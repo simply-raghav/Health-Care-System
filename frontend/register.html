@@ -1,10 +1,10 @@
 <!DOCTYPE html> 
 <html lang="en">
 	
-<!-- /login.html   -->
+<!-- /register.html   -->
 <head>
 		<meta charset="utf-8">
-		<title>Online Appointment</title>
+		<title></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		
 		<!-- Favicons -->
@@ -21,7 +21,6 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		
 		
-	
 	</head>
 	<body class="account-page">
 
@@ -98,48 +97,113 @@
 					
 					<div class="row">
 						<div class="col-md-8 offset-md-2">
-							
-							<!-- Login Tab Content -->
+								
+							<!-- Register Content -->
 							<div class="account-content">
 								<div class="row align-items-center justify-content-center">
 									<div class="col-md-7 col-lg-6 login-left">
-										<img src="assets/img/login-banner.png" class="img-fluid" alt=" Login">	
+										<img src="assets/img/login-banner.png" class="img-fluid" alt=" Register">	
 									</div>
 									<div class="col-md-12 col-lg-6 login-right">
 										<div class="login-header">
-											<h3>Login <span></span></h3>
+											<h3>Patient Register <a href="Hospital-register.html">Are you a Hospital?</a></h3>
 										</div>
-										<form action="https://dreamguys.co.in/demo//index.html">
-											<div class="form-group form-focus">
-												<input type="email" class="form-control floating">
-												<label class="focus-label">Email</label>
-											</div>
-											<div class="form-group form-focus">
-												<input type="password" class="form-control floating">
-												<label class="focus-label">Password</label>
-											</div>
-											<div class="text-right">
-												<a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
-											</div>
-											<button class="btn btn-primary btn-block btn-lg login-btn" type="button" onclick="window.location.href='admin/index.html';">Login</button>
-											<div class="login-or">
-												<span class="or-line"></span>
-												<span class="span-or">or</span>
-											</div>
-											<div class="row form-row social-login">
-												<div class="col-6">
-													<!-- <a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i> Login</a> -->
-												</div>
-												<div class="col-6">
-													<!-- <a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a> -->
-												</div>
-											</div>
-											<div class="text-center dont-have">Don’t have an account? <a href="Hospital-register.html">Register</a></div>
-										</form>
+										
+										<!-- Register Form -->
+										<!-- Register Form -->
+<form action="#">
+    <div class="form-group form-focus">
+        <input type="text" class="form-control floating">
+        <label class="focus-label">First Name</label>
+    </div>
+    <div class="form-group form-focus">
+        <input type="text" class="form-control floating">
+        <label class="focus-label">Last Name</label>
+    </div>
+    <div class="form-group form-focus">
+        <label for="Date-Of-Birth" class="floating-label">Date of Birth</label>
+        <input type="date" id="Date-Of-Birth" class="form-control floating">
+    </div>
+	<br>
+	<br>
+    <div class="form-group form-focus">
+        <label for="blood-group" class="floating-label">Blood Group</label>
+        <select id="blood-group" class="form-control floating">
+            <option value="" disabled selected>Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+    </div>
+	<br>
+	<br>
+    <div class="form-group form-focus">
+        <input type="email" class="form-control floating">
+        <label class="focus-label">Email Address</label>
+    </div>
+    <div class="form-group form-focus">
+        <input type="text" class="form-control floating">
+        <label class="focus-label">Mobile Number</label>
+    </div>
+    <div class="form-group form-focus">
+        <input type="text" class="form-control floating">
+        <label class="focus-label">Address</label>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6 form-focus">
+            <input type="text" class="form-control floating">
+            <label class="focus-label">City</label>
+        </div>
+        <div class="form-group col-md-6 form-focus">
+            <input type="text" class="form-control floating">
+            <label class="focus-label">State</label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6 form-focus">
+            <input type="text" class="form-control floating">
+            <label class="focus-label">Pincode</label>
+        </div>
+        <div class="form-group col-md-6 form-focus">
+            <input type="text" class="form-control floating">
+            <label class="focus-label">Country</label>
+        </div>
+    </div>
+    <div class="form-group form-focus">
+        <input type="password" class="form-control floating">
+        <label class="focus-label">Create Password</label>
+    </div>
+    <div class="form-group form-focus">
+        <input type="password" class="form-control floating">
+        <label class="focus-label">Confirm Password</label>
+    </div>
+    <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Signup</button>
+    <div class="login-or">
+        <span class="or-line"></span>
+        <!-- <span class="span-or">or</span> -->
+    </div>
+    <div class="row form-row social-login">
+        <div class="col-6">
+            <!-- <a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i> Login</a> -->
+        </div>
+        <div class="col-6">
+            <!-- <a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a> -->
+        </div>
+    </div>
+</form>
+<!-- /Register Form -->
+
+										<!-- /Register Form -->
+										
 									</div>
 								</div>
 							</div>
-							<!-- /Login Tab Content -->
+							<!-- /Register Content -->
 								
 						</div>
 					</div>
@@ -191,7 +255,6 @@
 							</div>
 	
 							
-	
 							<div class="col-lg-3 col-md-6">
 	
 								<!-- Footer Widget -->
@@ -268,5 +331,5 @@
 		
 	</body>
 
-<!-- /login.html  -->
+<!-- /register.html   -->
 </html>
