@@ -1,18 +1,14 @@
 const MongoStore = require("connect-mongo");
 const mongoose = require("mongoose");
 const patientDetail = new mongoose.Schema({
-    name : {
-        type : String
-    }, 
-    password : {
-        type : String
-    }, 
-    email : {
-        type : String
-    }, 
-    contact : {
-        type : Number
-    }
+  name: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
 });
 
 const patient = new mongoose.model("patient", patientDetail);

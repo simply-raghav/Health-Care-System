@@ -124,10 +124,10 @@
 							<div class="profile-sidebar">
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
-										<a href="#" class="booking-doc-img">
-											<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+										<a href="#" class="booking-doc-img" id="doctor_image">
+											<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="Doctor Image">
 										</a>
-										<div class="profile-det-info">
+										<div class="profile-det-info" id="doctor_info">
 											<h3>Dr. ABC</h3>
 											
 											<div class="patient-details">
@@ -198,11 +198,11 @@
 									<div class="card">
 										<div class="card-body">
 											<h4 class="card-title">Schedule Timings</h4>
-											<div class="profile-box">
+											<div class="profile-box" id="profile_box">
 												<div class="row">
 
 													<div class="col-lg-4">
-														<div class="form-group">               
+														<div class="form-group" id="time_slot">               
 															<label>Timing Slot Duration</label>
 															<select class="select form-control">
 																<option>-</option>
@@ -223,7 +223,7 @@
 															<div class="schedule-header">
 															
 																<!-- Schedule Nav -->
-																<div class="schedule-nav">
+																<div class="schedule-nav" id="select_day">
 																	<ul class="nav nav-tabs nav-justified">
 																		<li class="nav-item">
 																			<a class="nav-link" data-toggle="tab" href="#slot_sunday">Sunday</a>
@@ -274,7 +274,7 @@
 																	</h4>
 																	
 																	<!-- Slot List -->
-																	<div class="doc-times">
+																	<div class="doc-times" id="doc_times">
 																		<div class="doc-slot-list">
 																			8:00 pm - 11:30 pm
 																			<a href="javascript:void(0)" class="delete_schedule">
