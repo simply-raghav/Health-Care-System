@@ -29,10 +29,7 @@
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
 		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		
 
 
     <style>
@@ -123,12 +120,7 @@
 					<i class="fe fe-text-align-left"></i>
 				</a>
 				
-				<!-- <div class="top-nav-search">
-					<form>
-						<input type="text" class="form-control" placeholder="Search here">
-						<button class="btn" type="submit"><i class="fa fa-search"></i></button>
-					</form>
-				</div> -->
+				
 				
 				<!-- Mobile Menu Toggle -->
 				<a class="mobile_btn" id="mobile_btn">
@@ -191,9 +183,7 @@
 							<li> 
 								<a href="patient-list.html"><i class="fe fe-user"></i> <span>Patients</span></a>
 							</li>
-							<!-- <li> 
-								<a href="reviews.html"><i class="fe fe-star-o"></i> <span>Reviews</span></a>
-							</li> -->
+							
 							<li> 
 								<a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a>
 							</li>
@@ -214,11 +204,7 @@
 
 
     <div class="container">
-        <!-- <div class="toggle-buttons">
-            <button id="patientBtn" class="active">Patient</button>
-            <button id="doctorBtn">Doctor</button>
-            <button id="hospitalBtn">Hospital</button>
-        </div> -->
+       
 
         
 
@@ -235,12 +221,7 @@
            
             <!-- <label for="address">Address:</label> -->
             <input type="text" id="address" name="address"  placeholder="Address" required><br><br>
-            <!-- <label for="gender">Gender:</label> -->
-            <!-- <select id="gender" name="gender" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select><br><br> -->
+            
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" placeholder="Date of Birth" required><br><br>
            
@@ -260,59 +241,15 @@
            
     
             <button type="submit">Register</button><br><br>
-            <!-- <button type="button" class="login-btn" onclick="location.href='http://127.0.0.1:5500/login1.html'">Login</button> -->
-
-            <!-- <div class="login-link">
-                <span>Already registered? </span><a href="http://127.0.0.1:5500/login1.html">Login here</a>
-            </div> -->
+            
         </form>
 
         
 
-        <!-- <div class="form-group">
-            <button type="button" class="login-btn">Login</button>
-        </div> -->
+       
     </div>
 
-    <!-- <script>
-        document.getElementById("patientBtn").addEventListener("click", function() {
-            toggleForm('patient');
-            this.classList.add("active");
-            document.getElementById("doctorBtn").classList.remove("active");
-            document.getElementById("hospitalBtn").classList.remove("active");
-        });
-
-        document.getElementById("doctorBtn").addEventListener("click", function() {
-            toggleForm('doctor');
-            this.classList.add("active");
-            document.getElementById("patientBtn").classList.remove("active");
-            document.getElementById("hospitalBtn").classList.remove("active");
-        });
-
-        document.getElementById("hospitalBtn").addEventListener("click", function() {
-            toggleForm('hospital');
-            this.classList.add("active");
-            document.getElementById("patientBtn").classList.remove("active");
-            document.getElementById("doctorBtn").classList.remove("active");
-        });
-
-        function toggleForm(formType) {
-            var forms = document.getElementsByClassName('form-group');
-            for (var i = 0; i < forms.length; i++) {
-                forms[i].style.display = 'none';
-            }
-            document.getElementById(formType + '-form').style.display = 'block';
-        }
-
-
-    
-    // Add event listener to login button
-    document.querySelector('.login-btn').addEventListener('click', function() {
-        // Redirect to the login page
-        window.location.href = 'http://127.0.0.1:5500/login1.html';
-    });
-
-    </script> -->
+   
 
     
 
