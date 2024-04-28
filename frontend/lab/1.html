@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      text-align: center;
+    }
+    .patient-info {
+      margin-bottom: 20px;
+    }
+    .symptoms {
+      margin-bottom: 20px;
+    }
+    .diagnosis {
+      margin-bottom: 20px;
+    }
+    .treatment {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Medical Report</h1>
+    <div class="patient-info">
+      <h2>Patient Information</h2>
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Age:</strong> 35</p>
+      <p><strong>Gender:</strong> Male</p>
+    </div>
+    <div class="symptoms">
+      <h2>Symptoms</h2>
+      <p>Fever, cough, headache</p>
+    </div>
+    <div class="diagnosis">
+      <h2>Diagnosis</h2>
+      <p>Diagnosis: Common cold</p>
+    </div>
+    <div class="treatment">
+      <h2>Treatment</h2>
+      <p>Rest, plenty of fluids, over-the-counter cold medication</p>
+    </div>
+    <button onclick="generatePDF()">Generate PDF</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script>
+    function generatePDF() {
+      const doc = new jsPDF();
+      const container = document.querySelector('.container');
+      doc.html(container, {
+        callback: function (doc) {
+          doc.save('medical_report.pdf');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
