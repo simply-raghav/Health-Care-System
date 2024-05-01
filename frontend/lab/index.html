@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>Online Appointment</title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.png"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="assets/css/feathericon.min.css" />
+
+    <link rel="stylesheet" href="assets/plugins/morris/morris.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <div class="header">
+        <!-- Logo -->
+        <div class="header-left">
+          <a href="../index.html" class="logo">
+            <img src="assets/img/logo.jpg" alt="Logo" />
+          </a>
+          <a href="index.html" class="logo logo-small">
+            <img
+              src="assets/img/logo-small.png"
+              alt="Logo"
+              width="30"
+              height="30"
+            />
+          </a>
+        </div>
+        <!-- /Logo -->
+
+        <a href="javascript:void(0);" id="toggle_btn">
+          <i class="fe fe-text-align-left"></i>
+        </a>
+
+        <div class="top-nav-search">
+          <form>
+            <!-- <input type="text" class="form-control" placeholder="Search here"> -->
+            <!-- <button class="btn" type="submit"><i class="fa fa-search"></i></button> -->
+          </form>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <a class="mobile_btn" id="mobile_btn">
+          <i class="fa fa-bars"></i>
+        </a>
+        <!-- /Mobile Menu Toggle -->
+
+        <!-- Header Right Menu -->
+        <ul class="nav user-menu">
+          <!-- /Notifications -->
+
+          <!-- User Menu -->
+          <li class="nav-item dropdown has-arrow">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+              <span class="user-img"
+                ><img
+                  class="rounded-circle"
+                  src="assets/img/profiles/avatar-01.jpg"
+                  width="31"
+                  alt="ABC"
+              /></span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="user-header">
+                <div class="avatar avatar-sm">
+                  <img
+                    src="assets/img/profiles/avatar-01.jpg"
+                    alt="User Image"
+                    class="avatar-img rounded-circle"
+                  />
+                </div>
+                <div class="user-text">
+                  <h6>ABC</h6>
+                  <!-- <p class="text-muted mb-0">Administrator</p> -->
+                </div>
+              </div>
+              <a class="dropdown-item" href="profile1.html">My Profile</a>
+              <a class="dropdown-item" href="settings.html">Settings</a>
+              <a class="dropdown-item" href="login.html">Logout</a>
+            </div>
+          </li>
+          <!-- /User Menu -->
+        </ul>
+        <!-- /Header Right Menu -->
+      </div>
+      <!-- /Header -->
+
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+          <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+              <li class="menu-title">
+                <span>Main</span>
+              </li>
+              <li class="active">
+                <a href="index.html"
+                  ><i class="fe fe-home"></i> <span>Dashboard</span></a
+                >
+              </li>
+              <!-- <li>
+                <a href="appointment-list.html"
+                  ><i class="fe fe-layout"></i> <span>Appointments</span></a
+                >
+              </li> -->
+              <li>
+                <a href="specialities.html"
+                  ><i class="fe fe-users"></i> <span>Types Of Tests</span></a
+                >
+              </li>
+              
+              <li>
+                <a href="patient-list.html"
+                  ><i class="fe fe-user"></i> <span>Patients</span></a
+                >
+              </li>
+
+              <!-- <li>
+                <a href="transactions-list.html"
+                  ><i class="fe fe-activity"></i> <span>Transactions</span></a
+                >
+              </li>
+              <li>
+                <a href="add_doctor.html"
+                  ><i class=""></i><span>Add Doctor</span></a
+                >
+              </li>
+              <li>
+                <a href="add-pharmacy.html"
+                  ><i class=""></i><span>Add Pharmacy</span></a
+                >
+              </li>
+              <li>
+                <a href="add-Laboratory.html"
+                  ><i class=""></i><span>Add Laboratory</span></a
+                >
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /Sidebar -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper">
+        <div class="content container-fluid">
+          <!-- Page Header -->
+          <div class="page-header">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3 class="page-title">Hospital name</h3>
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item active">Dashboard</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- /Page Header -->
+
+          <!-- </div>	
+					</div> -->
+          <div class="row">
+            <div class="col-md-6 d-flex">
+              <!-- Recent Orders -->
+
+              <!-- /Recent Orders -->
+            </div>
+            <div class="col-md-12 d-flex">
+              <!-- Feed Activity -->
+              <div class="card card-table flex-fill">
+                <div class="card-header">
+                  <h4 class="card-title">Patients List</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover table-center mb-0">
+                      <thead>
+                        <tr>
+                          <th>Patient Name</th>
+                          <th>Phone</th>
+                          <th>Last Visit</th>
+                          <th class="text-right">Report</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <h2 class="table-avatar">
+                              <a
+                                href="profile.html"
+                                class="avatar avatar-sm mr-2"
+                                ><img
+                                  class="avatar-img rounded-circle"
+                                  src="assets/img/patients/patient1.jpg"
+                                  alt="User Image"
+                              /></a>
+                              <a href="profile.html">X... </a>
+                            </h2>
+                          </td>
+                          <td>8286329170</td>
+                          <td>20 Oct 2023</td>
+                          <td class="text-right">
+                            <div class="table-action">
+                              <a
+                                href="javascript:void(0);"
+                                class="btn btn-sm bg-info-light"
+                                onclick="generatePDF()"
+                              >
+                                <i class="far fa-eye"></i> View
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <h2 class="table-avatar">
+                              <a
+                                href="profile.html"
+                                class="avatar avatar-sm mr-2"
+                                ><img
+                                  class="avatar-img rounded-circle"
+                                  src="assets/img/patients/patient2.jpg"
+                                  alt="User Image"
+                              /></a>
+                              <a href="profile.html">Y... </a>
+                            </h2>
+                          </td>
+                          <td>2077299974</td>
+                          <td>22 Oct 2023</td>
+                          <td class="text-right">
+                            <div class="table-action">
+                              <a
+                                href="javascript:void(0);"
+                                class="btn btn-sm bg-info-light"
+                                onclick="generatePDF()"
+                              >
+                                <i class="far fa-eye"></i> View
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <h2 class="table-avatar">
+                              <a
+                                href="profile.html"
+                                class="avatar avatar-sm mr-2"
+                                ><img
+                                  class="avatar-img rounded-circle"
+                                  src="assets/img/patients/patient3.jpg"
+                                  alt="User Image"
+                              /></a>
+                              <a href="profile.html">Z...</a>
+                            </h2>
+                          </td>
+                          <td>2607247769</td>
+                          <td>21 Oct 2023</td>
+                          <td class="text-right">
+                            <div class="table-action">
+                              <a
+                                href="javascript:void(0);"
+                                class="btn btn-sm bg-info-light"
+                                onclick="generatePDF()"
+                              >
+                                <i class="far fa-eye"></i> View
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <h2 class="table-avatar">
+                              <a
+                                href="profile.html"
+                                class="avatar avatar-sm mr-2"
+                                ><img
+                                  class="avatar-img rounded-circle"
+                                  src="assets/img/patients/patient4.jpg"
+                                  alt="User Image"
+                              /></a>
+                              <a href="profile.html">W...</a>
+                            </h2>
+                          </td>
+                          <td>5043686874</td>
+                          <td>21 Sep 2023</td>
+                          <td class="text-right">
+                            <div class="table-action">
+                              <a
+                                href="javascript:void(0);"
+                                class="btn btn-sm bg-info-light"
+                                onclick="generatePDF()"
+                              >
+                                <i class="far fa-eye"></i> View
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <h2 class="table-avatar">
+                              <a
+                                href="profile.html"
+                                class="avatar avatar-sm mr-2"
+                                ><img
+                                  class="avatar-img rounded-circle"
+                                  src="assets/img/patients/patient5.jpg"
+                                  alt="User Image"
+                              /></a>
+                              <a href="profile.html">V...</a>
+                            </h2>
+                          </td>
+                          <td>9548207887</td>
+                          <td>18 Sep 2023</td>
+                          <td class="text-right">
+                            <div class="table-action">
+                              <a
+                                href="javascript:void(0);"
+                                class="btn btn-sm bg-info-light"
+                                onclick="generatePDF()"
+                              >
+                                <i class="far fa-eye"></i> View
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- /Feed Activity -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"></div>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Wrapper -->
+    </div>
+    <!-- /Main Wrapper -->
+	
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="assets/plugins/raphael/raphael.min.js"></script>
+    <script src="assets/plugins/morris/morris.min.js"></script>
+    <script src="assets/js/chart.morris.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+
+    <script>
+      function generatePDF() {
+        var pdfObject = jsPDFInvoiceTemplate.default(props);
+        console.log("Object created : ", pdfObject);
+      }
+      var props = {
+        outputType: jsPDFInvoiceTemplate.OutputType.Save,
+        returnJsPDFDocObject: true,
+        fileName: "Invoice 2021",
+        orientationLandscape: false,
+        compress: true,
+        logo: {
+          src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/logo.png",
+          type: "PNG", //optional, when src= data:uri (nodejs case)
+          width: 53.33, //aspect ratio = width/height
+          height: 26.66,
+          margin: {
+            top: 0, //negative or positive num, from the current position
+            left: 0, //negative or positive num, from the current position
+          },
+        },
+        stamp: {
+          inAllPages: true, //by default = false, just in the last page
+          src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/qr_code.jpg",
+          type: "JPG", //optional, when src= data:uri (nodejs case)
+          width: 20, //aspect ratio = width/height
+          height: 20,
+          margin: {
+            top: 0, //negative or positive num, from the current position
+            left: 0, //negative or positive num, from the current position
+          },
+        },
+        business: {
+          name: "Business Name",
+          address: "Albania, Tirane ish-Dogana, Durres 2001",
+          phone: "(+355) 069 11 11 111",
+          email: "email@example.com",
+          email_1: "info@example.al",
+          website: "www.example.al",
+        },
+        contact: {
+          label: "Invoice issued for:",
+          name: "Client Name",
+          address: "Albania, Tirane, Astir",
+          phone: "(+355) 069 22 22 222",
+          email: "client@website.al",
+          otherInfo: "www.website.al",
+        },
+        invoice: {
+          label: "Invoice #: ",
+          num: 19,
+          invDate: "Payment Date: 01/01/2021 18:12",
+          invGenDate: "Invoice Date: 02/02/2021 10:17",
+          headerBorder: false,
+          tableBodyBorder: false,
+          header: [
+            {
+              title: "#",
+              style: {
+                width: 10,
+              },
+            },
+            {
+              title: "Test",
+              style: {
+                width: 30,
+              },
+            },
+            {
+              title: "Description",
+              style: {
+                width: 80,
+              },
+            },
+            { title: "Price" },
+            { title: "Quantity" },
+            { title: "Unit" },
+            { title: "Total" },
+          ],
+          table: Array.from(Array(1), (item, index) => [
+            index + 1,
+            "There are many variations ",
+            "Lorem Ipsum is simply dummy text dummy text ",
+            200.5,
+            4.5,
+            "m2",
+            400.5,
+          ]),
+          additionalRows: [
+            {
+              col1: "Total:",
+              col2: "145,250.50",
+              col3: "ALL",
+              style: {
+                fontSize: 14, //optional, default 12
+              },
+            },
+            {
+              col1: "VAT:",
+              col2: "20",
+              col3: "%",
+              style: {
+                fontSize: 10, //optional, default 12
+              },
+            },
+            {
+              col1: "SubTotal:",
+              col2: "116,199.90",
+              col3: "ALL",
+              style: {
+                fontSize: 10, //optional, default 12
+              },
+            },
+          ],
+          invDescLabel: "Invoice Note",
+          invDesc:
+            "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+        },
+        footer: {
+          text: "The invoice is created on a computer and is valid without the signature and stamp.",
+        },
+        pageEnable: true,
+        pageLabel: "Page ",
+      };
+    </script>
+  </body>
+</html>

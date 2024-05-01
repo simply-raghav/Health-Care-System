@@ -82,13 +82,13 @@
 					</div>		 
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-							<div class="header-contact-img">
+							<!-- <div class="header-contact-img">
 								<i class="far fa-hospital"></i>							
 							</div>
 							<div class="header-contact-detail">
 								<p class="contact-header">Contact</p>
 								<p class="contact-info-header"> +1 315 369 5943</p>
-							</div>
+							</div> -->
 						</li>
 						<li class="nav-item">
 							<a class="nav-link header-login" href="login.html">login / Signup </a>
@@ -105,7 +105,7 @@
 						<div class="col-md-12 col-12">
 							<nav aria-label="breadcrumb" class="page-breadcrumb">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+									<li class="breadcrumb-item"><a href="patient-dashboard.html">Dashboard</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Doctor Profile</li>
 								</ol>
 							</nav>
@@ -169,18 +169,19 @@
 											<span>Dental Fillings</span>
 											<span>Teeth Whitneing</span>
 										</div>
+
 									</div>
 								</div>
 								<div class="doc-info-right">
 									<div class="clini-infos">
 										<ul>
-											<li><i class="far fa-thumbs-up"></i> 99%</li>
+											<!-- <li><i class="far fa-thumbs-up"></i> 99%</li>
 											<li><i class="far fa-comment"></i> 35 Feedback</li>
 											<li><i class="fas fa-map-marker-alt"></i> Newyork, USA</li>
-											<li><i class="far fa-money-bill-alt"></i> $100 per hour </li>
+											<li><i class="far fa-money-bill-alt"></i> $100 per hour </li> -->
 										</ul>
 									</div>
-									<div class="doctor-action">
+									<!-- <div class="doctor-action">
 										<a href="javascript:void(0)" class="btn btn-white fav-btn">
 											<i class="far fa-bookmark"></i>
 										</a>
@@ -193,9 +194,9 @@
 										<a href="javascript:void(0)" class="btn btn-white call-btn" data-toggle="modal" data-target="#video_call">
 											<i class="fas fa-video"></i>
 										</a>
-									</div>
-									<div class="clinic-booking">
-										<a class="apt-btn" href="booking.html">Book Appointment</a>
+									</div> -->
+									<div class="text-right">		
+												<a href="#" class="add-new-btn" data-toggle="modal" data-target="#add_medical_records">Add Medical Records</a>
 									</div>
 								</div>
 							</div>
@@ -203,6 +204,10 @@
 					</div>
 					<!-- /Doctor Widget -->
 					
+
+                 
+
+
 					<!-- Doctor Details Tab -->
 					<div class="card">
 						<div class="card-body pt-0">
@@ -214,10 +219,10 @@
 										<a class="nav-link active" href="#doc_overview" data-toggle="tab">Overview</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#doc_locations" data-toggle="tab">Locations</a>
+										<!-- <a class="nav-link" href="#doc_locations" data-toggle="tab">Locations</a> -->
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#doc_reviews" data-toggle="tab">Reviews</a>
+										<!-- <a class="nav-link" href="#doc_reviews" data-toggle="tab">Reviews</a> -->
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="#doc_business_hours" data-toggle="tab">Business Hours</a>
@@ -1014,6 +1019,41 @@
 		</div>
 		<!-- Video Call Modal -->
 		
+
+        <!-- Add Medical Records Modal -->
+		<div class="modal fade custom-modal" id="add_medical_records">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title">Medical Records</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<form>					
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Date</label>
+								<input type="text" class="form-control datetimepicker" value="31-10-2019">
+							</div>
+							<div class="form-group">
+								<label>Description ( Optional )</label>
+								<textarea class="form-control"></textarea>
+							</div>
+							<div class="form-group">
+								<label>Upload File</label> 
+								<input type="file" class="form-control">
+							</div>	
+							<div class="submit-section text-center">
+								<button type="submit" class="btn btn-primary submit-btn">Submit</button>
+								<button type="button" class="btn btn-secondary submit-btn" data-dismiss="modal">Cancel</button>							
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /Add Medical Records Modal -->
+		 
+
 		<!-- jQuery -->
 		<script src="assets/js/jquery.min.js"></script>
 		
