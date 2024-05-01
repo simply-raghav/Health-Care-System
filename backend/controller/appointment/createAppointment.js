@@ -1,15 +1,15 @@
 
-const Appointment = require("../../Models/appointment");
-const doctor = require("../../Models/doctor");
-const Doctor = require("../../Models/doctor");
+const Appointment = require("../../Models/appointment.model");
+const doctor = require("../../Models/doctor.model");
+
 const createAppointment = async (req, res)=>{
     
     try {
         console.log(req.body);
         
         const {name, status, amount} = req.body;
-        const dateofAppointment = new Date("05-04-2024");
-        const dateOfBooking = new Date("04-24-2024");
+        const dateofAppointment = new Date("06-29-2024");
+        const dateOfBooking = new Date("06-21-2024");
         const data = await doctor.findOne({name});
         console.log("hi there", data);
         const doctorId = data._id;
