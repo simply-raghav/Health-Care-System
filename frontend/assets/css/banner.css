@@ -1,0 +1,38 @@
+
+.section-search {
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative; 
+  background: white;
+}
+
+.section-search:before,
+.section-search:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.section-search:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.section-search:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.section-search:hover .container-fluid {
+  animation-play-state: paused;
+}
+
+.container-fluid {
+  display: inline-block;
+  animation: 5s slide infinite linear;
+}
+
