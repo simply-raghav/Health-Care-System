@@ -74,7 +74,7 @@
 						</ul>
 					</div>
 					<ul class="nav header-navbar-rht">
-						<li class="nav-item contact-item">
+						<!-- <li class="nav-item contact-item">
 							<div class="header-contact-img">
 								<i class="far fa-hospital"></i>
 							</div>
@@ -82,7 +82,7 @@
 								<p class="contact-header">Contact</p>
 								<p class="contact-info-header"> +91 *******8765</p>
 							</div>
-						</li>
+						</li> -->
 						<li class="nav-item">
 							<!-- <a class="nav-link header-login" href="../loginsign up/127.0.0.15501/-doctor-appointment-booking-bootstrap-template-admin-dashboard-master/login.html">login / Signup </a> -->
 						</li>
@@ -111,7 +111,7 @@
 										
 										<!-- Register Form -->
 										<!-- Register Form -->
-<form action="#">
+<form action="#"   onsubmit="return validateForm()">
     <div class="form-group form-focus">
         <input type="text " class="form-control floating"required>
         <label class="focus-label ">First Name</label>
@@ -147,9 +147,10 @@
         <label class="focus-label">Email Address</label>
     </div>
     <div class="form-group form-focus">
-        <input type="text" class="form-control floating" required>
-        <label class="focus-label">Mobile Number</label>
-    </div>
+		<input type="text" class="form-control floating" pattern="[0-9]{10}" title="Please enter a 10-digit mobile number" required>
+		<label class="focus-label">Mobile Number</label>
+	</div>
+	
     <div class="form-group form-focus">
         <input type="text" class="form-control floating" required>
         <label class="focus-label">Address</label>
@@ -174,10 +175,15 @@
             <label class="focus-label">Country</label>
         </div>
     </div>
-    <div class="form-group form-focus">
+    <!-- <div class="form-group form-focus">
         <input type="password" class="form-control floating"required>
         <label class="focus-label">Create Password</label>
-    </div>
+    </div> -->
+	<div class="form-group form-focus">
+		<input type="password" class="form-control floating" id="password" name="password">
+		<label class="focus-label">Password</label>
+		<span id="passwordError" class="text-danger"></span>
+	</div>
     <div class="form-group form-focus">
         <input type="password" class="form-control floating"required>
         <label class="focus-label">Confirm Password</label>
@@ -322,6 +328,26 @@
 		
 		<!-- Custom JS -->
 		<script src="assets/js/script.js"></script>
+
+
+		<!-- JavaScript for password validation -->
+		<script>
+			function validateForm() {
+				var password = document.getElementById("password").value;
+				var passwordError = document.getElementById("passwordError");
+				
+				// Reset password error message
+				passwordError.textContent = "";
+	
+				// Password validation
+				if (password.length < 8) {
+					passwordError.textContent = "Password must be at least 8 characters long";
+					return false; // Prevent form submission
+				}
+	
+				return true; // Allow form submission
+			}
+		</script>
 		
 	</body>
 
