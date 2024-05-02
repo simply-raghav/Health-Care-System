@@ -1,5 +1,4 @@
 const express = require('express');
-const doctor = require("./Models/doctor");
 require("./DB/db.js");
 const ejs = require("ejs");
 const app = express();
@@ -16,7 +15,14 @@ app.set("views","./views");
 app.use(cookie());
 app.use(express.json());
 app.use(express.static("public"));
-app.use("/authDoctor", require("./Routes/Doctor/auth"))
+
+app.use("/authDoctor", require("./Routes/Doctor/auth.js"))
+app.use("/authHospital", require("./Routes/Hospital/auth.js"))
+// app.use("/authLab", require("./Routes/Lab/auth.js"))
+// app.use("/authPharmacy", require("./Routes/Hospital/auth.js"))
+
+app.use("/authPatient", require("./Routes/Patient/auth.js"))
+app.use("/auth", require("./Routes/auth.js"))
 app.use("/appointment", require("./Routes/Appointments"));
 app.use("/health_care",require("./Routes/pages/render.js"))
 

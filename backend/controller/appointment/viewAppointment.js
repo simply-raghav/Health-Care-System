@@ -1,7 +1,7 @@
 
-const Appointment = require("../../Models/appointment");
+const Appointment = require("../../Models/appointment.model");
+
 const getAllAppointments = async (req, res)=>{
-    const doctor = require("../../Models/doctor")
     
     try {
         const result = await Appointment.find().populate("doctorId");
@@ -19,4 +19,24 @@ const getAllAppointments = async (req, res)=>{
     }
 }
 
-module.exports = getAllAppointments;
+const getAllAppointments_doctor = async (req, res) => {
+  
+
+  try {
+      console.log("Appointment : ", req.b);
+    const result = await Appointment.find({ doctorId: req.body.doctor_id });
+    return res.json({
+      status: "success",
+      message: "entry created successfully",
+      result: result,
+    });
+  } catch (error) {
+    return res.json({
+      status: "Error",
+      message: error.message,
+    });
+  }
+};
+
+
+module.exports = {getAllAppointments, getAllAppointments_doctor};

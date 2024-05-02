@@ -1,10 +1,13 @@
 const express = require("express");
 const router = new express.Router();
 const createAppointment = require("../controller/appointment/createAppointment");
-const viewAppointment = require("../controller/appointment/viewAppointment");
+const {
+  getAllAppointments,
+  getAllAppointments_doctor,
+} = require("../controller/appointment/viewAppointment");
 
 router.post('/makeAppointment', createAppointment);
-router.get('/viewAppointment', viewAppointment);
+router.post('/viewAppointment', getAllAppointments_doctor);
 
 
 module.exports = router;

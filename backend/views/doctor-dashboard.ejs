@@ -7,17 +7,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		
 		<!-- Favicons -->
-		<link href="assets/img/favicon.png" rel="icon">
+		<link href="/img/favicon.png" rel="icon">
 		
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
 		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
 		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 		
 		<!-- Main CSS -->
-		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="/css/style.css">
 		
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -26,7 +26,7 @@
 		<![endif]-->
 	
 	</head>
-	<body>
+	<body onload="getData('<%= doctor_id %>')">
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
@@ -43,13 +43,13 @@
 							</span>
 						</a>
 						<a href="index.html" class="navbar-brand logo">
-							<img src="assets/img/logo.jpg" class="img-fluid" alt="Logo">
+							<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="index.html" class="menu-logo">
-								<img src="assets/img/logo.jpg" class="img-fluid" alt="Logo">
+								<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
@@ -133,13 +133,13 @@
 						<li class="nav-item dropdown has-arrow logged-item">
 							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
 								<span class="user-img">
-									<img class="rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" width="31" alt="ABC">
+									<img class="rounded-circle" src="/img/doctors/doctor-thumb-02.jpg" width="31" alt="ABC">
 								</span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right">
 								<div class="user-header">
 									<div class="avatar avatar-sm">
-										<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+										<img src="/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
 									</div>
 									<div class="user-text">
 										<h6>XYZ</h6>
@@ -188,10 +188,10 @@
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
 										<a href="#" class="booking-doc-img">
-											<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+											<img src="/img/doctors/doctor-thumb-02.jpg" alt="User Image">
 										</a>
 										<div class="profile-det-info" id="docotr_info">
-											<h3>Dr. ABC</h3>
+											<h3 id="Doctor_name" style="text-transform: capitalize;">Dr. ABC</h3>
 											
 											<div class="patient-details">
 												<h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
@@ -288,7 +288,7 @@
 													<div class="dash-widget dct-border-rht">
 														<div class="circle-bar circle-bar1">
 															<div class="circle-graph1" data-percent="75">
-																<img src="assets/img/icon-01.png" class="img-fluid" alt="patient">
+																<img src="/img/icon-01.png" class="img-fluid" alt="patient">
 															</div>
 														</div>
 														<div class="dash-widget-info">
@@ -303,7 +303,7 @@
 													<div class="dash-widget dct-border-rht">
 														<div class="circle-bar circle-bar2">
 															<div class="circle-graph2" data-percent="65">
-																<img src="assets/img/icon-02.png" class="img-fluid" alt="Patient">
+																<img src="/img/icon-02.png" class="img-fluid" alt="Patient">
 															</div>
 														</div>
 														<div class="dash-widget-info">
@@ -318,7 +318,7 @@
 													<div class="dash-widget">
 														<div class="circle-bar circle-bar3">
 															<div class="circle-graph3" data-percent="50">
-																<img src="assets/img/icon-03.png" class="img-fluid" alt="Patient">
+																<img src="/img/icon-03.png" class="img-fluid" alt="Patient">
 															</div>
 														</div>
 														<div class="dash-widget-info">
@@ -374,37 +374,11 @@
 																		<th></th>
 																	</tr>
 																</thead>
-																<tbody>
-																	<tr>
+																<tbody id = "appointment_upcoming_list">
+																	<!-- <tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient.jpg" alt="User Image"></a>
-																				<a href="patient-profile.html">XYZ <span>#PT0016</span></a>
-																			</h2>
-																		</td>
-																		<td>11 dec 2023 <span class="d-block text-info">10.00 AM</span></td>
-																		<td>General</td>
-																		<td>New Patient</td>
-																		<td class="text-center">Rs.150</td>
-																		<td class="text-right">
-																			<div class="table-action">
-																				<a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-																					<i class="far fa-eye"></i> View
-																				</a>
-																				
-																				<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-																					<i class="fas fa-check"></i> Accept
-																				</a>
-																				<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-																					<i class="fas fa-times"></i> Cancel
-																				</a>
-																			</div>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient1.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">ABC <span>#PT0001</span></a>
 																			</h2>
 																		</td>
@@ -426,11 +400,11 @@
 																				</a>
 																			</div>
 																		</td>
-																	</tr>
+																	</tr> -->
 																	<!-- <tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient2.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient2.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Travis Trimble  <span>#PT0002</span></a>
 																			</h2>
 																		</td>
@@ -456,7 +430,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient3.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient3.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Carl Kelly <span>#PT0003</span></a>
 																			</h2>
 																		</td>
@@ -482,7 +456,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient4.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient4.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Michelle Fairfax <span>#PT0004</span></a>
 																			</h2>
 																		</td>
@@ -508,7 +482,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient5.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient5.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Gina Moore <span>#PT0005</span></a>
 																			</h2>
 																		</td>
@@ -558,7 +532,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">XYZ <span>#PT0016</span></a>
 																			</h2>
 																		</td>
@@ -584,7 +558,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient1.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">ABC <span>#PT0001</span></a>
 																			</h2>
 																		</td>
@@ -610,7 +584,7 @@
 																	<!-- <tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient2.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient2.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Travis Trimble  <span>#PT0002</span></a>
 																			</h2>
 																		</td>
@@ -636,7 +610,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient3.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient3.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Carl Kelly <span>#PT0003</span></a>
 																			</h2>
 																		</td>
@@ -662,7 +636,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient4.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient4.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Michelle Fairfax <span>#PT0004</span></a>
 																			</h2>
 																		</td>
@@ -688,7 +662,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient5.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient5.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Gina Moore <span>#PT0005</span></a>
 																			</h2>
 																		</td>
@@ -738,7 +712,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">XYZ <span>#PT0016</span></a>
 																			</h2>
 																		</td>
@@ -764,7 +738,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient1.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">ABC <span>#PT0001</span></a>
 																			</h2>
 																		</td>
@@ -790,7 +764,7 @@
 																	<!-- <tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient2.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient2.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Travis Trimble  <span>#PT0002</span></a>
 																			</h2>
 																		</td>
@@ -816,7 +790,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient3.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient3.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Carl Kelly <span>#PT0003</span></a>
 																			</h2>
 																		</td>
@@ -842,7 +816,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient4.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient4.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Michelle Fairfax <span>#PT0004</span></a>
 																			</h2>
 																		</td>
@@ -868,7 +842,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient5.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient5.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">Gina Moore <span>#PT0005</span></a>
 																			</h2>
 																		</td>
@@ -919,7 +893,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient6.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient6.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">ABC <span>#PT0006</span></a>
 																			</h2>
 																		</td>
@@ -945,7 +919,7 @@
 																	<tr>
 																		<td>
 																			<h2 class="table-avatar">
-																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient7.jpg" alt="User Image"></a>
+																				<a href="patient-profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/img/patients/patient7.jpg" alt="User Image"></a>
 																				<a href="patient-profile.html">XYZ <span>#PT0006</span></a>
 																			</h2>
 																		</td>
@@ -1001,7 +975,7 @@
 								<!-- Footer Widget -->
 								<div class="footer-widget footer-about">
 									<div class="footer-logo">
-										<img src="assets/img/logo.jpg"  width="120" alt="logo">
+										<img src="/img/logo.jpg"  width="120" alt="logo">
 									</div>
 									<div class="footer-about-content">
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -1097,23 +1071,25 @@
 		<!-- /Main Wrapper -->
 	  
 		<!-- jQuery -->
-		<script src="assets/js/jquery.min.js"></script>
+		<script src="/js/jquery.min.js"></script>
 		
 		<!-- Bootstrap Core JS -->
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 		
 		<!-- Sticky Sidebar JS -->
         <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
         <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
 		
 		<!-- Circle Progress JS -->
-		<script src="assets/js/circle-progress.min.js"></script>
+		<script src="/js/circle-progress.min.js"></script>
 		
 		<!-- Custom JS -->
-		<script src="assets/js/script.js"></script>
+		<script src="/js/script.js"></script>
+		
+		<script src="/javascript/Doctor/dashboard.js"></script>
 		
 	</body>
 
-<!-- /doctor-dashboard.html   -->
+	<!-- /doctor-dashboard.html   -->
 </html>
