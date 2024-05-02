@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const loggedin = require("../../controller/auth/isLoggedin")
+const logout = require("../../controller/auth/logout");
 router.get('/', loggedin, (req,res)=>{
     console.log("in render ",req.user)
     let loginbtnclass,dashboardbtnclass;
@@ -26,11 +27,13 @@ router.get('/login', loggedin, (req,res)=>{
     }  
 });
 
+router.get('/logout', logout);
+
 router.get("/dashboard", loggedin, (req, res) => {
   
   if (req.user) {
     res.render((req.entity + "-dashboard"), {
-      doctor_id: req.user.id,
+      id: req.user.id,
     });
   } else {
     res.redirect("login");
@@ -40,7 +43,7 @@ router.get("/dashboard", loggedin, (req, res) => {
 router.get("/registerPat", loggedin, (req, res) => {
   if (req.user) {
     res.redirect("dashboard", {
-      doctor_id: req.user.id,
+      id: req.user.id,
     });
   } else {
     res.render("register_pat");
@@ -50,12 +53,43 @@ router.get("/registerPat", loggedin, (req, res) => {
 router.get("/registerHos", loggedin, (req, res) => {
   if (req.user) {
     res.render(req.entity + "-dashboard", {
-      doctor_id: req.user.id,
+      id: req.user.id,
     });
   } else {
     res.render("register_hospital");
   }
 });
+
+router.get("/addDoc", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/add_doctor");
+  } else {
+    res.redirect("login");
+  }
+});
+
+router.get("/addLab", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/add_laboratory");
+  } else {
+    res.redirect("login");
+  }
+});
+
+router.get("/addPharm", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/add_pharmacy");
+  } else {
+    res.redirect("login");
+  }
+});
+
+
+
+
+
+
+
 
 
 

@@ -1,8 +1,8 @@
-const doctor_data = (doctor_id) => {
-  fetch("/doctorDashboard/user", {
+const doctor_data = (id) => {
+  fetch("/authDoctor/users", {
     method: "POST",
     body: JSON.stringify({
-      doctor_id,
+      doctor_id: id,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -10,20 +10,21 @@ const doctor_data = (doctor_id) => {
   })
     .then((res) => res.json())
     .then((data) => {
+      console.log("data: ", data);
       if (data.status === "success") {
-        document.getElementById("Doctor_name").innerHTML = data.result.name;
+        document.getElementById("Doctor_name").innerHTML = "Dr. " + data.result.name;
       } else {
-        document.getElementById("Doctor_name").innerHTML = "Jonny Sins";
+        document.getElementById("Doctor_name").innerHTML = "Dr. ABC";
       }
     });
 
 }
 
-const doctor_appointments = (doctor_id) => {
+const doctor_appointments = (id) => {
     fetch("/appointment/viewAppointment", {
       method: "POST",
       body: JSON.stringify({
-        doctor_id,
+        doctor_id: id,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -31,8 +32,8 @@ const doctor_appointments = (doctor_id) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        let appointment_body; 
-        for(let i = 0; i<data.result.length; i++){
+        let appointment_body;
+        for (let i = 0; i < data.result.length; i++) {
           appointment_body += `<tr>
             <td>
               <h2 class="table-avatar">
@@ -52,26 +53,28 @@ const doctor_appointments = (doctor_id) => {
               </div>
             </td>
           </tr>
-          `
+          `;
         }
-          
-        console.log(appointment_body)
-        document.getElementById("appointment_upcoming_list").innerHTML += appointment_body;
+
+        console.log(appointment_body);
+        document.getElementById("appointment_upcoming_list").innerHTML +=
+          appointment_body;
       });
 
 }
 
 
-const getData = (doctor_id) => {
-  console.log("Doctor Id: ", doctor_id)
-  doctor_data(doctor_id);
-  doctor_appointments(doctor_id);
+const getData = (id) => {
+  console.log("Doctor Id: ", id)
+  doctor_data(id);
+  doctor_appointments(id);
   
 };
 
 
 
 const login = document.getElementById("loginform");
+
 login.addEventListener("submit", async () => {
   const email = document.getElementById("email").value;
   const pass = document.getElementById("password").value;
@@ -92,3 +95,4 @@ login.addEventListener("submit", async () => {
       console.log("Data: ", data);
     });
 });
+

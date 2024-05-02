@@ -43,9 +43,13 @@ const register = async (req, resp)=>{
         const newPat = new patient(pat);
         const result = await newPat.save();
         
-        const token = jwt.sign({email: pat.email, id: result._id}, process.env.SECRET_KEY, {
-            expiresIn : process.env.JWT_EXPIRES,
-        });
+        const token = jwt.sign(
+          { email: pat.email, id: result._id, entity: "patient"},
+          process.env.SECRET_KEY,
+          {
+            expiresIn: process.env.JWT_EXPIRES,
+          }
+        );
         const cookieOption = {
           expiresIn: new Date(Date.now() + process.env.COOKIE_EXPIRES*24*60*60*1000),
           httpOnly: true,
