@@ -33,7 +33,7 @@
 30. Profile Settings
 31. Appoitment List
 32. Reviews
-38. Responsive
+33. Responsive
 
 ========================================*/
 
@@ -348,13 +348,15 @@ button.bg-success:hover {
 }
 .bg-info,
 .badge-info {
-	background-color: #009efb !important;
+	/* background-color: #009efb !important; */
+	
+	background-color: #4F6F52 !important;
 }
 a.bg-info:focus, 
 a.bg-info:hover, 
 button.bg-info:focus, 
 button.bg-info:hover {
-    background-color: #028ee1 !important;
+    background-color: #4F6F52 !important;
 }
 .bg-warning,
 .badge-warning {
@@ -499,16 +501,21 @@ button.bg-danger:hover {
     color: #fff;
 }
 .btn-info {
-	background-color: #009efb;
-	border: 1px solid #009efb
+	/* background-color: #009efb;
+	border: 1px solid #009efb */
+	background-color: #4F6F52;
+	border: 1px solid #4F6F52
 }
 .btn-info:hover,
 .btn-info:focus,
 .btn-info.active,
 .btn-info:active,
 .open > .dropdown-toggle.btn-info {
-	background-color: #028ee1;
-	border: 1px solid #028ee1
+	/* background-color: #028ee1;
+	border: 1px solid #028ee1 */
+	background-color: #4F6F52;
+	border: 1px solid #4F6F52 
+
 }
 .btn-info.active.focus,
 .btn-info.active:focus,
@@ -519,14 +526,18 @@ button.bg-danger:hover {
 .open > .dropdown-toggle.btn-info.focus,
 .open > .dropdown-toggle.btn-info:focus,
 .open > .dropdown-toggle.btn-info:hover {
-	background-color: #028ee1;
-	border: 1px solid #028ee1
+	/* background-color: #028ee1;
+	border: 1px solid #028ee1 */
+	background-color: #4F6F52;
+	border: 1px solid #4F6F52
 }
 .btn-info.active:not(:disabled):not(.disabled),
 .btn-info:active:not(:disabled):not(.disabled),
 .show > .btn-info.dropdown-toggle {
-	background-color: #028ee1;
-	border-color: #028ee1;
+	/* background-color: #028ee1;
+	border-color: #028ee1; */
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 	color: #fff;
 }
 .btn-info.active:focus:not(:disabled):not(.disabled), 
@@ -535,8 +546,10 @@ button.bg-danger:hover {
 	box-shadow: unset;
 }
 .btn-info.disabled, .btn-info:disabled {
-    background-color: #009efb;
-    border-color: #009efb;
+    /* background-color: #009efb;
+    border-color: #009efb; */
+	background-color: #4F6F52;
+    border-color: #4F6F52;
     color: #fff;
 }
 .btn-warning {
@@ -686,26 +699,33 @@ button.bg-danger:hover {
 	box-shadow: none;
 }
 .btn-outline-info {
-	color: #009efb;
-	border-color: #009efb;
+	/* color: #009efb;
+	border-color: #009efb; */
+	color: #4F6F52;
+	border-color: #4F6F52;
 }
 .btn-outline-info:hover {
 	color: #fff;
-	background-color: #009efb;
-	border-color: #009efb;
+	/* background-color: #009efb;
+	border-color: #009efb; */
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 }
 .btn-outline-info:focus, .btn-outline-info.focus {
 	box-shadow: none;
 }
 .btn-outline-info.disabled, .btn-outline-info:disabled {
 	background-color: transparent;
-	color: #009efb;
+	/* color: #009efb; */
+	color: #4F6F52;
 }
 .btn-outline-info:not(:disabled):not(.disabled):active, 
 .btn-outline-info:not(:disabled):not(.disabled).active,
 .show > .btn-outline-info.dropdown-toggle {
-	background-color: #009efb;
-	border-color: #009efb;
+	/* background-color: #009efb;
+	border-color: #009efb; */
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 }
 .btn-outline-info:not(:disabled):not(.disabled):active:focus, 
 .btn-outline-info:not(:disabled):not(.disabled).active:focus,
@@ -780,22 +800,22 @@ button.bg-danger:hover {
 .pagination > .active > span,
 .pagination > .active > span:focus,
 .pagination > .active > span:hover {
-	background-color: #20c0f3;
-	border-color: #20c0f3;
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 }
 .pagination > li > a, 
 .pagination > li > span {
-	color: #20c0f3;
+	color: #4F6F52;
 }
 .page-link:hover {
-	color: #20c0f3;
+	color: #4F6F52;
 }
 .page-link:focus {
 	box-shadow: unset;
 }
 .page-item.active .page-link {
-	background-color: #20c0f3;
-	border-color: #20c0f3;
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 }
 .dropdown-menu {
     background-color: #fff;
@@ -806,7 +826,7 @@ button.bg-danger:hover {
     transform-origin: left top 0;
 }
 .dropdown-item.active, .dropdown-item:active {
-    background-color: #0de0fe;
+    background-color: #4F6F52;
 }
 .navbar-nav .open .dropdown-menu {
 	border: 0;
@@ -844,11 +864,11 @@ button.bg-danger:hover {
 	color: #a6a6a6;
 }
 .bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover {
-	background-color: #20c0f3;
+	background-color: #4F6F52;
 	text-shadow: unset;
 }
 .bootstrap-datetimepicker-widget table td.today::before{
-	border-bottom-color: #20c0f3;
+	border-bottom-color: #4F6F52;
 }
 .bg-info-light {
 	background-color: rgba(2, 182, 179,0.12) !important;
@@ -918,7 +938,7 @@ button.bg-danger:hover {
 .avatar-title {
 	width: 100%;
 	height: 100%;
-	background-color: #20c0f3;
+	background-color: #4F6F52;
 	color: #fff;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1116,7 +1136,7 @@ button.bg-danger:hover {
 	line-height: 44px;
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-	background-color: #20c0f3;
+	background-color: #4F6F52;
 }
 .select2-container--default .select2-selection--multiple {
 	border: 1px solid #dcdcdc;
@@ -1152,8 +1172,8 @@ button.bg-danger:hover {
 .nav-tabs.nav-tabs-solid > .active > a,
 .nav-tabs.nav-tabs-solid > .active > a:hover,
 .nav-tabs.nav-tabs-solid > .active > a:focus {
-	background-color: #20c0f3;
-	border-color: #20c0f3;
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 	color: #fff;
 }
 .tab-content {
@@ -1184,8 +1204,8 @@ button.bg-danger:hover {
 .nav-tabs.nav-tabs-solid > li > a.active,
 .nav-tabs.nav-tabs-solid > li > a.active:hover,
 .nav-tabs.nav-tabs-solid > li > a.active:focus {
-	background-color: #20c0f3;
-	border-color: #20c0f3;
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 	color: #fff;
 }
 .nav-tabs.nav-tabs-solid.nav-tabs-rounded {
@@ -1237,14 +1257,14 @@ button.bg-danger:hover {
 .nav-tabs.nav-tabs-top > li > a.active,
 .nav-tabs.nav-tabs-top > li > a.active:hover,
 .nav-tabs.nav-tabs-top > li > a.active:focus {
-	border-top-color: #20c0f3;
+	border-top-color: #4F6F52;
 }
 .nav-tabs.nav-tabs-bottom > li > a.active, 
 .nav-tabs.nav-tabs-bottom > li > a.active:hover, 
 .nav-tabs.nav-tabs-bottom > li > a.active:focus {
 	border-bottom-width: 2px;
 	border-color: transparent;
-	border-bottom-color: #20c0f3;
+	border-bottom-color: #4F6F52;
 	background-color: transparent;
 	transition: none 0s ease 0s; 
 	-moz-transition: none 0s ease 0s; 
@@ -1351,7 +1371,7 @@ button.bg-danger:hover {
     color: #272b41;
 }
 .line {
-    background-color: #20c0f3;
+    background-color: #4F6F52;
     height: 2px;
     margin: 0;
     width: 60px;
@@ -1499,7 +1519,7 @@ button.bg-danger:hover {
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
-    background-color: #0de0fe;
+    background-color: #4F6F52;
 	color: #fff;
 	opacity: 1;
 }
@@ -1968,7 +1988,7 @@ button.bg-danger:hover {
     width: 31px;
 }
 .bar-icon span {
-    background-color: #0de0fe;
+    background-color: #4F6F52;
     display: block;
     float: left;
     height: 3px;
@@ -2065,7 +2085,7 @@ html.menu-opened body {
 	margin-right: 15px;
 }
 .footer .footer-bottom .copyright {
-	border-top: 1px solid #1663a6;
+	border-top: 1px solid #4F6F52;
 	padding: 30px 0;
 }
 .footer .footer-bottom .copyright-text p {
@@ -2167,7 +2187,7 @@ html.menu-opened body {
     margin-bottom: 3px;
 }
 .login-header h3 a {
-    color: #0de0fe;
+    color: #4F6F52;
     float: right;
     font-size: 15px;
     margin-top: 2px;
@@ -2389,11 +2409,11 @@ html.menu-opened body {
     -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button {
-    background-color: #0de0fe;
+    background-color: #4F6F52;
 }
 .slick-dots li.slick-active button:before {
     opacity: 1;
-    color: #0de0fe;
+    color: #4F6F52;
 }
 .slick-slide {
 	outline: none !important;
@@ -2446,7 +2466,7 @@ html.menu-opened body {
 }
 .speicality-img span i {
     font-size: 15px;
-	color:#0de0fe;
+	color:#4F6F52;
 }
 .speicality-item p {
     font-size: 16px;
@@ -2598,21 +2618,21 @@ html.menu-opened body {
     padding-right: 3px;
 }
 .view-btn {
-    color: #0de0fe;
+    color: #4F6F52;
     font-size: 13px;
-    border: 2px solid #0de0fe;
+    border: 2px solid #4F6F52;
     text-align: center;
     display: block;
     font-weight: 500;
 	padding: 6px;
 }
 .view-btn:hover, .view-btn:focus {
-	background-color: #0de0fe;
+	background-color: #4F6F52;
 	color: #fff;
 }
 .book-btn {
-	background-color: #0de0fe;
-    border: 2px solid #0de0fe;
+	background-color: #4F6F52;
+    border: 2px solid #4F6F52;
     color: #fff;
     font-size: 13px;
     text-align: center;
@@ -2621,8 +2641,8 @@ html.menu-opened body {
 	padding: 6px;
 }
 .book-btn:hover, .book-btn:focus {
-	background-color: #01cae4;
-	border-color: #01cae4;
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 	color: #fff;
 }
 .section-doctor .profile-widget {
@@ -2639,7 +2659,7 @@ html.menu-opened body {
 	margin-top: 20px;
 }
 .about-content a {
-    background-color: #0de0fe;
+    background-color: #4F6F52;
     border-radius: 4px;
 	color: #fff;
     display: inline-block;
@@ -2651,8 +2671,8 @@ html.menu-opened body {
     text-align: center;
 }
 .about-content a:hover, .about-content a:focus {
-	background-color: #01cae4;
-	border-color: #01cae4;
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 	color: #fff;
 }
 .section-features {
@@ -2788,7 +2808,7 @@ html.menu-opened body {
     display: none;
     left: 4px;
     top: 0;
-    color: #0de0fe;
+    color: #4F6F52;
     font-size: 11px;
 }
 .custom_check input:checked ~ .checkmark:after {
@@ -2857,8 +2877,8 @@ html.menu-opened body {
 	line-height: 18px;
 }
 .btn-search .btn {
-    background-color: #0de0fe;
-    border: 1px solid #0de0fe;
+    background-color: #4F6F52;
+    border: 1px solid #4F6F52;
     color: #fff;
     height: 46px;
 	font-weight:500;
@@ -2890,7 +2910,7 @@ html.menu-opened body {
 	border-radius: 5px;
 }
 .doc-department {
-    color: #20c0f3;
+    color: #4F6F52;
     font-size: 14px;
     margin-bottom: 8px;
 }
@@ -2994,9 +3014,9 @@ html.menu-opened body {
 }
 .clinic-booking a {
     background-color: #fff;
-    border: 2px solid #20c0f3;
+    border: 2px solid #4F6F52;
     border-radius: 4px;
-    color: #20c0f3;
+    color: #4F6F52;
     display: block;
     font-size: 14px;
     font-weight: 500;
@@ -3007,16 +3027,16 @@ html.menu-opened body {
     width: 100%;
 }
 .clinic-booking a.view-pro-btn:hover, .clinic-booking a.view-pro-btn:focus {
-	background: #20c0f3; 
+	background: #4F6F52; 
 	color: #fff;
 }
 .clinic-booking a.apt-btn {
-    background-color: #20c0f3;
+    background-color: #4F6F52;
     color: #fff;
 }
 .clinic-booking a.apt-btn:hover, .clinic-booking a.apt-btn:focus {
-	background-color: #0db9f2;
-	border-color: #0db9f2;
+	background-color: #4F6F52;
+	border-color: #4F6F52;
 	color: #fff;
 }
 .load-more {
@@ -3073,7 +3093,7 @@ html.menu-opened body {
 .user-tabs .nav-tabs.nav-tabs-bottom > li > a.active:hover, 
 .user-tabs .nav-tabs.nav-tabs-bottom > li > a.active:focus {
 	border-bottom-width: 3px;
-	color: #20c0f3;
+	color: #4F6F52;
 }
 .user-tabs .med-records {
 	display: inline-block;
@@ -3081,7 +3101,7 @@ html.menu-opened body {
 }
 .user-tabs .nav-tabs > li > a:hover {
 	background-color: unset;
-	color: #20c0f3;
+	color: #4F6F52;
 }
 .widget {
 	margin-bottom: 30px;
@@ -3151,10 +3171,10 @@ html.menu-opened body {
     border-radius: 50%;
     height: 12px;
     width: 12px;
-    border: 2px solid #20c0f3;
+    border: 2px solid #4F6F52;
 }
 .exp-year {
-    color: #20c0f3;
+    color: #4F6F52;
     margin-bottom: 2px;
 }
 .exp-title {
@@ -3281,7 +3301,7 @@ html.menu-opened body {
     font-size: 14px;
 }
 .review-listing > ul li .comment .comment-body .comment-reply .comment-btn {
-    color: #20c0f3;
+    color: #4F6F52;
     display: inline-block;
     font-weight: 500;
     font-size: 15px;
@@ -3521,8 +3541,8 @@ html.menu-opened body {
 	margin-bottom: 0;
 }
 .time-slot li .timing.selected {
-	background-color: #42c0fb;
-	border: 1px solid #42c0fb;
+	background-color: #4F6F52;
+	border: 1px solid #4F6F52;
 	color: #fff;
 }
 .time-slot li .timing.selected::before {
@@ -3580,7 +3600,7 @@ html.menu-opened body {
     width: 100%;
 }
 .exist-customer a {
-	color: #20c0f3;
+	color: #4F6F52;
 	font-weight: 500;
 }
 .payment-widget .payment-list + .payment-list {
@@ -3630,7 +3650,7 @@ html.menu-opened body {
     transition: all .3s;
 }
 .payment-radio input:checked ~ .checkmark {
-    border-color: #20c0f3;
+    border-color: #4F6F52;
 }
 .payment-radio .checkmark::after {
     position: absolute;
@@ -3639,7 +3659,7 @@ html.menu-opened body {
     content: '';
     width: 9px;
     height: 9px;
-    background-color: #20c0f3;
+    background-color: #4F6F52;
     opacity: 0;
     visibility: hidden;
     -webkit-transform: scale(0.1);
@@ -3717,7 +3737,7 @@ html.menu-opened body {
     color: #272b41;
 }
 .booking-total ul li .total-cost {
-    color: #20c0f3;
+    color: #4F6F52;
     font-size: 16px;
     float: right;
 }
@@ -3932,7 +3952,7 @@ html.menu-opened body {
 	-ms-flex-pack: center;
 }
 .edit-link {
-    color: #20c0f3;
+    color: #4F6F52;
     font-size: 16px;
     margin-top: 4px;
 }
