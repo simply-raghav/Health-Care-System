@@ -16,8 +16,11 @@ login.addEventListener("submit",async ()=>{
         if(data.status === "Success"){
             window.location.href = "/health_care/dashboard";
             return;
+        }else {
+            alert(data.message);
+            window.location.href = "/health_care/dashboard";
+            return;
         }
-    console.log("Data: ", data)
 })
 
     

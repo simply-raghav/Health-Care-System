@@ -100,6 +100,14 @@ router.get("/book_appointment", loggedin, (req, res) => {
   }
 });
 
+router.get("/appointments", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("doctor/appointments");
+  } else {
+    res.redirect("login");
+  }
+});
+
 
 
 
