@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .patient-info {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medical Report</h1>
+    <div class="patient-info">
+        <h2>Patient Information</h2>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Age:</strong> 45</p>
+        <p><strong>Gender:</strong> Male</p>
+        <p><strong>Date of Visit:</strong> May 2, 2024</p>
+    </div>
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>Blood Pressure</td>
+            <td>120/80 mmHg</td>
+        </tr>
+        <tr>
+            <td>Heart Rate</td>
+            <td>72 bpm</td>
+        </tr>
+        <tr>
+            <td>Temperature</td>
+            <td>98.6°F (37°C)</td>
+        </tr>
+        <tr>
+            <td>Blood Sugar</td>
+            <td>110 mg/dL</td>
+        </tr>
+    </table>
+    <h2>Diagnosis</h2>
+    <p>The patient presented with symptoms of acute respiratory infection, including fever, cough, and shortness of breath. Upon examination, signs of pneumonia were evident on chest X-ray.</p>
+    <h2>Treatment</h2>
+    <p>The patient was prescribed a course of antibiotics (azithromycin) and advised to take plenty of fluids and rest. Follow-up appointment scheduled in one week for reassessment.</p>
+    <div class="footer">
+        <p>This medical report is confidential and intended solely for the use of the individual or entity to whom it is addressed.</p>
+        <button id="downloadButton">Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            var element = document.body;
+            html2pdf(element, {
+                margin: 0.5,
+                filename: 'medical_report.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { dpi: 192, letterRendering: true },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            });
+        });
+    </script>
+</body>
+</html>

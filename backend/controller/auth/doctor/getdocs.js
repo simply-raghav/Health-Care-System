@@ -19,7 +19,7 @@ const getusers = async (req, res) => {
 
 const getuser = async (req, res) => {
   try {
-    const result = await doctor.findOne({_id:req.body.doctor_id});
+    const result = await doctor.findOne({_id:req.body.id});
     console.log("Result: ", result);
     return res.json({
       status: "success",

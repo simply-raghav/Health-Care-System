@@ -52,13 +52,13 @@ const register = async (req, resp) => {
       registration_number,
       owner_name,
       license_number,
-      password,
+      password: hashed,
     };
     const newHos = new hospital(hos);
     const result = await newHos.save();
 
     const token = jwt.sign(
-      { email: hos.email, id: result._id },
+      { email: hos.email, id: result._id, entity: "hospital" },
       process.env.SECRET_KEY,
       {
         expiresIn: process.env.JWT_EXPIRES,
