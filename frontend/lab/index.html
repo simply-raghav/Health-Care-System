@@ -170,7 +170,7 @@
           <div class="page-header">
             <div class="row">
               <div class="col-sm-12">
-                <h3 class="page-title">Hospital name</h3>
+                <h3 class="page-title">Lab name</h3>
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item active">Dashboard</li>
                 </ul>
@@ -223,128 +223,23 @@
                           <td>20 Oct 2023</td>
                           <td class="text-right">
                             <div class="table-action">
+                              <a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
+																<i class="fe fe-pencil"></i> Edit
+															</a>
                               <a
-                                href="javascript:void(0);"
+                                href="patient_report.html"
                                 class="btn btn-sm bg-info-light"
-                                onclick="generatePDF()"
+                                "
                               >
                                 <i class="far fa-eye"></i> View
                               </a>
                             </div>
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            <h2 class="table-avatar">
-                              <a
-                                href="profile.html"
-                                class="avatar avatar-sm mr-2"
-                                ><img
-                                  class="avatar-img rounded-circle"
-                                  src="assets/img/patients/patient2.jpg"
-                                  alt="User Image"
-                              /></a>
-                              <a href="profile.html">Y... </a>
-                            </h2>
-                          </td>
-                          <td>2077299974</td>
-                          <td>22 Oct 2023</td>
-                          <td class="text-right">
-                            <div class="table-action">
-                              <a
-                                href="javascript:void(0);"
-                                class="btn btn-sm bg-info-light"
-                                onclick="generatePDF()"
-                              >
-                                <i class="far fa-eye"></i> View
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <h2 class="table-avatar">
-                              <a
-                                href="profile.html"
-                                class="avatar avatar-sm mr-2"
-                                ><img
-                                  class="avatar-img rounded-circle"
-                                  src="assets/img/patients/patient3.jpg"
-                                  alt="User Image"
-                              /></a>
-                              <a href="profile.html">Z...</a>
-                            </h2>
-                          </td>
-                          <td>2607247769</td>
-                          <td>21 Oct 2023</td>
-                          <td class="text-right">
-                            <div class="table-action">
-                              <a
-                                href="javascript:void(0);"
-                                class="btn btn-sm bg-info-light"
-                                onclick="generatePDF()"
-                              >
-                                <i class="far fa-eye"></i> View
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <h2 class="table-avatar">
-                              <a
-                                href="profile.html"
-                                class="avatar avatar-sm mr-2"
-                                ><img
-                                  class="avatar-img rounded-circle"
-                                  src="assets/img/patients/patient4.jpg"
-                                  alt="User Image"
-                              /></a>
-                              <a href="profile.html">W...</a>
-                            </h2>
-                          </td>
-                          <td>5043686874</td>
-                          <td>21 Sep 2023</td>
-                          <td class="text-right">
-                            <div class="table-action">
-                              <a
-                                href="javascript:void(0);"
-                                class="btn btn-sm bg-info-light"
-                                onclick="generatePDF()"
-                              >
-                                <i class="far fa-eye"></i> View
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <h2 class="table-avatar">
-                              <a
-                                href="profile.html"
-                                class="avatar avatar-sm mr-2"
-                                ><img
-                                  class="avatar-img rounded-circle"
-                                  src="assets/img/patients/patient5.jpg"
-                                  alt="User Image"
-                              /></a>
-                              <a href="profile.html">V...</a>
-                            </h2>
-                          </td>
-                          <td>9548207887</td>
-                          <td>18 Sep 2023</td>
-                          <td class="text-right">
-                            <div class="table-action">
-                              <a
-                                href="javascript:void(0);"
-                                class="btn btn-sm bg-info-light"
-                                onclick="generatePDF()"
-                              >
-                                <i class="far fa-eye"></i> View
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
+                       
+                       
+                        
+                        
                       </tbody>
                     </table>
                   </div>
@@ -361,6 +256,36 @@
       <!-- /Page Wrapper -->
     </div>
     <!-- /Main Wrapper -->
+
+    <!-- Edit Details Modal -->
+			<div class="modal fade" id="edit_specialities_details" aria-hidden="true" role="dialog">
+				<div class="modal-dialog modal-dialog-centered" role="document" >
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Upload Medical Report</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="row form-row">
+									
+									<div class="col-12 col-sm-6">
+										<div class="form-group">
+											<label>PDF</label>
+											<input type="file"  class="form-control">
+										</div>
+									</div>
+									
+								</div>
+								<button type="submit" class="btn btn-primary btn-block">Upload</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Edit Details Modal -->
 	
 
     <!-- jQuery -->
