@@ -116,27 +116,7 @@
 		$('main-wrapper').removeClass('slide-nav');
 	});
 	
-	// Mobile Menu
 	
-	/*if($(window).width() <= 991){
-		mobileSidebar();
-	} else {
-		$('html').removeClass('menu-opened');
-	}*/
-	
-	/*function mobileSidebar() {
-		$('.main-nav a').on('click', function(e) {
-			$('.dropdown-menu').each(function() {
-			  if($(this).hasClass('show')) {
-				  $(this).slideUp(350);
-			  }
-			});
-			if(!$(this).next('.dropdown-menu').hasClass('show')) {
-				$(this).next('.dropdown-menu').slideDown(350);
-			}
-			
-		});
-	}*/
 	
 	// Tooltip
 	
