@@ -269,7 +269,7 @@
 
                         <!-- Submit Section -->
                         <div class="submit-section proceed-btn text-right" id="proceed_to_pay">
-                            <a href="checkout.html" class="btn btn-primary submit-btn">Proceed to Pay</a>
+                            <a href=""id="payButton" class="btn btn-primary submit-btn">Proceed to Pay</a>
                         </div>
                         <!-- /Submit Section -->
 
@@ -433,6 +433,85 @@
         }
         // ]]>
     </script>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js" onload="initializeRazorpay()"></script> <!-- Razorpay SDK -->
+
+<script>
+  // Function to show/hide pages
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+      page.classList.add('hidden');
+    });
+    document.getElementById(pageId).classList.remove('hidden');
+  }
+
+  // Function to handle payment
+  function handlePayment(event) {
+    const amount = 500;
+    const currency = 'INR';
+    const receiptId = '1234567890';
+
+    fetch('http://localhost:5000/order', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        amount,
+        currency,
+        receipt: receiptId
+      })
+    })
+    .then(response => response.json())
+    .then(order => {
+      console.log('order', order);
+
+      var options = {
+        key: "rzp_test_ZKeBtequHxogmy",
+        amount,
+        currency,
+        name: "devyani",
+        description: "Test Transaction",
+        image: "https://i.ibb.co/5Y3m33n/test.png",
+        order_id: order.id,
+        handler: async function(response) {
+          // Process payment confirmation
+          showPage('confirmationPage');
+        },
+        prefill: {
+          name: "devyani",
+          email: "devyani@example.com",
+          contact: "9000000000",
+        },
+        notes: {
+          address: "Razorpay Corporate Office",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      var rzp1 = new Razorpay(options);
+      rzp1.open();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+
+    event.preventDefault();
+  }
+
+  // Add event listener for payment button
+  document.getElementById("payButton").addEventListener("click", handlePayment);
+
+  // Add event listener for home link
+  document.getElementById("homeLink").addEventListener("click", function(event) {
+    showPage('homePage');
+    event.preventDefault();
+  });
+</script>
+
 </body>
 
 <!-- /booking.html  -->
