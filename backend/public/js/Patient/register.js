@@ -3,7 +3,7 @@ register.addEventListener("submit", async () => {
   const fstName = document.getElementById("firstName").value;
   const lastName = document.getElementById("lastName").value;
   const DOB = document.getElementById("DOB").value;
-//   const bloodGrp = document.getElementById("bloodGrp").value;
+  const bloodGrp = document.getElementById("bloodGrp").value;
   const email = document.getElementById("email").value;
   const contact = document.getElementById("contact").value;
   const address = document.getElementById("address").value;
@@ -16,7 +16,7 @@ register.addEventListener("submit", async () => {
   console.log("fstName: ", fstName,
 "lastName : ", lastName,
 "DOB: ", DOB,
-// "bloodGrp : ", bloodGrp,
+"bloodGrp : ", bloodGrp,
 "email: ", email,
 "contact: ", contact,
 "address: ", address,
@@ -30,7 +30,19 @@ register.addEventListener("submit", async () => {
     window.location = window.location;
     return false;
   }else{
-    const data = { fstName, lastName, password, email, contact};
+    const data = {
+      fstName,
+      lastName,
+      DOB,
+      bloodGrp,
+      email,
+      contact,
+      address,
+      city,
+      state,
+      pincode,
+      password,
+    };
   console.log(data);
   fetch("/authPatient/register", {
     method: "POST",

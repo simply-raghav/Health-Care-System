@@ -13,21 +13,21 @@
    
 		
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="/admin/img/favicon.png">
 		
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/admin/css/font-awesome.min.css">
 		
 		<!-- Feathericon CSS -->
-        <link rel="stylesheet" href="/css/feathericon.min.css">
+        <link rel="stylesheet" href="/admin/css/feathericon.min.css">
 		
-		<link rel="stylesheet" href="/plugins/morris/morris.css">
+		<link rel="stylesheet" href="/admin/plugins/morris/morris.css">
 		
 		<!-- Main CSS -->
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/admin/css/style.css">
 		
 		<!--[if lt IE 9]>
 			<script src="/js/html5shiv.min.js"></script>
@@ -111,10 +111,10 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="index.html" class="logo">
-						<img src="/img/logo.png" alt="Logo">
+						<img src="/admin/img/logo.png" alt="Logo">
 					</a>
 					<a href="index.html" class="logo logo-small">
-						<img src="/img/logo-small.png" alt="Logo" width="30" height="30">
+						<img src="/admin/img/logo-small.png" alt="Logo" width="30" height="30">
 					</a>
                 </div>
 				<!-- /Logo -->
@@ -144,12 +144,12 @@
 					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<span class="user-img"><img class="rounded-circle" src="/img/profiles/avatar-01.jpg" width="31" alt="ABC"></span>
+							<span class="user-img"><img class="rounded-circle" src="/admin/img/profiles/avatar-01.jpg" width="31" alt="ABC"></span>
 						</a>
 						<div class="dropdown-menu">
 							<div class="user-header">
 								<div class="avatar avatar-sm">
-									<img src="/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+									<img src="/admin/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
 								</div>
 								<div class="user-text">
 									<h6>ABC</h6>
@@ -158,7 +158,7 @@
 							</div>
 							<a class="dropdown-item" href="profile.html">My Profile</a>
 							<a class="dropdown-item" href="settings.html">Settings</a>
-							<a class="dropdown-item" href="login.html">Logout</a>
+							<a class="dropdown-item" href="/health_care/logout">Logout</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -177,7 +177,7 @@
 								<span>Main</span>
 							</li>
 							<li> 
-								<a href="index.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="/health_care/dashboard"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 							<li> 
 								<a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Appointments</span></a>
@@ -198,13 +198,13 @@
 								<a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a>
 							</li>
 							<li class="active">
-								<a href="add_doctor.html"><i class=""></i><span>Add Doctor</span></a>
+								<a href="addDoc"><i class=""></i><span>Add Doctor</span></a>
 							</li>
 							<li>
-								<a href="add-pharmacy.html"><i class=""></i><span>Add Pharmacy</span></a>
+								<a href="addPharm"><i class=""></i><span>Add Pharmacy</span></a>
 							</li>
 							<li>
-								<a href="add-Laboratory.html"><i class=""></i><span>Add Laboratory</span></a>
+								<a href="addLab"><i class=""></i><span>Add Laboratory</span></a>
 							</li>
 							
 						</ul>
@@ -222,41 +222,34 @@
 
         
 
-        <form id="doctor-form" class="form-group">
+        <form id="doctor-form" class="form-group" onsubmit="return false">
            
             <h3>Doctor's Information</h3>
             <!-- <label for="full_name">Full Name:</label> -->
-            <input type="text" id="full_name" name="full_name" placeholder="Full Name" required><br><br>
+            <input type="text" id="name" name="full_name" placeholder="Full Name" required><br><br>
              <!-- <label for="email">Email:</label> -->
              <input type="email" id="email" name="email" placeholder="Email" required><br><br>
-             <input type="password" placeholder="Password" required><br><br>
+             <input type="password" id = "password" placeholder="Password" required><br><br>
               <!-- <label for="phone">Phone Number:</label> -->
-            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required><br><br>
+            <input type="tel" id="contact" name="contact" placeholder="Contact Number" required><br><br>
            
             <!-- <label for="address">Address:</label> -->
             <input type="text" id="address" name="address"  placeholder="Address" required><br><br>
             <label for="gender">Gender:</label>
             <select id="gender" name="gender" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
             </select><br><br>
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" placeholder="Date of Birth" required><br><br>
            
     
             <h3>Professional Information</h3>
-            <!-- <label for="license">Medical License Number:</label> -->
             <input type="text" id="license" name="license"  placeholder="License" required><br><br>
-            <!-- <label for="specialty">Specialty or Specializations:</label> -->
             <input type="text" id="specialty" name="specialty" placeholder="Speciality or Specializations" required><br><br>
-            <!-- <label for="experience">Years of Experience:</label> -->
             <input type="number" id="experience" name="experience" placeholder="Years of Experience" required><br><br>
-            <!-- <label for="education">Education:</label> -->
-            <input type="text" id="education" name="education" placeholder="Education" required><br><br>
-            <!-- <label for="certifications">Board Certifications:</label> -->
-            <input type="text" id="certifications" name="certifications" placeholder="Board Certifications" required><br><br>
-    
+            
            
     
             <button type="submit">Register</button><br><br>
@@ -313,6 +306,8 @@
     });
 
     </script> -->
+    <!-- Register Hospital -->
+    <script src="/js/doctor/register.js"></script>
 
     
 

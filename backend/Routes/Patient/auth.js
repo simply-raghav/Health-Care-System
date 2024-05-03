@@ -5,6 +5,6 @@ const {getusers, getuser} = require("../../controller/auth/patient/getpatient");
 const login = require("../../controller/auth/login");
 
 router.post('/register', reg);
-router.post('/users', getusers);
+router.post('/users', getuser);
 
 module.exports = router;

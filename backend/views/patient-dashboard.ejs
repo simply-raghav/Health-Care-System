@@ -16,8 +16,8 @@
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		
 		<!-- Fontawesome CSS -->
-		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+		<link rel="stylesheet" href="/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css">
 		
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="/css/style.css">
@@ -25,7 +25,7 @@
 		
 	
 	</head>
-	<body>
+	<body onload="getData('<%= id %>')">
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
@@ -40,26 +40,26 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="index.html" class="navbar-brand logo">
+						<a href="/health_care" class="navbar-brand logo">
 							<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
-							<a href="index.html" class="menu-logo">
+							<a href="/health_care" class="menu-logo">
 								<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
 								<i class="fas fa-times"></i>
 							</a>
 						</div>
-						<ul class="main-nav">
+						<!-- <ul class="main-nav">
 							<li class="active">
-								<a href="index.html">Home</a>
+								<a href="/health_care">Home</a>
 							</li>
 							<li class="has-submenu">
 								<a href="login_doctor.html">Doctors <i class="fas fa-chevron-down"></i></a>
-								<!-- <ul class="submenu">
+								<ul class="submenu">
 									<li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
 									<li><a href="appointments.html">Appointments</a></li>
 									<li><a href="schedule-timings.html">Schedule Timing</a></li>
@@ -70,9 +70,9 @@
 									<li><a href="doctor-profile-settings.html">Profile Settings</a></li>
 									<li><a href="reviews.html">Reviews</a></li>
 									<li><a href="doctor-register.html">Doctor Register</a></li>
-								</ul> -->
+								</ul>
 							</li>	
-							<!-- <li class="has-submenu">
+							<li class="has-submenu">
 								<a href="login.html">Patients <i class="fas fa-chevron-down"></i></a>
 								<ul class="submenu">
 									<li><a href="search.html">Search Doctor</a></li>
@@ -86,8 +86,8 @@
 									<li><a href="profile-settings.html">Profile Settings</a></li>
 									<li><a href="change-password.html">Change Password</a></li>
 								</ul>
-							</li>	 -->
-							<!-- <li class="has-submenu">
+							</li>	
+							<li class="has-submenu">
 								<a href="#">Pages <i class="fas fa-chevron-down"></i></a>
 								<ul class="submenu">
 									<li><a href="voice-call.html">Voice Call</a></li>
@@ -107,16 +107,16 @@
 									<li><a href="register.html">Register</a></li>
 									<li><a href="forgot-password.html">Forgot Password</a></li>
 								</ul>
-							</li> -->
+							</li	>
 							<li>
 								<a href="login_hospital.html" target="_blank">Hospital</a>
 							</li>
 							<li class="login-link">
 								<a href="login.html">Login / Signup</a>
 							</li>
-						</ul>		 
+						</ul>		  -->
 					</div>		 
-					<ul class="nav header-navbar-rht">
+					<!-- <ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
 							<div class="header-contact-img">
 								<i class="far fa-hospital"></i>							
@@ -129,7 +129,7 @@
 						<li class="nav-item">
 							<a class="nav-link header-login" href="login.html">login / Signup </a>
 						</li>
-					</ul>
+					</ul> -->
 				</nav>
 			</header>
 			<!-- header -->
@@ -147,13 +147,15 @@
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
 										<a href="#" class="booking-doc-img" id="user-img">
-											<img src="/dr strange.jpg" alt="User Image">
+											<img class="avatar-img rounded-circle" src="/img/blank.webp" alt="user image">
 										</a>
 										<div class="profile-det-info">
 											<h3 id="patient_name">Niket Singh</h3>
-											<div class="patient-details" id="address">
-												<h5 ><i class="fas fa-birthday-cake"></i> 08 DEC 1998, 25 years</h5>
-												<h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Prayagraj, India</h5>
+											<div class="patient-details">
+												<h5 ><i class="fas fa-birthday-cake"></i><span id = 'DOB'></span>
+												</h5>
+												<h5 class="mb-0"><i class="fas fa-map-marker-alt"></i><span id='address'></span>
+												 </h5>
 											</div>
 										</div>
 									</div>
@@ -168,7 +170,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="book-appointment.html">
+												<a href="book_appointment">
 													<i class="fas fa-bookmark"></i>
 													<span>Book Appointments</span>
 												</a>
@@ -181,7 +183,7 @@
 												</a>
 											</li> -->
 											<li>
-												<a href="profile-settings.html">
+												<a href="pat_profile">
 													<i class="fas fa-user-cog"></i>
 													<span>Profile Settings</span>
 												</a>
@@ -193,7 +195,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="index.html">
+												<a href="/health_care/logout">
 													<i class="fas fa-sign-out-alt"></i>
 													<span>Logout</span>
 												</a>
@@ -256,7 +258,7 @@
 																			<a href="doctor-profile.html" class="avatar avatar-sm mr-2" id="doctor_img">
 																				<img class="avatar-img rounded-circle" src="/img/doctor/doctor-01.jpg" alt="doctor Image">
 																			</a>
-																			<a href="doctor-profile.html" id="doctor_name">Dr. Motilal Nehru <span id="specility">Dental</span></a>
+																			<a href="doctor-profile.html" id="doctor_name">Dr. Devyani <span id="specility">Dental</span></a>
 																		</h2>
 																	</td>
 																	<td>14 Nov 2019 <span class="d-block text-info">10.00 AM</span></td>
@@ -591,12 +593,14 @@
 		<script src="/js/bootstrap.min.js"></script>
 		
 		<!-- Sticky Sidebar JS -->
-        <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
-        <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+        <script src="/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
 		
 		<!-- Custom JS -->
 		<script src="/js/script.js"></script>
-		
+
+		<!-- Dashboard JS-->
+		<script src="/js/Patient/dashboard.js"></script>
 	
 </body>
 

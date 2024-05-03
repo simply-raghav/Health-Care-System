@@ -8,7 +8,7 @@ const doctorDetail = new mongoose.Schema({
   hospital: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "hospital",
-    required : true
+    required: true,
   },
   password: {
     type: String,
@@ -33,6 +33,18 @@ const doctorDetail = new mongoose.Schema({
   },
   DOB: {
     type: Date,
+    required: true,
+  },
+  license: {
+    type: String,
+    required: true,
+  },
+  specialty: {
+    type: String,
+    required: true,
+  },
+  experience: {
+    type: String,
     required: true,
   },
 });
