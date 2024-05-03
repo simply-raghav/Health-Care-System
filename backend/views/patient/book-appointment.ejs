@@ -33,7 +33,7 @@
     
 </head>
 
-<body>
+<body onload="getData()">
 
     <!-- Main Wrapper -->
     <div class="main-wrapper">
@@ -159,7 +159,7 @@
                     <div class="col-md-12 col-lg-8 col-xl-9">
 
                         <!-- Doctor Widget -->
-                        <div class="card">
+                        <div class="card" id = "doctorCardLists">
                             <div class="card-body">
                                 <div class="doctor-widget">
                                     <div class="doc-info-left">
@@ -409,6 +409,9 @@
         }
         // ]]>
     </script>
+
+    <script src="/javascript/Patient/doctorList.js"></script>
+
 </body>
 
 <!-- /search.html  -->

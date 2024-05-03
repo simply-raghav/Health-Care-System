@@ -3,7 +3,7 @@ const doctor = require("../../../Models/doctor.model");
 
 const getusers = async (req, res) => {
   try {
-    const result = await doctor.find();
+    const result = await doctor.find().populate('hospital');
     return res.json({
       status: "success",
       message: "entry created successfully",
