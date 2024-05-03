@@ -6,7 +6,9 @@ const login = require("../../controller/auth/login");
 
 router.post('/register', reg);
 router.post('/users', getuser);
+router.get('/user', getusers);
 router.post('/login', login);
+
 
 
 
