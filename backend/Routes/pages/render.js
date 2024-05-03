@@ -131,6 +131,30 @@ router.get("/appointments", loggedin, (req, res) => {
   }
 });
 
+router.get("/schedule-timings", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("doctor/schedule-timings", {
+      id: req.user.id,
+    });
+  } else {
+    res.redirect("login");
+  }
+});
+
+router.get("/doctor_profile_settings", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("doctor/doctor-profile-settings", {
+      id: req.user.id,
+    });
+  } else {
+    res.redirect("login");
+  }
+});
+
+
+
+
+
 
 
 
