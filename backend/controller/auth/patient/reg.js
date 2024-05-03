@@ -26,8 +26,19 @@ const register = async (req, resp)=>{
 
     try {
         console.log(req.body);
-        const {fstName, lastName , password, email, contact} = req.body;
-        
+        const {
+          fstName,
+          lastName,
+          DOB,
+          bloodGrp,
+          email,
+          contact,
+          address,
+          city,
+          state,
+          pincode,
+          password,
+        } = req.body;
         if (await exist(email)) {
           return resp.json({
             status: "Failure",
@@ -39,7 +50,18 @@ const register = async (req, resp)=>{
         console.log(hashed);
         let name = fstName;
         name += " " + lastName;
-        const pat = {name, password:hashed, email, contact};
+        const pat = {
+          name,
+          DOB,
+          bloodGrp,
+          email,
+          contact,
+          address,
+          city,
+          state,
+          pincode,
+          password : hashed,
+        };
         const newPat = new patient(pat);
         const result = await newPat.save();
         

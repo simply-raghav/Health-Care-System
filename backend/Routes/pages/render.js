@@ -84,6 +84,23 @@ router.get("/addPharm", loggedin, (req, res) => {
   }
 });
 
+router.get("/pat_profile", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("patient/profile-settings");
+  } else {
+    res.redirect("login");
+  }
+});
+
+router.get("/book_appointment", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("patient/book-appointment");
+  } else {
+    res.redirect("login");
+  }
+});
+
+
 
 
 

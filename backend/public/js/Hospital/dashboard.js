@@ -1,9 +1,10 @@
-const doctor_data = (id) => {
-  fetch("/authDoctor/users", {
+const hospital_data = (id) => {
+  fetch("/authHospital/users", {
     method: "POST",
     body: JSON.stringify({
-      doctor_id: id,
+      id: id,
     }),
+
     headers: {
       "Content-Type": "application/json",
     },
@@ -12,9 +13,9 @@ const doctor_data = (id) => {
     .then((data) => {
       console.log("data: ", data);
       if (data.status === "success") {
-        document.getElementById("Doctor_name").innerHTML = "Dr. " + data.result.name;
+        document.getElementById("hospital_name").innerHTML = data.result.name;
       } else {
-        document.getElementById("Doctor_name").innerHTML = "Dr. ABC";
+        document.getElementById("hospital_name").innerHTML = "Doctor Online";
       }
     });
 
@@ -66,7 +67,6 @@ const doctor_appointments = (id) => {
 
 const getData = (id) => {
   console.log("Doctor Id: ", id)
-  doctor_data(id);
-  doctor_appointments(id);
+  hospital_data(id);
   
 };

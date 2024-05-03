@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
 
 	<meta charset="utf-8">
@@ -9,17 +8,20 @@
 	<title>Online Appointment</title>
 
 	<!-- Favicons -->
-	<link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
+	<link type="image/x-icon" href="/img/favicon.png" rel="icon">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 
 	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css">
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="/css/style.css">
+
+	<link rel="stylesheet" href="/css/banner.css">
+
 
 </head>
 
@@ -40,13 +42,13 @@
 						</span>
 					</a>
 					<a href="/health_care" class="navbar-brand logo">
-						<img src="assets/img/logo.jpg" class="img-fluid" alt="Logo">
+						<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
 					</a>
 				</div>
 				<div class="main-menu-wrapper">
 					<div class="menu-header">
 						<a href="/health_care" class="menu-logo">
-							<img src="assets/img/logo.jpg" class="img-fluid" alt="Logo">
+							<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
 						</a>
 						<a id="menu_close" class="menu-close" href="javascript:void(0);">
 							<i class="fas fa-times"></i>
@@ -57,72 +59,30 @@
 							<a href="/health_care">Home</a>
 						</li>
 						<li class="has-submenu">
-								<a href="/health_care/doctorlogin">Doctors <i class="fas fa-chevron-down"></i></a>
-							<!-- <ul class="submenu">
-									<li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
-									<li><a href="appointments.html">Appointments</a></li>
-									<li><a href="schedule-timings.html">Schedule Timing</a></li>
-									<li><a href="my-patients.html">Patients List</a></li>
-									<li><a href="patient-profile.html">Patients Profile</a></li>
-									<li><a href="chat-doctor.html">Chat</a></li>
-									<li><a href="invoices.html">Invoices</a></li>
-									<li><a href="doctor-profile-settings.html">Profile Settings</a></li>
-									<li><a href="reviews.html">Reviews</a></li>
-									<li><a href="doctor-register.html">Doctor Register</a></li>
-								</ul> -->
+								<a href="/health_care/login">Doctors <i class="fas fa-chevron-down"></i></a>
+
 						</li>
 						<li class="has-submenu">
-							<a href="login.html">Patients </a>
-							<!-- <ul class="submenu">
-									<li><a href="search.html">Search Doctor</a></li>
-									<li><a href="doctor-profile.html">Doctor Profile</a></li>
-									<li><a href="booking.html">Booking</a></li>
-									<li><a href="checkout.html">Checkout</a></li>
-									<li><a href="booking-success.html">Booking Success</a></li>
-									<li><a href="patient-dashboard.html">Patient Dashboard</a></li>
-									<li><a href="favourites.html">Favourites</a></li>
-									<li><a href="chat.html">Chat</a></li>
-									<li><a href="profile-settings.html">Profile Settings</a></li>
-									<li><a href="change-password.html">Change Password</a></li>
-								</ul> -->
+							<a href="/health_care/login">Patients </a>
+
 						</li>
-						<!-- <li class="has-submenu">
-								<a href="#">Pages </a>
-								<ul class="submenu">
-									<li><a href="voice-call.html">Voice Call</a></li>
-									<li><a href="video-call.html">Video Call</a></li>
-									<li><a href="search.html">Search Doctors</a></li>
-									<li><a href="calendar.html">Calendar</a></li>
-									<li><a href="components.html">Components</a></li>
-									<li class="has-submenu">
-										<a href="invoices.html">Invoices</a>
-										<ul class="submenu">
-											<li><a href="invoices.html">Invoices</a></li>
-											<li><a href="invoice-view.html">Invoice View</a></li>
-										</ul>
-									</li>
-									<li><a href="blank-page.html">Starter Page</a></li>
-									<li><a href="login.html">Login</a></li>
-									<li><a href="register.html">Register</a></li>
-									<li><a href="forgot-password.html">Forgot Password</a></li>
-								</ul>
-							</li> -->
+
 						<li>
-							<a href="login_hospital.html" target="_blank">Hospital</a>
+							<a href="/health_care/login" target="_blank">Hospital</a>
 						</li>
 						<li class="login-link">
-							<a href="login.html">Login / Signup</a>
+							<a href="/health_care/login">Login / Signup</a>
 						</li>
 					</ul>
 				</div>
 				<ul class="nav header-navbar-rht">
 					<li class="nav-item contact-item">
 						<div class="header-contact-img">
-							<i class="far fa-hospital"></i>
+							<!-- <i class="far fa-hospital"></i>							 -->
 						</div>
 						<div class="header-contact-detail">
-							<p class="contact-header">Contact</p>
-							<p class="contact-info-header">+91 315 369 5943</p>
+							<!-- <p class="contact-header">Contact</p> -->
+							<!-- <p class="contact-info-header">+91 315 369 5943</p> -->
 						</div>
 					</li>
 					<li class="nav-item">
@@ -135,35 +95,20 @@
 		<!-- /Header -->
 
 		<!-- Home Banner -->
+		<!-- <marquee behavior="" direction="right"> -->
 		<section class="section section-search">
 			<div class="container-fluid">
+				<!-- <marquee behavior="scroll" scrollamount="25" direction="right">
+					<img src="/img/search-bg.png" alt="">
+				</marquee> -->
 				<div class="banner-wrapper">
 					<div class="banner-header text-center">
-						<h1>Search Doctor, Make an Appointment</h1>
-						<p>Discover the best doctors, clinic & hospital the city nearest to you.</p>
 					</div>
-
-					<!-- Search -->
-					<div class="search-box">
-						<form action="templateshub.net">
-							<div class="form-group search-location">
-								<input type="text" class="form-control" placeholder="Search Location">
-								<span class="form-text">Based on your Location</span>
-							</div>
-							<div class="form-group search-info">
-								<input type="text" class="form-control"
-									placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc">
-								<span class="form-text">Ex : Dental or Sugar Check up etc</span>
-							</div>
-							<button type="submit" class="btn btn-primary search-btn"><i class="fas fa-search"></i>
-								<span>Search</span></button>
-						</form>
-					</div>
-					<!-- /Search -->
-
 				</div>
 			</div>
 		</section>
+		<!-- </marquee> -->
+
 		<!-- /Home Banner -->
 
 		<!-- Clinic and Specialities -->
@@ -182,7 +127,7 @@
 							<!-- Slider Item -->
 							<div class="speicality-item text-center">
 								<div class="speicality-img">
-									<img src="assets/img/specialities/specialities-01.png" class="img-fluid"
+									<img src="/img/specialities/specialities-01.png" class="img-fluid"
 										alt="Speciality">
 									<span><i class="fa fa-circle" aria-hidden="true"></i></span>
 								</div>
@@ -193,7 +138,7 @@
 							<!-- Slider Item -->
 							<div class="speicality-item text-center">
 								<div class="speicality-img">
-									<img src="assets/img/specialities/specialities-02.png" class="img-fluid"
+									<img src="/img/specialities/specialities-02.png" class="img-fluid"
 										alt="Speciality">
 									<span><i class="fa fa-circle" aria-hidden="true"></i></span>
 								</div>
@@ -204,7 +149,7 @@
 							<!-- Slider Item -->
 							<div class="speicality-item text-center">
 								<div class="speicality-img">
-									<img src="assets/img/specialities/specialities-03.png" class="img-fluid"
+									<img src="/img/specialities/specialities-03.png" class="img-fluid"
 										alt="Speciality">
 									<span><i class="fa fa-circle" aria-hidden="true"></i></span>
 								</div>
@@ -215,7 +160,7 @@
 							<!-- Slider Item -->
 							<div class="speicality-item text-center">
 								<div class="speicality-img">
-									<img src="assets/img/specialities/specialities-04.png" class="img-fluid"
+									<img src="/img/specialities/specialities-04.png" class="img-fluid"
 										alt="Speciality">
 									<span><i class="fa fa-circle" aria-hidden="true"></i></span>
 								</div>
@@ -226,7 +171,7 @@
 							<!-- Slider Item -->
 							<div class="speicality-item text-center">
 								<div class="speicality-img">
-									<img src="assets/img/specialities/specialities-05.png" class="img-fluid"
+									<img src="/img/specialities/specialities-05.png" class="img-fluid"
 										alt="Speciality">
 									<span><i class="fa fa-circle" aria-hidden="true"></i></span>
 								</div>
@@ -268,7 +213,7 @@
 							<div class="profile-widget">
 								<div class="doc-img">
 									<a href="doctor-profile.html">
-										<img class="img-fluid" alt="User Image" src="assets/img/doctors/doctor-01.jpg">
+										<img class="img-fluid" alt="User Image" src="/img/doctors/doctor-01.jpg">
 									</a>
 									<a href="javascript:void(0)" class="fav-btn">
 										<i class="far fa-bookmark"></i>
@@ -327,7 +272,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-5 features-img">
-						<img src="assets/img/features/feature.png" class="img-fluid" alt="Feature">
+						<img src="/img/features/feature.png" class="img-fluid" alt="Feature">
 					</div>
 					<div class="col-md-7">
 						<div class="section-header">
@@ -338,42 +283,42 @@
 						<div class="features-slider slider">
 							<!-- Slider Item -->
 							<div class="feature-item text-center">
-								<img src="assets/img/features/feature-01.jpg" class="img-fluid" alt="Feature">
+								<img src="/img/features/feature-01.jpg" class="img-fluid" alt="Feature">
 								<p>Patient Ward</p>
 							</div>
 							<!-- /Slider Item -->
 
 							<!-- Slider Item -->
 							<div class="feature-item text-center">
-								<img src="assets/img/features/feature-02.jpg" class="img-fluid" alt="Feature">
+								<img src="/img/features/feature-02.jpg" class="img-fluid" alt="Feature">
 								<p>Test Room</p>
 							</div>
 							<!-- /Slider Item -->
 
 							<!-- Slider Item -->
 							<div class="feature-item text-center">
-								<img src="assets/img/features/feature-03.jpg" class="img-fluid" alt="Feature">
+								<img src="/img/features/feature-03.jpg" class="img-fluid" alt="Feature">
 								<p>ICU</p>
 							</div>
 							<!-- /Slider Item -->
 
 							<!-- Slider Item -->
 							<div class="feature-item text-center">
-								<img src="assets/img/features/feature-04.jpg" class="img-fluid" alt="Feature">
+								<img src="/img/features/feature-04.jpg" class="img-fluid" alt="Feature">
 								<p>Laboratory</p>
 							</div>
 							<!-- /Slider Item -->
 
 							<!-- Slider Item -->
 							<div class="feature-item text-center">
-								<img src="assets/img/features/feature-05.jpg" class="img-fluid" alt="Feature">
+								<img src="/img/features/feature-05.jpg" class="img-fluid" alt="Feature">
 								<p>Operation</p>
 							</div>
 							<!-- /Slider Item -->
 
 							<!-- Slider Item -->
 							<div class="feature-item text-center">
-								<img src="assets/img/features/feature-06.jpg" class="img-fluid" alt="Feature">
+								<img src="/img/features/feature-06.jpg" class="img-fluid" alt="Feature">
 								<p>Medical</p>
 							</div>
 							<!-- /Slider Item -->
@@ -396,7 +341,7 @@
 							<!-- Footer Widget -->
 							<div class="footer-widget footer-about">
 								<div class="footer-logo">
-									<img src="assets/img/logo.jpg" width="120" alt="logo">
+									<img src="/img/logo.jpg" width="120" alt="logo">
 								</div>
 								<div class="footer-about-content">
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -426,39 +371,6 @@
 
 						</div>
 
-						<!-- <div class="col-lg-3 col-md-6"> -->
-
-						<!-- Footer Widget -->
-						<!-- <div class="footer-widget footer-menu">
-									<h2 class="footer-title">For Patients</h2>
-									<ul>
-										<li><a href="search.html"><i class="fas fa-angle-double-right"></i> Search for Doctors</a></li>
-										<li><a href="login.html"><i class="fas fa-angle-double-right"></i> Login</a></li>
-										<li><a href="register.html"><i class="fas fa-angle-double-right"></i> Register</a></li>
-										<li><a href="booking.html"><i class="fas fa-angle-double-right"></i> Booking</a></li>
-										<li><a href="patient-dashboard.html"><i class="fas fa-angle-double-right"></i> Patient Dashboard</a></li>
-									</ul>
-								</div> -->
-						<!-- /Footer Widget -->
-
-						<!-- </div>  -->
-
-						<!-- <div class="col-lg-3 col-md-6"> -->
-
-						<!-- Footer Widget -->
-						<!-- <div class="footer-widget footer-menu">
-									<h2 class="footer-title">For Doctors</h2>
-									<ul>
-										<li><a href="appointments.html"><i class="fas fa-angle-double-right"></i> Appointments</a></li>
-										<li><a href="chat.html"><i class="fas fa-angle-double-right"></i> Chat</a></li>
-										<li><a href="login.html"><i class="fas fa-angle-double-right"></i> Login</a></li>
-										<li><a href="doctor-register.html"><i class="fas fa-angle-double-right"></i> Register</a></li>
-										<li><a href="doctor-dashboard.html"><i class="fas fa-angle-double-right"></i> Doctor Dashboard</a></li>
-									</ul>
-								</div> -->
-						<!-- /Footer Widget -->
-
-						<!-- </div> -->
 
 						<div class="col-lg-3 col-md-6">
 
@@ -504,8 +416,7 @@
 								<!-- Copyright Menu -->
 								<div class="copyright-menu">
 									<ul class="policy-menu">
-										<li><a href="term-condition.html">Terms and Conditions</a></li>
-										<li><a href="privacy-policy.html">Policy</a></li>
+
 									</ul>
 								</div>
 								<!-- /Copyright Menu -->
@@ -526,20 +437,19 @@
 	<!-- /Main Wrapper -->
 
 	<!-- jQuery -->
-		<script src="/javascript/jquery.min.js"></script>
+	<script src="/js/jquery.min.js"></script>
 
 	<!-- Bootstrap Core JS -->
-		<script src="/javascript/popper.min.js"></script>
-		<script src="/javascript/bootstrap.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 
 	<!-- Slick JS -->
-		<script src="/javascript/slick.js"></script>
+	<script src="/js/slick.js"></script>
 
 	<!-- Custom JS -->
-		<script src="/javascript/script.js"></script>
+	<script src="/js/script.js"></script>
 
 </body>
 
-<!-- /  30 Nov 2019 04:11:53 GMT -->
 
 </html>
