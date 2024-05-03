@@ -99,6 +99,40 @@
             background-color: #4CAF50;
         }
     </style>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(function() {
+    var specialties = [
+      "Cardiology",
+      "Dermatology",
+      "Endocrinology",
+      "Gastroenterology",
+      "Hematology",
+      "Immunology",
+      "Nephrology",
+      "Neurology",
+      "Obstetrics and Gynecology",
+      "Oncology",
+      "Ophthalmology",
+      "Orthopedics",
+      "Otolaryngology (ENT)",
+      "Pediatrics",
+      "Psychiatry",
+      "Pulmonology",
+      "Radiology",
+      "Rheumatology",
+      "Urology",
+      "Infectious Disease"
+    ];
+
+    $("#specialty").autocomplete({
+      source: specialties
+    });
+  });
+</script>
 </head>
 <body>
     
@@ -247,7 +281,7 @@
     
             <h3>Professional Information</h3>
             <input type="text" id="license" name="license"  placeholder="License" required><br><br>
-            <input type="text" id="specialty" name="specialty" placeholder="Speciality or Specializations" required><br><br>
+            <input type="text" id="specialty" name="specialty" placeholder="Specialty or Specializations" required><br><br>
             <input type="number" id="experience" name="experience" placeholder="Years of Experience" required><br><br>
             
            
