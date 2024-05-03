@@ -57,8 +57,8 @@ const getCardFormat = (result) => {
                                             </ul>
                                         </div> -->
                                         <div class="clinic-booking">
-                                            <a class="view-pro-btn" href="doctor-profile.html">View Profile</a>
-                                            <a class="apt-btn" href="booking.html">Book Appointment</a>
+                                            <a class="view-pro-btn" href=/health_care/doctor_profile/${result[i]._id} >View Profile</a>
+                                            <a class="apt-btn" href="/health_care/booking/${result[i]._id}">Book Appointment</a>
                                         </div>
                                     </div>
                                 </div>

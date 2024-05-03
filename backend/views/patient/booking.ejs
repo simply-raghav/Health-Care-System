@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- /booking.html   -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Online Appointment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Your CSS styles here */
+        .selected {
+            background-color: #90EE90; /* Light green */
+        }
+        .day-slot ul li:hover,
+        .time-slot ul li:hover {
+            background-color: #f0f0f0; /* Light gray */
+            cursor: pointer;
+        }
+        .time-slot-message {
+            font-size: 18px;
+            color: red;
+            margin-top: 10px;
+        }
+        .nav-button#next_button {
+    float: right;
+}
+        .nav-button {
+            cursor: pointer;
+            font-size: 30px; /* Increased font size */
+            margin: 0 10px;
+        }
+    </style>
+
+</head>
+
+<body onload="getData('<%= id %>')">
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- Header -->
+       
+        <!-- /Header -->
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-12 col-12">
+                        <nav aria-label="breadcrumb" class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="patient-dashboard.html">Dashborard</a></li>
+                                <li class="breadcrumb-item"><a href="book-appointment.html">Book Appointment</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Booking</li>
+                            </ol>
+                        </nav>
+                        <h2 class="breadcrumb-title">Booking</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Breadcrumb -->
+
+        <!-- Page Content -->
+        <div class="content">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="booking-doc-info">
+                                    <a href="doctor-profile.html" class="booking-doc-img" id="doctor_image">
+											<img src="/img/doctor/doctor-thumb-02.jpg" alt="Doctor Image">
+										</a>
+                                    <div class="booking-info" id="doctor_info">
+                                        <h4><a href="/health_care/doctor_profile/<%= id %>"><span id = "docName">Dr. xyz</span></a></h4>
+                                        
+                                        <p class="text-muted mb-0"><i class="fas fa-map-marker-alt"></i> <span id = "address">Delhi, India</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Schedule Widget -->
+                        <div class="card booking-schedule schedule-widget">
+
+                            <!-- Schedule Header -->
+<div class="schedule-header">
+    <div class="row">
+        <div class="col-md-12">
+            <span class="nav-button" id="prev_button">&lt;</span> <!-- Previous button -->
+            <!-- Day Slot -->
+            <div class="day-slot" id="day_slot">
+                <ul>
+                    <!-- Dynamically generated dates will be inserted here -->
+                </ul>
+            </div>
+            <!-- /Day Slot -->
+            <span class="nav-button" id="next_button">></span> <!-- Next button -->
+        </div>
+    </div>
+</div>
+<!-- /Schedule Header -->
+
+<!-- Schedule Content -->
+<div class="schedule-cont">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Time Slot -->
+            <div class="time-slot" id="time_slot">
+                <!-- Message to be displayed instead of time slots -->
+                <div class="time-slot-message" style="display: none;">Today is a holiday.</div>
+                <ul class="clearfix">
+                    <!-- Dynamically generated time slots will be inserted here -->
+                </ul>
+            </div>
+            <!-- /Time Slot -->
+        </div>
+    </div>
+</div>
+<!-- /Schedule Content -->
+
+<script>
+    // JavaScript code to dynamically generate dates and time slots
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentDateIndex = 0; // Index of the first displayed date
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const today = new Date();
+        const datesList = document.querySelector('.day-slot ul');
+        const prevButton = document.getElementById('prev_button');
+
+        // Function to generate dates for the next 7 days excluding Saturdays and Sundays
+        function generateDates() {
+            datesList.innerHTML = ''; // Clear previous dates
+            for (let i = 0; i < 7; i++) {
+                const currentDate = new Date(today);
+                currentDate.setDate(currentDate.getDate() + currentDateIndex + i);
+                const day = days[currentDate.getDay()];
+                const date = currentDate.getDate();
+                const month = currentDate.toLocaleString('default', { month: 'short' });
+                const year = currentDate.getFullYear();
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${day}</span>
+                    <span class="slot-date">${date} ${month} <small class="slot-year">${year}</small></span>
+                `;
+                // Add click event listener to select date
+                li.addEventListener('click', function() {
+                    if (day === 'Sun') {
+                        // Clear all time slots
+                        const timeSlotsList = document.querySelector('.time-slot ul');
+                        timeSlotsList.innerHTML = '';
+                        // Display the message
+                        const message = document.querySelector('.time-slot-message');
+                        message.style.display = 'block';
+                        return;
+                    }
+                    // Hide the message
+                    const message = document.querySelector('.time-slot-message');
+                    message.style.display = 'none';
+                    // Remove previously selected dates
+                    const selectedDates = document.querySelectorAll('.day-slot li.selected');
+                    selectedDates.forEach(date => date.classList.remove('selected'));
+                    // Highlight the selected date
+                    li.classList.add('selected');
+                    const selectedDateString = currentDate.toDateString();
+                    console.log('Selected Date:', selectedDateString);
+                    // You can add your logic to handle the selected date here
+                    // Generate time slots
+                    generateTimeSlots();
+                });
+                datesList.appendChild(li);
+            }
+        }
+
+        // Function to generate time slots
+        function generateTimeSlots() {
+            const timeSlotsList = document.querySelector('.time-slot ul');
+            timeSlotsList.innerHTML = ''; // Clear previous time slots
+            for (let i = 9; i <= 17; i++) {
+                const li = document.createElement('li');
+                if (i < 12) {
+                    li.innerHTML = `
+                        <a class="timing" href="#">
+                            <span>${i}:00</span> <span>AM</span>
+                        </a>
+                    `;
+                } else if (i === 12) {
+                    li.innerHTML = `
+                        <a class="timing" href="#">
+                            <span>${i}:00</span> <span>PM</span>
+                        </a>
+                    `;
+                } else {
+                    li.innerHTML = `
+                        <a class="timing" href="#">
+                            <span>${i - 12}:00</span> <span>PM</span>
+                        </a>
+                    `;
+                }
+                // Add click event listener to select time slot
+                li.addEventListener('click', function() {
+                    // Remove previously selected time slots
+                    const selectedSlots = document.querySelectorAll('.time-slot ul li.selected');
+                    selectedSlots.forEach(slot => slot.classList.remove('selected'));
+                    // Highlight the selected time slot
+                    li.classList.add('selected');
+                    const selectedTime = li.textContent.trim();
+                    console.log('Selected Time:', selectedTime);
+                    // You can add your logic to handle the selected time slot here
+                });
+                timeSlotsList.appendChild(li);
+            }
+        }
+
+        // Generate initial set of dates and time slots when the page loads
+        generateDates();
+        generateTimeSlots();
+
+        // Event listener for the ">" (greater than) sign to generate the next 7 days
+        const nextButton = document.getElementById('next_button');
+        nextButton.addEventListener('click', function() {
+            currentDateIndex += 7; // Increment the index by 7 to get the next set of dates
+            generateDates();
+            // Enable the previous button when navigating forward
+            prevButton.disabled = false;
+        });
+
+        // Event listener for the "<" (less than) sign to generate the previous 7 days
+        prevButton.addEventListener('click', function() {
+            if (currentDateIndex === 0) {
+                // Prevent navigating back to today's date or any past date
+                return;
+            }
+            currentDateIndex -= 7; // Decrement the index by 7 to get the previous set of dates
+            generateDates();
+            // Disable the previous button if currentDateIndex is 0 (today's date)
+            if (currentDateIndex === 0) {
+                prevButton.disabled = true;
+            }
+        });
+
+        // Disable the previous button initially if currentDateIndex is 0 (today's date)
+        if (currentDateIndex === 0) {
+            prevButton.disabled = true;
+        }
+    });
+</script>
+
+                        </div>
+                        <!-- /Schedule Widget -->
+
+                        <!-- Submit Section -->
+                        <div class="submit-section proceed-btn text-right" id="proceed_to_pay">
+                            <a href=""id="payButton" class="btn btn-primary submit-btn">Proceed to Pay</a>
+                        </div>
+                        <!-- /Submit Section -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /Page Content -->
+
+       <!-- Footer -->
+			<footer class="footer">
+
+				<!-- Footer Top -->
+				<div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+	
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-about">
+									<div class="footer-logo">
+										<img src="/img/logo.jpg"  width="120" alt="logo">
+									</div>
+									<div class="footer-about-content">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+										<div class="social-icon">
+											<ul>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+												<li>
+													<a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+	
+							</div>
+	
+							 
+							<div class="col-lg-3 col-md-6">
+	
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-contact">
+									<h2 class="footer-title">Contact Us</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p> mnnit,<br> allahabad ibdia </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i> +91 *******545
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i> @example.com
+										</p>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+	
+							</div>
+	
+						</div>
+					</div>
+				</div>
+				<!-- /Footer Top -->
+	
+				<!-- Footer Bottom -->
+				<div class="footer-bottom">
+					<div class="container-fluid">
+	
+						<!-- Copyright -->
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<div class="copyright-text">
+										<p class="mb-0"><a href="templateshub.net"></a></p>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+	
+									<!-- Copyright Menu -->
+									<div class="copyright-menu">
+										<ul class="policy-menu">
+											
+										</ul>
+									</div>
+									<!-- /Copyright Menu -->
+	
+								</div>
+							</div>
+						</div>
+						<!-- /Copyright -->
+	
+					</div>
+				</div>
+				<!-- /Footer Bottom -->
+	
+			</footer>
+			<!-- /Footer -->
+
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="/js/script.js"></script>
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function() {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function(msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        } else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js" onload="initializeRazorpay()"></script> <!-- Razorpay SDK -->
+
+<script>
+  // Function to show/hide pages
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+      page.classList.add('hidden');
+    });
+    document.getElementById(pageId).classList.remove('hidden');
+  }
+
+  // Function to handle payment
+  function handlePayment(event) {
+    const amount = 500;
+    const currency = 'INR';
+    const receiptId = '1234567890';
+
+    fetch('http://localhost:5000/order', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        amount,
+        currency,
+        receipt: receiptId
+      })
+    })
+    .then(response => response.json())
+    .then(order => {
+      console.log('order', order);
+
+      var options = {
+        key: "rzp_test_ZKeBtequHxogmy",
+        amount,
+        currency,
+        name: "devyani",
+        description: "Test Transaction",
+        image: "https://i.ibb.co/5Y3m33n/test.png",
+        order_id: order.id,
+        handler: async function(response) {
+          // Process payment confirmation
+          showPage('confirmationPage');
+        },
+        prefill: {
+          name: "devyani",
+          email: "devyani@example.com",
+          contact: "9000000000",
+        },
+        notes: {
+          address: "Razorpay Corporate Office",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      var rzp1 = new Razorpay(options);
+      rzp1.open();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+
+    event.preventDefault();
+  }
+
+  // Add event listener for payment button
+  document.getElementById("payButton").addEventListener("click", handlePayment);
+
+  // Add event listener for home link
+  document.getElementById("homeLink").addEventListener("click", function(event) {
+    showPage('homePage');
+    event.preventDefault();
+  });
+</script>
+
+<!-- Custom JS -->
+<script src="/js/Patient/booking.js"></script>
+
+</body>
+
+<!-- /booking.html  -->
+
+</html>
