@@ -7,34 +7,48 @@ register.addEventListener("submit", async () => {
     const address   = document.getElementById("address").value;
     const gender    = document.getElementById("gender").value;
     const dob       = document.getElementById("dob").value;
+    const degreeOverall   = document.getElementById("degreeOverall").value;
     const license   = document.getElementById("license").value;
-    const specialty = document.getElementById("specialty").value;
+    const profession = document.getElementById("profession").value;
     const experience= document.getElementById("experience").value;
 
   console.log(
     "Data in Register JS",
-    "name", name,
-    "password", password,
-    "email" , email, 
-    "contact", contact , 
-    "address" , address , 
-    "gender" , gender , 
-    "dob" , dob,
-    "license" , license,
-    "specialty" , specialty,
-    "experience" , experience,
+    "name",
+    name,
+    "password",
+    password,
+    "email",
+    email,
+    "contact",
+    contact,
+    "address",
+    address,
+    "gender",
+    gender,
+    "dob",
+    dob,
+    "degreeOverall",
+    degreeOverall,
+    "license",
+    license,
+    "profession",
+    profession,
+    "experience",
+    experience
   );
     const data = {
-    name,
-    password,
-    email,
-    contact,
-    address,
-    gender,
-    dob,
-    license,
-    specialty,
-    experience,
+      name,
+      password,
+      email,
+      contact,
+      address,
+      gender,
+      dob,
+      degreeOverall,
+      license,
+      profession,
+      experience,
     };
     console.log(data);
     fetch("/authDoctor/register", {

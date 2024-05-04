@@ -31,7 +31,7 @@
 		
 	
 	</head>
-	<body onload="getData('<%= id %>')">
+	<body onload="getData('<%= id %>')" onsubmit="saveData('<%= id %>')">
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
@@ -310,7 +310,7 @@
 												<label>Clinic Images</label>
 												<form action="#" class="dropzone"></form>
 											</div>
-											<div class="upload-wrap" id="upload_image">
+											<!-- <div class="upload-wrap" id="upload_image">
 												<div class="upload-images">
 													<img src="/img/features/feature-01.jpg" alt="Upload Image">
 													<a href="javascript:void(0);" class="btn btn-icon btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>
@@ -319,7 +319,7 @@
 													<img src="/img/features/feature-02.jpg" alt="Upload Image">
 													<a href="javascript:void(0);" class="btn btn-icon btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>
 												</div>
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</div>
@@ -386,7 +386,7 @@
 											</div>
 											<div class="custom-control custom-radio custom-control-inline">
 												<input type="radio" id="price_custom" name="rating_option" value="custom_price" class="custom-control-input">
-												<label class="custom-control-label" for="price_custom">Custom Price (per hour)</label>
+												<label class="custom-control-label" for="price_custom">Custom Price (per Booking)</label>
 											</div>
 										</div>
 
@@ -409,7 +409,7 @@
 									<h4 class="card-title">Services and Specialization</h4>
 									<div class="form-group">
 										<label>Services</label>
-										<input type="text" data-role="tagsinput" class="input-tags form-control" placeholder="Enter Services" name="services" value="Tooth cleaning " id="services">
+										<input type="text" data-role="tagsinput" class="input-tags form-control" placeholder="Enter Services" name="services" id="services">
 										<small class="form-text text-muted">Note : Type & Press enter to add new services</small>
 									</div> 
 									<div class="form-group mb-0">
@@ -459,7 +459,7 @@
 							<!-- /Education -->
 						
 							<!-- Experience -->
-							<div class="card">
+							<!-- <div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Experience</h4>
 									<div class="experience-info" id="experience_info">
@@ -498,11 +498,11 @@
 										<a href="javascript:void(0);" class="add-experience"><i class="fa fa-plus-circle"></i> Add More</a>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- /Experience -->
 							
 							<!-- Awards -->
-							<div class="card">
+							<!-- <div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Awards</h4>
 									<div class="awards-info" id="awards_info">
@@ -525,11 +525,11 @@
 										<a href="javascript:void(0);" class="add-award"><i class="fa fa-plus-circle"></i> Add More</a>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- /Awards -->
 							
 							<!-- Memberships -->
-							<div class="card">
+							<!-- <div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Memberships</h4>
 									<div class="membership-info" id="membership_info">
@@ -546,11 +546,11 @@
 										<a href="javascript:void(0);" class="add-membership"><i class="fa fa-plus-circle"></i> Add More</a>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- /Memberships -->
 							
 							<!-- Registrations -->
-							<div class="card">
+							<!-- <div class="card">
 								<div class="card-body">
 									<h4 class="card-title">Registrations</h4>
 									<div class="registrations-info" id="registration_info">
@@ -573,7 +573,7 @@
 										<a href="javascript:void(0);" class="add-reg"><i class="fa fa-plus-circle"></i> Add More</a>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- /Registrations -->
 							
 							<div class="submit-section submit-btn-bottom" id="save_changes">

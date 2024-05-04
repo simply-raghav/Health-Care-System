@@ -105,7 +105,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
   $(function() {
-    var specialties = [
+    var profession = [
       "Cardiology",
       "Dermatology",
       "Endocrinology",
@@ -128,8 +128,8 @@
       "Infectious Disease"
     ];
 
-    $("#specialty").autocomplete({
-      source: specialties
+    $("#profession").autocomplete({
+      source: profession
     });
   });
 </script>
@@ -280,8 +280,11 @@
            
     
             <h3>Professional Information</h3>
+            <input type = "text" id = "degreeOverall" placeholder="Degree" required> 
+            <small>Eg. BDS, MDS - Oral & Maxillofacial Surgery</small>
+            <br>
             <input type="text" id="license" name="license"  placeholder="License" required><br><br>
-            <input type="text" id="specialty" name="specialty" placeholder="Specialty or Specializations" required><br><br>
+            <input type="text" id="profession" name="Profession" placeholder="Profession" required><br><br>
             <input type="number" id="experience" name="experience" placeholder="Years of Experience" required><br><br>
             
            
