@@ -198,9 +198,9 @@
 														<div class="form-group" id="time_slot">               
 															<label>Timing Slot Duration</label>
 															<select class="select form-control">
-																<option>-</option>
+																<option selected="selected">-</option>
 																<option>15 mins</option>
-																<option selected="selected">30 mins</option>  
+																<option >30 mins</option>  
 																<option>45 mins</option>
 																<option>1 Hour</option>
 															</select>
@@ -222,7 +222,7 @@
 																			<a class="nav-link" data-toggle="tab" href="#slot_sunday">Sunday</a>
 																		</li>
 																		<li class="nav-item">
-																			<a class="nav-link active" data-toggle="tab" href="#slot_monday">Monday</a>
+																			<a class="nav-link " data-toggle="tab" href="#slot_monday">Monday</a>
 																		</li>
 																		<li class="nav-item">
 																			<a class="nav-link" data-toggle="tab" href="#slot_tuesday">Tuesday</a>
@@ -252,76 +252,728 @@
 																<!-- Sunday Slot -->
 																<div id="slot_sunday" class="tab-pane fade">
 																	<h4 class="card-title d-flex justify-content-between">
-																		<span>Time Slots</span> 
-																		<a class="edit-link" data-toggle="modal" href="#add_time_slot"><i class="fa fa-plus-circle"></i> Add Slot</a>
+																		<span>Time Slots</span>
+																		<!-- <label for="holiday">Mark As Holiday</label>
+																		<input type="checkbox" name="holiday" id="">  -->
+																		<!-- <a class="edit-link" ><i class="fa fa-plus-circle"></i> Add Slot</a> -->
 																	</h4>
-																	<p class="text-muted mb-0">Not Available</p>
+																	<!-- slot model -->
+																	<div class="modal-body">
+																		
+																		<form onsubmit="return false">
+																			<label for="holiday">Mark As Holiday</label>
+																		<input checked type="checkbox"  name="holiday" id="holidayCheckbox"> 
+																		<br><br>
+																			<div class="hours-info">
+																				
+																				<div class="row form-row hours-cont">
+																					<div class="col-12 col-md-10">
+																						<div class="row form-row">
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									
+																									<label>Start Time</label>
+																									<select id="startTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+
+																									</select>
+																								</div> 
+																							</div>
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									<label>End Time</label>
+																									<select id="endTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																									</select>
+																								</div> 
+																							</div>
+																							
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<!-- <div class="add-more mb-3">
+																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
+																			</div> -->
+																			<div class="submit-section text-center">
+																				<button type="submit"  class="btn btn-primary submit-btn">Save Changes</button>
+																			</div>
+																		</form>
+																	</div>
+																	<!-- slot model -->
 																</div>
 																<!-- /Sunday Slot -->
-
+																
 																<!-- Monday Slot -->
-																<div id="slot_monday" class="tab-pane fade show active">
+																<div id="slot_monday" class="tab-pane fade">
 																	<h4 class="card-title d-flex justify-content-between">
-																		<span>Time Slots</span> 
-																		<a class="edit-link" data-toggle="modal" href="#edit_time_slot"><i class="fa fa-edit mr-1"></i>Edit</a>
+																		<span>Time Slots</span>
+																		<!-- <label for="holiday">Mark As Holiday</label>
+																		<input type="checkbox" name="holiday" id="">  -->
+																		<!-- <a class="edit-link" ><i class="fa fa-plus-circle"></i> Add Slot</a> -->
 																	</h4>
-																	
-																	<!-- Slot List -->
-																	<div class="doc-times" id="doc_times">
+																	<!-- slot model -->
+																	<div class="modal-body">
 																		
+																		<form onsubmit="return false">
+																			<label for="holiday">Mark As Holiday</label>
+																		<input checked type="checkbox"  name="holiday" id="mondayHolidayCheckbox"> 
+																		<br><br>
+																			<div class="hours-info">
+																				
+																				<div class="row form-row hours-cont">
+																					<div class="col-12 col-md-10">
+																						<div class="row form-row">
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									
+																									<label>Start Time</label>
+																									<select id="mondayStartTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+
+																									</select>
+																								</div> 
+																							</div>
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									<label>End Time</label>
+																									<select id="mondayEndTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																									</select>
+																								</div> 
+																							</div>
+																							
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<!-- <div class="add-more mb-3">
+																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
+																			</div> -->
+																			<div class="submit-section text-center">
+																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																			</div>
+																		</form>
 																	</div>
-																	<!-- /Slot List -->
-																	
+																	<!-- slot model -->
 																</div>
 																<!-- /Monday Slot -->
 
 																<!-- Tuesday Slot -->
 																<div id="slot_tuesday" class="tab-pane fade">
 																	<h4 class="card-title d-flex justify-content-between">
-																		<span>Time Slots</span> 
-																		<a class="edit-link" data-toggle="modal" href="#add_time_slot"><i class="fa fa-plus-circle"></i> Add Slot</a>
+																		<span>Time Slots</span>
+																		<!-- <label for="holiday">Mark As Holiday</label>
+																		<input type="checkbox" name="holiday" id="">  -->
+																		<!-- <a class="edit-link" ><i class="fa fa-plus-circle"></i> Add Slot</a> -->
 																	</h4>
-																	<p class="text-muted mb-0">Not Available</p>
+																	<!-- slot model -->
+																	<div class="modal-body">
+																		
+																		<form onsubmit="return false">
+																			<label for="holiday">Mark As Holiday</label>
+																		<input checked type="checkbox"  name="holiday" id="tuesdayHolidayCheckbox"> 
+																		<br><br>
+																			<div class="hours-info">
+																				
+																				<div class="row form-row hours-cont">
+																					<div class="col-12 col-md-10">
+																						<div class="row form-row">
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									
+																									<label>Start Time</label>
+																									<select id="tuesdayStartTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																
+																									</select>
+																								</div> 
+																							</div>
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									<label>End Time</label>
+																									<select id="tuesdayEndTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																									</select>
+																								</div> 
+																							</div>
+																							
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<!-- <div class="add-more mb-3">
+																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
+																			</div> -->
+																			<div class="submit-section text-center">
+																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																			</div>
+																		</form>
+																	</div>
+																	<!-- slot model -->
 																</div>
 																<!-- /Tuesday Slot -->
 
 																<!-- Wednesday Slot -->
 																<div id="slot_wednesday" class="tab-pane fade">
 																	<h4 class="card-title d-flex justify-content-between">
-																		<span>Time Slots</span> 
-																		<a class="edit-link" data-toggle="modal" href="#add_time_slot"><i class="fa fa-plus-circle"></i> Add Slot</a>
+																		<span>Time Slots</span>
+																		<!-- <label for="holiday">Mark As Holiday</label>
+																		<input type="checkbox" name="holiday" id="">  -->
+																		<!-- <a class="edit-link" ><i class="fa fa-plus-circle"></i> Add Slot</a> -->
 																	</h4>
-																	<p class="text-muted mb-0">Not Available</p>
+																	<!-- slot model -->
+																	<div class="modal-body">
+																		
+																		<form onsubmit="return false">
+																			<label for="holiday">Mark As Holiday</label>
+																		<input checked type="checkbox"  name="holiday" id="wednesdayHolidayCheckbox"> 
+																		<br><br>
+																			<div class="hours-info">
+																				
+																				<div class="row form-row hours-cont">
+																					<div class="col-12 col-md-10">
+																						<div class="row form-row">
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									
+																									<label>Start Time</label>
+																									<select id="wednesdayStartTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																
+																									</select>
+																								</div> 
+																							</div>
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									<label>End Time</label>
+																									<select id="wednesdayEndTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																									</select>
+																								</div> 
+																							</div>
+																							
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<!-- <div class="add-more mb-3">
+																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
+																			</div> -->
+																			<div class="submit-section text-center">
+																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																			</div>
+																		</form>
+																	</div>
+																	<!-- slot model -->
 																</div>
 																<!-- /Wednesday Slot -->
 
 																<!-- Thursday Slot -->
 																<div id="slot_thursday" class="tab-pane fade">
 																	<h4 class="card-title d-flex justify-content-between">
-																		<span>Time Slots</span> 
-																		<a class="edit-link" data-toggle="modal" href="#add_time_slot"><i class="fa fa-plus-circle"></i> Add Slot</a>
+																		<span>Time Slots</span>
+																		<!-- <label for="holiday">Mark As Holiday</label>
+																		<input type="checkbox" name="holiday" id="">  -->
+																		<!-- <a class="edit-link" ><i class="fa fa-plus-circle"></i> Add Slot</a> -->
 																	</h4>
-																	<p class="text-muted mb-0">Not Available</p>
+																	<!-- slot model -->
+																	<div class="modal-body">
+																		
+																		<form onsubmit="return false">
+																			<label for="holiday">Mark As Holiday</label>
+																		<input checked type="checkbox"  name="holiday" id="thursdayHolidayCheckbox"> 
+																		<br><br>
+																			<div class="hours-info">
+																				
+																				<div class="row form-row hours-cont">
+																					<div class="col-12 col-md-10">
+																						<div class="row form-row">
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									
+																									<label>Start Time</label>
+																									<select id="thursdayStartTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																
+																									</select>
+																								</div> 
+																							</div>
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									<label>End Time</label>
+																									<select id="thursdayEndTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																									</select>
+																								</div> 
+																							</div>
+																							
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<!-- <div class="add-more mb-3">
+																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
+																			</div> -->
+																			<div class="submit-section text-center">
+																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																			</div>
+																		</form>
+																	</div>
+																	<!-- slot model -->
 																</div>
 																<!-- /Thursday Slot -->
 
 																<!-- Friday Slot -->
 																<div id="slot_friday" class="tab-pane fade">
 																	<h4 class="card-title d-flex justify-content-between">
-																		<span>Time Slots</span> 
-																		<a class="edit-link" data-toggle="modal" href="#add_time_slot"><i class="fa fa-plus-circle"></i> Add Slot</a>
+																		<span>Time Slots</span>
+																		<!-- <label for="holiday">Mark As Holiday</label>
+																		<input type="checkbox" name="holiday" id="">  -->
+																		<!-- <a class="edit-link" ><i class="fa fa-plus-circle"></i> Add Slot</a> -->
 																	</h4>
-																	<p class="text-muted mb-0">Not Available</p>
+																	<!-- slot model -->
+																	<div class="modal-body">
+																		
+																		<form onsubmit="return false">
+																			<label for="holiday">Mark As Holiday</label>
+																		<input checked type="checkbox"  name="holiday" id="fridayHolidayCheckbox"> 
+																		<br><br>
+																			<div class="hours-info">
+																				
+																				<div class="row form-row hours-cont">
+																					<div class="col-12 col-md-10">
+																						<div class="row form-row">
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									
+																									<label>Start Time</label>
+																									<select id="fridayStartTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																
+																									</select>
+																								</div> 
+																							</div>
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									<label>End Time</label>
+																									<select id="fridayEndTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																									</select>
+																								</div> 
+																							</div>
+																							
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<!-- <div class="add-more mb-3">
+																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
+																			</div> -->
+																			<div class="submit-section text-center">
+																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																			</div>
+																		</form>
+																	</div>
+																	<!-- slot model -->
 																</div>
 																<!-- /Friday Slot -->
 
 																<!-- Saturday Slot -->
 																<div id="slot_saturday" class="tab-pane fade">
 																	<h4 class="card-title d-flex justify-content-between">
-																		<span>Time Slots</span> 
-																		<a class="edit-link" data-toggle="modal" href="#add_time_slot"><i class="fa fa-plus-circle"></i> Add Slot</a>
+																		<span>Time Slots</span>
+																		<!-- <label for="holiday">Mark As Holiday</label>
+																		<input type="checkbox" name="holiday" id="">  -->
+																		<!-- <a class="edit-link" ><i class="fa fa-plus-circle"></i> Add Slot</a> -->
 																	</h4>
-																	<p class="text-muted mb-0">Not Available</p>
+																	<!-- slot model -->
+																	<div class="modal-body">
+																		
+																		<form onsubmit="return false">
+																			<label for="holiday">Mark As Holiday</label>
+																		<input checked type="checkbox"  name="holiday" id="saturdayHolidayCheckbox"> 
+																		<br><br>
+																			<div class="hours-info">
+																				
+																				<div class="row form-row hours-cont">
+																					<div class="col-12 col-md-10">
+																						<div class="row form-row">
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									
+																									<label>Start Time</label>
+																									<select id="saturdayStartTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																
+																									</select>
+																								</div> 
+																							</div>
+																							<div class="col-12 col-md-6">
+																								<div class="form-group">
+																									<label>End Time</label>
+																									<select id="saturdayEndTime" class="form-control">
+																										<option value="-">-</option>
+																										<option>00:00</option>
+																										<option>01:00</option>
+																										<option>02:00</option>
+																										<option>03:00</option>
+																										<option>04:00</option>
+																										<option>05:00</option>
+																										<option>06:00</option>
+																										<option>07:00</option>
+																										<option>08:00</option>
+																										<option>09:00</option>
+																										<option>10:00</option>
+																										<option>11:00</option>
+																										<option>12:00</option>
+																										<option>13:00</option>
+																										<option>14:00</option>
+																										<option>15:00</option>
+																										<option>16:00</option>
+																										<option>17:00</option>
+																										<option>18:00</option>
+																										<option>19:00</option>
+																										<option>20:00</option>
+																										<option>21:00</option>
+																										<option>22:00</option>
+																										<option>23:00</option>
+																									</select>
+																								</div> 
+																							</div>
+																							
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			
+																			<!-- <div class="add-more mb-3">
+																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
+																			</div> -->
+																			<div class="submit-section text-center">
+																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																			</div>
+																		</form>
+																	</div>
+																	<!-- slot model -->
 																</div>
 																<!-- /Saturday Slot -->
 
@@ -453,12 +1105,12 @@
 		<!-- /Main Wrapper -->
 		
 		<!-- Add Time Slot Modal -->
-		<div class="modal fade custom-modal" id="add_time_slot">
+		<!-- <div class="modal fade custom-modal" id="add_time_slot">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">Add Time Slots</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<div class="modal-header"> -->
+						<!-- <h5 class="modal-title">Add Time Slots</h5> -->
+						<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
@@ -472,7 +1124,7 @@
 												<div class="form-group">
 													<label>Start Time</label>
 													<select class="form-control">
-														<option>-</option>
+														<option value="-">-</option>
 														<option>12.00 am</option>
 														<option>12.30 am</option>  
 														<option>1.00 am</option>
@@ -484,7 +1136,7 @@
 												<div class="form-group">
 													<label>End Time</label>
 													<select class="form-control">
-														<option>-</option>
+														<option value="-">-</option>
 														<option>12.00 am</option>
 														<option>12.30 am</option>  
 														<option>1.00 am</option>
@@ -495,23 +1147,23 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							
-							<div class="add-more mb-3">
+							<!-- <div class="add-more mb-3">
 								<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
-							</div>
-							<div class="submit-section text-center">
+							</div> -->
+							<!-- <div class="submit-section text-center">
 								<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- /Add Time Slot Modal -->
 		
 		<!-- Edit Time Slot Modal -->
-		<div class="modal fade custom-modal" id="edit_time_slot">
+		<!-- <div class="modal fade custom-modal" id="edit_time_slot">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -521,7 +1173,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<form>
+						<form onsubmit="return false">
 							<div class="hours-info">
 								<div class="row form-row hours-cont">
 									<div class="col-12 col-md-10">
@@ -530,7 +1182,7 @@
 												<div class="form-group">
 													<label>Start Time</label>
 													<select class="form-control">
-														<option>-</option>
+														<option value="-">-</option>
 														<option selected>12.00 am</option>
 														<option>12.30 am</option>  
 														<option>1.00 am</option>
@@ -542,7 +1194,7 @@
 												<div class="form-group">
 													<label>End Time</label>
 													<select class="form-control">
-														<option>-</option>
+														<option value="-">-</option>
 														<option>12.00 am</option>
 														<option selected>12.30 am</option>  
 														<option>1.00 am</option>
@@ -561,7 +1213,7 @@
 												<div class="form-group">
 													<label>Start Time</label>
 													<select class="form-control">
-														<option>-</option>
+														<option value="-">-</option>
 														<option>12.00 am</option>
 														<option selected>12.30 am</option>
 														<option>1.00 am</option>
@@ -573,7 +1225,7 @@
 												<div class="form-group">
 													<label>End Time</label>
 													<select class="form-control">
-														<option>-</option>
+														<option value="-">-</option>
 														<option>12.00 am</option>
 														<option>12.30 am</option>
 														<option selected>1.00 am</option>
@@ -593,7 +1245,7 @@
 												<div class="form-group">
 													<label>Start Time</label>
 													<select class="form-control">
-														<option>-</option>
+														<option value="-">-</option>
 														<option>12.00 am</option>
 														<option>12.30 am</option>
 														<option selected>1.00 am</option>
@@ -605,7 +1257,7 @@
 												<div class="form-group">
 													<label>End Time</label>
 													<select class="form-control">
-														<option>-</option>
+														<option value="-">-</option>
 														<option>12.00 am</option>
 														<option>12.30 am</option>
 														<option>1.00 am</option>
@@ -630,7 +1282,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- /Edit Time Slot Modal -->
 	  
 		<!-- jQuery -->
@@ -649,7 +1301,567 @@
 		
 		<!-- Custom JS -->
 		<script src="/js/script.js"></script>
+
+		<!-- holiday checkbox toggle -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				var holidayCheckbox = document.getElementById("holidayCheckbox");
+				var hoursInfoDiv = document.querySelector(".hours-info");
 		
+				// Initially hide the hours-info div if the checkbox is checked
+				if (holidayCheckbox.checked) {
+					hoursInfoDiv.style.display = "none";
+				}
+		
+				// Add event listener to the checkbox
+				holidayCheckbox.addEventListener("change", function() {
+					// Toggle the visibility of hours-info div based on checkbox state
+					if (this.checked) {
+						hoursInfoDiv.style.display = "none";
+					} else {
+						hoursInfoDiv.style.display = "block";
+					}
+				});
+			});
+		</script>
+		<!-- holiday checkbox toggle -->
+
+		<!-- start & end time validation -->
+		<script>
+			// Populate options for start time
+			var startTimeSelect = document.getElementById("startTime");
+			var endTimeSelect = document.getElementById("endTime");
+		
+			for (var i = 0; i < 24; i++) {
+				var hour = (i < 10) ? "0" + i : i;
+				startTimeSelect.options[startTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+			}
+		
+			// Function to update end time options based on selected start time
+			function updateEndTimeOptions() {
+				var selectedStartTime = document.getElementById("startTime").value;
+		
+				// Clear existing options
+				endTimeSelect.innerHTML = "<option value='-'>-</option>";
+		
+				// Populate options for end time based on selected start time
+				for (var i = parseInt(selectedStartTime.split(":")[0]) + 1; i <= 23; i++) {
+					var hour = (i < 10) ? "0" + i : i;
+					endTimeSelect.options[endTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+				}
+			}
+		
+			// Event listener to update end time options when start time changes
+			startTimeSelect.addEventListener("change", updateEndTimeOptions);
+		
+			// Form submission validation
+			document.getElementById("timeForm").addEventListener("submit", function(event) {
+				event.preventDefault();
+				var startTime = document.getElementById("startTime").value;
+				var endTime = document.getElementById("endTime").value;
+		
+				// Validate start time and end time selections
+				if (startTime === "-" || endTime === "-") {
+					alert("Please select both start time and end time.");
+					return false;
+				}
+		
+				// Convert start time and end time to minutes
+				var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+				var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+		
+				// Check if start time is less than end time
+				if (startTimeMinutes >= endTimeMinutes) {
+					alert("Start time must be less than end time.");
+					return false;
+				}
+		
+				// If validation passed, you can submit the form or perform other actions
+				document.getElementById("timeForm").submit();
+			});
+		</script>
+		
+		<!-- start & end time validation -->
+
+		<!-- Holiday checkbox toggle for Monday slot -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+    var mondayHolidayCheckbox = document.getElementById("mondayHolidayCheckbox");
+    var mondayHoursInfoDiv = document.querySelector("#slot_monday .hours-info");
+
+    // Initially hide the hours-info div if the checkbox is checked
+    if (mondayHolidayCheckbox.checked) {
+        mondayHoursInfoDiv.style.display = "none";
+    }
+
+    // Add event listener to the checkbox
+    mondayHolidayCheckbox.addEventListener("change", function() {
+        // Toggle the visibility of hours-info div based on checkbox state
+        if (this.checked) {
+            mondayHoursInfoDiv.style.display = "none";
+        } else {
+            mondayHoursInfoDiv.style.display = "block";
+        }
+    });
+});
+		</script>
+		<!-- Holiday checkbox toggle for Monday slot -->
+
+		<!-- Start & end time validation for Monday slot -->
+		<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    var mondayStartTimeSelect = document.getElementById("mondayStartTime");
+    var mondayEndTimeSelect = document.getElementById("mondayEndTime");
+
+    for (var i = 0; i < 24; i++) {
+        var hour = (i < 10) ? "0" + i : i;
+        mondayStartTimeSelect.options[mondayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+    }
+
+    function updateMondayEndTimeOptions() {
+        var selectedMondayStartTime = document.getElementById("mondayStartTime").value;
+
+        mondayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
+
+        for (var i = parseInt(selectedMondayStartTime.split(":")[0]) + 1; i <= 23; i++) {
+            var hour = (i < 10) ? "0" + i : i;
+            mondayEndTimeSelect.options[mondayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+        }
+    }
+
+    mondayStartTimeSelect.addEventListener("change", updateMondayEndTimeOptions);
+
+    document.getElementById("mondayForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var startTime = document.getElementById("mondayStartTime").value;
+        var endTime = document.getElementById("mondayEndTime").value;
+
+        if (startTime === "-" || endTime === "-") {
+            alert("Please select both start time and end time.");
+            return false;
+        }
+
+        var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+        var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+
+        if (startTimeMinutes >= endTimeMinutes) {
+            alert("Start time must be less than end time.");
+            return false;
+        }
+
+        document.getElementById("mondayForm").submit();
+    });
+});
+
+
+		</script>
+		
+		<!-- Start & end time validation for Monday slot -->
+
+
+
+
+
+
+
+
+		<!-- Holiday checkbox toggle for tuesday slot -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+var tuesdayHolidayCheckbox = document.getElementById("tuesdayHolidayCheckbox");
+var tuesdayHoursInfoDiv = document.querySelector("#slot_tuesday .hours-info");
+
+// Initially hide the hours-info div if the checkbox is checked
+if (tuesdayHolidayCheckbox.checked) {
+tuesdayHoursInfoDiv.style.display = "none";
+}
+
+// Add event listener to the checkbox
+tuesdayHolidayCheckbox.addEventListener("change", function() {
+// Toggle the visibility of hours-info div based on checkbox state
+if (this.checked) {
+    tuesdayHoursInfoDiv.style.display = "none";
+} else {
+    tuesdayHoursInfoDiv.style.display = "block";
+}
+});
+});
+</script>
+<!-- Holiday checkbox toggle for tuesday slot -->
+
+<!-- Start & end time validation for tuesday slot -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+var tuesdayStartTimeSelect = document.getElementById("tuesdayStartTime");
+var tuesdayEndTimeSelect = document.getElementById("tuesdayEndTime");
+
+for (var i = 0; i < 24; i++) {
+var hour = (i < 10) ? "0" + i : i;
+tuesdayStartTimeSelect.options[tuesdayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+}
+
+function updatetuesdayEndTimeOptions() {
+var selectedtuesdayStartTime = document.getElementById("tuesdayStartTime").value;
+
+tuesdayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
+
+for (var i = parseInt(selectedtuesdayStartTime.split(":")[0]) + 1; i <= 23; i++) {
+    var hour = (i < 10) ? "0" + i : i;
+    tuesdayEndTimeSelect.options[tuesdayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+}
+}
+
+tuesdayStartTimeSelect.addEventListener("change", updatetuesdayEndTimeOptions);
+
+document.getElementById("tuesdayForm").addEventListener("submit", function(event) {
+event.preventDefault();
+var startTime = document.getElementById("tuesdayStartTime").value;
+var endTime = document.getElementById("tuesdayEndTime").value;
+
+if (startTime === "-" || endTime === "-") {
+    alert("Please select both start time and end time.");
+    return false;
+}
+
+var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+
+if (startTimeMinutes >= endTimeMinutes) {
+    alert("Start time must be less than end time.");
+    return false;
+}
+
+document.getElementById("tuesdayForm").submit();
+});
+});
+
+
+</script>
+
+<!-- Start & end time validation for tuesday slot -->
+
+
+
+
+		<!-- Holiday checkbox toggle for wednesday slot -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+        var wednesdayHolidayCheckbox = document.getElementById("wednesdayHolidayCheckbox");
+        var wednesdayHoursInfoDiv = document.querySelector("#slot_wednesday .hours-info");
+        
+        // Initially hide the hours-info div if the checkbox is checked
+        if (wednesdayHolidayCheckbox.checked) {
+        wednesdayHoursInfoDiv.style.display = "none";
+        }
+        
+        // Add event listener to the checkbox
+        wednesdayHolidayCheckbox.addEventListener("change", function() {
+        // Toggle the visibility of hours-info div based on checkbox state
+        if (this.checked) {
+            wednesdayHoursInfoDiv.style.display = "none";
+        } else {
+            wednesdayHoursInfoDiv.style.display = "block";
+        }
+        });
+        });
+        </script>
+        <!-- Holiday checkbox toggle for wednesday slot -->
+        
+        <!-- Start & end time validation for wednesday slot -->
+        <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+        var wednesdayStartTimeSelect = document.getElementById("wednesdayStartTime");
+        var wednesdayEndTimeSelect = document.getElementById("wednesdayEndTime");
+        
+        for (var i = 0; i < 24; i++) {
+        var hour = (i < 10) ? "0" + i : i;
+        wednesdayStartTimeSelect.options[wednesdayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+        }
+        
+        function updatewednesdayEndTimeOptions() {
+        var selectedwednesdayStartTime = document.getElementById("wednesdayStartTime").value;
+        
+        wednesdayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
+        
+        for (var i = parseInt(selectedwednesdayStartTime.split(":")[0]) + 1; i <= 23; i++) {
+            var hour = (i < 10) ? "0" + i : i;
+            wednesdayEndTimeSelect.options[wednesdayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+        }
+        }
+        
+        wednesdayStartTimeSelect.addEventListener("change", updatewednesdayEndTimeOptions);
+        
+        document.getElementById("wednesdayForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var startTime = document.getElementById("wednesdayStartTime").value;
+        var endTime = document.getElementById("wednesdayEndTime").value;
+        
+        if (startTime === "-" || endTime === "-") {
+            alert("Please select both start time and end time.");
+            return false;
+        }
+        
+        var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+        var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+        
+        if (startTimeMinutes >= endTimeMinutes) {
+            alert("Start time must be less than end time.");
+            return false;
+        }
+        
+        document.getElementById("wednesdayForm").submit();
+        });
+        });
+        
+        
+        </script>
+        
+        <!-- Start & end time validation for wednesday slot -->
+
+
+
+
+				<!-- Holiday checkbox toggle for thursday slot -->
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+				var thursdayHolidayCheckbox = document.getElementById("thursdayHolidayCheckbox");
+				var thursdayHoursInfoDiv = document.querySelector("#slot_thursday .hours-info");
+				
+				// Initially hide the hours-info div if the checkbox is checked
+				if (thursdayHolidayCheckbox.checked) {
+				thursdayHoursInfoDiv.style.display = "none";
+				}
+				
+				// Add event listener to the checkbox
+				thursdayHolidayCheckbox.addEventListener("change", function() {
+				// Toggle the visibility of hours-info div based on checkbox state
+				if (this.checked) {
+					thursdayHoursInfoDiv.style.display = "none";
+				} else {
+					thursdayHoursInfoDiv.style.display = "block";
+				}
+				});
+				});
+				</script>
+				<!-- Holiday checkbox toggle for thursday slot -->
+				
+				<!-- Start & end time validation for thursday slot -->
+				<script>
+				
+				document.addEventListener("DOMContentLoaded", function() {
+				var thursdayStartTimeSelect = document.getElementById("thursdayStartTime");
+				var thursdayEndTimeSelect = document.getElementById("thursdayEndTime");
+				
+				for (var i = 0; i < 24; i++) {
+				var hour = (i < 10) ? "0" + i : i;
+				thursdayStartTimeSelect.options[thursdayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+				}
+				
+				function updatethursdayEndTimeOptions() {
+				var selectedthursdayStartTime = document.getElementById("thursdayStartTime").value;
+				
+				thursdayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
+				
+				for (var i = parseInt(selectedthursdayStartTime.split(":")[0]) + 1; i <= 23; i++) {
+					var hour = (i < 10) ? "0" + i : i;
+					thursdayEndTimeSelect.options[thursdayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+				}
+				}
+				
+				thursdayStartTimeSelect.addEventListener("change", updatethursdayEndTimeOptions);
+				
+				document.getElementById("thursdayForm").addEventListener("submit", function(event) {
+				event.preventDefault();
+				var startTime = document.getElementById("thursdayStartTime").value;
+				var endTime = document.getElementById("thursdayEndTime").value;
+				
+				if (startTime === "-" || endTime === "-") {
+					alert("Please select both start time and end time.");
+					return false;
+				}
+				
+				var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+				var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+				
+				if (startTimeMinutes >= endTimeMinutes) {
+					alert("Start time must be less than end time.");
+					return false;
+				}
+				
+				document.getElementById("thursdayForm").submit();
+				});
+				});
+				
+				
+				</script>
+				
+				<!-- Start & end time validation for thursday slot -->
+
+
+
+
+						<!-- Holiday checkbox toggle for friday slot -->
+						<script>
+							document.addEventListener("DOMContentLoaded", function() {
+						var fridayHolidayCheckbox = document.getElementById("fridayHolidayCheckbox");
+						var fridayHoursInfoDiv = document.querySelector("#slot_friday .hours-info");
+						
+						// Initially hide the hours-info div if the checkbox is checked
+						if (fridayHolidayCheckbox.checked) {
+						fridayHoursInfoDiv.style.display = "none";
+						}
+						
+						// Add event listener to the checkbox
+						fridayHolidayCheckbox.addEventListener("change", function() {
+						// Toggle the visibility of hours-info div based on checkbox state
+						if (this.checked) {
+							fridayHoursInfoDiv.style.display = "none";
+						} else {
+							fridayHoursInfoDiv.style.display = "block";
+						}
+						});
+						});
+						</script>
+						<!-- Holiday checkbox toggle for friday slot -->
+						
+						<!-- Start & end time validation for friday slot -->
+						<script>
+						
+						document.addEventListener("DOMContentLoaded", function() {
+						var fridayStartTimeSelect = document.getElementById("fridayStartTime");
+						var fridayEndTimeSelect = document.getElementById("fridayEndTime");
+						
+						for (var i = 0; i < 24; i++) {
+						var hour = (i < 10) ? "0" + i : i;
+						fridayStartTimeSelect.options[fridayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+						}
+						
+						function updatefridayEndTimeOptions() {
+						var selectedfridayStartTime = document.getElementById("fridayStartTime").value;
+						
+						fridayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
+						
+						for (var i = parseInt(selectedfridayStartTime.split(":")[0]) + 1; i <= 23; i++) {
+							var hour = (i < 10) ? "0" + i : i;
+							fridayEndTimeSelect.options[fridayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+						}
+						}
+						
+						fridayStartTimeSelect.addEventListener("change", updatefridayEndTimeOptions);
+						
+						document.getElementById("fridayForm").addEventListener("submit", function(event) {
+						event.preventDefault();
+						var startTime = document.getElementById("fridayStartTime").value;
+						var endTime = document.getElementById("fridayEndTime").value;
+						
+						if (startTime === "-" || endTime === "-") {
+							alert("Please select both start time and end time.");
+							return false;
+						}
+						
+						var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+						var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+						
+						if (startTimeMinutes >= endTimeMinutes) {
+							alert("Start time must be less than end time.");
+							return false;
+						}
+						
+						document.getElementById("fridayForm").submit();
+						});
+						});
+						
+						
+						</script>
+						
+						<!-- Start & end time validation for friday slot -->
+
+
+
+
+								<!-- Holiday checkbox toggle for saturday slot -->
+								<script>
+									document.addEventListener("DOMContentLoaded", function() {
+								var saturdayHolidayCheckbox = document.getElementById("saturdayHolidayCheckbox");
+								var saturdayHoursInfoDiv = document.querySelector("#slot_saturday .hours-info");
+								
+								// Initially hide the hours-info div if the checkbox is checked
+								if (saturdayHolidayCheckbox.checked) {
+								saturdayHoursInfoDiv.style.display = "none";
+								}
+								
+								// Add event listener to the checkbox
+								saturdayHolidayCheckbox.addEventListener("change", function() {
+								// Toggle the visibility of hours-info div based on checkbox state
+								if (this.checked) {
+									saturdayHoursInfoDiv.style.display = "none";
+								} else {
+									saturdayHoursInfoDiv.style.display = "block";
+								}
+								});
+								});
+								</script>
+								<!-- Holiday checkbox toggle for saturday slot -->
+								
+								<!-- Start & end time validation for saturday slot -->
+								<script>
+								
+								document.addEventListener("DOMContentLoaded", function() {
+								var saturdayStartTimeSelect = document.getElementById("saturdayStartTime");
+								var saturdayEndTimeSelect = document.getElementById("saturdayEndTime");
+								
+								for (var i = 0; i < 24; i++) {
+								var hour = (i < 10) ? "0" + i : i;
+								saturdayStartTimeSelect.options[saturdayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+								}
+								
+								function updatesaturdayEndTimeOptions() {
+								var selectedsaturdayStartTime = document.getElementById("saturdayStartTime").value;
+								
+								saturdayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
+								
+								for (var i = parseInt(selectedsaturdayStartTime.split(":")[0]) + 1; i <= 23; i++) {
+									var hour = (i < 10) ? "0" + i : i;
+									saturdayEndTimeSelect.options[saturdayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+								}
+								}
+								
+								saturdayStartTimeSelect.addEventListener("change", updatesaturdayEndTimeOptions);
+								
+								document.getElementById("saturdayForm").addEventListener("submit", function(event) {
+								event.preventDefault();
+								var startTime = document.getElementById("saturdayStartTime").value;
+								var endTime = document.getElementById("saturdayEndTime").value;
+								
+								if (startTime === "-" || endTime === "-") {
+									alert("Please select both start time and end time.");
+									return false;
+								}
+								
+								var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+								var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+								
+								if (startTimeMinutes >= endTimeMinutes) {
+									alert("Start time must be less than end time.");
+									return false;
+								}
+								
+								document.getElementById("saturdayForm").submit();
+								});
+								});
+								
+								
+								</script>
+								
+								<!-- Start & end time validation for saturday slot -->
+
+
+
+
+
 	</body>
 
 <!-- /schedule-timings.html   -->
