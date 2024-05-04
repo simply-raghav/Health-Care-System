@@ -39,7 +39,7 @@ const doctorDetail = new mongoose.Schema({
     type: String,
     required: true,
   },
-  specialty: {
+  profession: {
     type: String,
     required: true,
   },
@@ -47,7 +47,49 @@ const doctorDetail = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
+  degree: {
+    type: String,
+    default: "",
+  },
+  about_me: {
+    type: String,
+    default: "",
+  },
+  pricing: {
+    type: Number,
+    default: 0,
+  },
+  services: [
+    {
+      type: String,
+    },
+  ],
+  Specialization: [
+    {
+      type: String,
+    },
+  ],
+  education: [
+    {
+      degree: {
+        type: String,
+        required: true,
+      },
+      institute: {
+        type: String,
+        required: true,
+      },
+      year_of_completion: {
+        type: Number,
+        required: true,
+      },
+    },
+  ],
+  // timings : [
+
+  // ],
+}, 
+{timestamps : true});
 
 const doctor = new mongoose.model("doctor", doctorDetail);
 
