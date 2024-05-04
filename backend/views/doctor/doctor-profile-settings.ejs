@@ -47,13 +47,13 @@
 								<span></span>
 							</span>
 						</a>
-						<a href="index.html" class="navbar-brand logo">
+						<a href="/health_care" class="navbar-brand logo">
 							<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
 						</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
-							<a href="index.html" class="menu-logo">
+							<a href="/health_care" class="menu-logo">
 								<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
 							</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -62,14 +62,14 @@
 						</div>
 						<ul class="main-nav">
 							<li>
-								<a href="index.html">Home</a>
+								<!-- <a href="/health_care">Home</a> -->
 							</li>
 							<li class="has-submenu active">
-								<a href="doctor-dashboard.html">Doctors </a>
+								<!-- <a href="doctor-dashboard.html">Doctors </a> -->
 							</li>	
 							
 							<li class="login-link">
-								<a href="login.html">Login / Signup</a>
+								<!-- <a href="login.html">Login / Signup</a> -->
 							</li>
 						</ul>		 
 					</div>		 
@@ -82,21 +82,21 @@
 						<li class="nav-item dropdown has-arrow logged-item">
 							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
 								<span class="user-img">
-									<img class="rounded-circle" src="/img/doctors/doctor-thumb-02.jpg" width="31" alt="ABC">
+									<img class="rounded-circle" src="/img/doctor/doctor-thumb-02.jpg" width="31" alt="ABC">
 								</span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right">
 								<div class="user-header">
 									<div class="avatar avatar-sm">
-										<img src="/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
+										<img src="/img/doctor/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
 									</div>
 									<div class="user-text">
 										<h6>XYZ</h6>
 										<p class="text-muted mb-0">Doctor</p>
 									</div>
 								</div>
-								<a class="dropdown-item" href="doctor-dashboard.html">Dashboard</a>
-								<a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>
+								<a class="dropdown-item" href="/health_care/dashboard">Dashboard</a>
+								<a class="dropdown-item">Profile Settings</a>
 								<a class="dropdown-item" href="login.html">Logout</a>
 							</div>
 						</li>
@@ -114,7 +114,7 @@
 						<div class="col-md-12 col-12">
 							<nav aria-label="breadcrumb" class="page-breadcrumb">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+									<li class="breadcrumb-item"><a href="/health_care">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Profile Settings</li>
 								</ol>
 							</nav>
@@ -137,13 +137,13 @@
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
 										<a href="#" class="booking-doc-img" id="doctor_image">
-											<img src="/img/doctors/doctor-thumb-02.jpg" alt="Doctor Image">
+											<img src="/img/doctor/doctor-thumb-02.jpg" alt="Doctor Image">
 										</a>
 										<div class="profile-det-info" id="doctor_info">
-											<h3>Dr. ABC</h3>
+											<h3 id="doctor_name">Dr. ABC</h3>
 											
 											<div class="patient-details">
-												<h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
+												<h5 id="doctor_degree" class="mb-0">NA</h5>
 											</div>
 										</div>
 									</div>
@@ -152,13 +152,13 @@
 									<nav class="dashboard-menu">
 										<ul>
 											<li>
-												<a href="doctor-dashboard.html">
+												<a href="/health_care/dashboard">
 													<i class="fas fa-columns"></i>
 													<span>Dashboard</span>
 												</a>
 											</li>
 											<li>
-												<a href="appointments.html">
+												<a href="/health_care/appointments">
 													<i class="fas fa-calendar-check"></i>
 													<span>Appointments</span>
 												</a>
@@ -170,14 +170,14 @@
 												</a>
 											</li>
 											<li>
-												<a href="schedule-timings.html">
+												<a href="/health_care/schedule-timings">
 													<i class="fas fa-hourglass-start"></i>
 													<span>Schedule Timings</span>
 												</a>
 											</li>
 											
 											<li class="active">
-												<a href="doctor-profile-settings.html">
+												<a href="#">
 													<i class="fas fa-user-cog"></i>
 													<span>Profile Settings</span>
 												</a>
@@ -213,7 +213,7 @@
 											<div class="form-group">
 												<div class="change-avatar">
 													<div class="profile-img" id="user_image">
-														<img src="/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+														<!-- <img src="/img/doctor/doctor-thumb-02.jpg" alt="User Image"> -->
 													</div>
 													<div class="upload-img" id="upload_image">
 														<div class="change-photo-btn">
@@ -228,47 +228,42 @@
 										<div class="col-md-6">
 											<div class="form-group" id="user_name">
 												<label>Username <span class="text-danger">*</span></label>
-												<input type="text" class="form-control" readonly>
+												<input id="doctor_username" type="text" class="form-control" readonly>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group" id="email">
 												<label>Email <span class="text-danger">*</span></label>
-												<input type="email" class="form-control" readonly>
+												<input id="doctor_email" type="email" class="form-control" readonly>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group" id="first_name">
-												<label>First Name <span class="text-danger">*</span></label>
-												<input type="text" class="form-control">
+												<label>Name <span class="text-danger"></span></label>
+												<input id="doctor_name_form" type="text" class="form-control">
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="form-group" id="last_name">
-												<label>Last Name <span class="text-danger">*</span></label>
-												<input type="text" class="form-control">
-											</div>
-										</div>
+										
 										<div class="col-md-6">
 											<div class="form-group" id="phone_no">
 												<label>Phone Number</label>
-												<input type="text" class="form-control">
+												<input id="doctor_phone_number" type="text" class="form-control">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group" id="gender">
 												<label>Gender</label>
-												<select class="form-control select">
-													<option>Select</option>
-													<option>Male</option>
-													<option>Female</option>
+												<select id="gender_form" class="form-control select">
+													<option value="Select" >Select</option>
+													<option value="Male" id="male" >Male</option>
+													<option value="Female" id="Female">Female</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group mb-0" id="date_of_birth">
 												<label>Date of Birth</label>
-												<input type="text" class="form-control">
+												<input type="date" id="doctor_dob_form" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -331,41 +326,41 @@
 								<div class="card-body" id="contact_details">
 									<h4 class="card-title">Contact Details</h4>
 									<div class="row form-row">
-										<div class="col-md-6">
+										<div class="col-md-8">
 											<div class="form-group">
-												<label>Address Line 1</label>
-												<input type="text" class="form-control" id="address1">
+												<label>Address</label>
+												<input type="text"  class="form-control" id="doctor_address_form">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="control-label">Address Line 2</label>
-												<input type="text" class="form-control" id="address2">
+												<!-- <label class="control-label">Address Line 2</label> -->
+												<!-- <input type="text" class="form-control" id="address2"> -->
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="control-label">City</label>
-												<input type="text" class="form-control" id="city">
+												<!-- <label class="control-label">City</label> -->
+												<!-- <input type="text" class="form-control" id="city"> -->
 											</div>
 										</div>
 
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="control-label">State / Province</label>
-												<input type="text" class="form-control" id="state">
+												<!-- <label class="control-label">State / Province</label> -->
+												<!-- <input type="text" class="form-control" id="state"> -->
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="control-label">Country</label>
-												<input type="text" class="form-control" id="country">
+												<!-- <label class="control-label">Country</label> -->
+												<!-- <input type="text" class="form-control" id="country"> -->
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="control-label">Postal Code</label>
-												<input type="text" class="form-control" id="postal_code">
+												<!-- <label class="control-label">Postal Code</label> -->
+												<!-- <input type="text" class="form-control" id="postal_code"> -->
 											</div>
 										</div>
 									</div>

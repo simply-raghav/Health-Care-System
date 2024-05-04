@@ -12,11 +12,19 @@ const doctor_data = (id) => {
     .then((data) => {
       console.log("data: ", data);
       if (data.status === "success") {
-        document.getElementById("Doctor_name").innerHTML = "Dr. " + data.result.name;
-        document.getElementById("speciality").innerHTML = data.result.specialty;
-
+        document.getElementById("doctor_name").innerHTML = "Dr. " + data.result.name;
+        document.getElementById("doctor_degree").innerHTML = data.result.degree;
+        document.getElementById("doctor_username").placeholder= data.result.name;
+        document.getElementById("doctor_email").placeholder= data.result.email;
+        document.getElementById("doctor_name_form").value= data.result.name;
+        document.getElementById("doctor_phone_number").value= data.result.contact;
+        document.getElementById("doctor_address_form").value= data.result.address;
+        // document.getElementById("doctor_dob_form").value= data.result.DOB;
+        
+        
       } else {
-        document.getElementById("Doctor_name").innerHTML = "Dr. NA";
+        document.getElementById("doctor_name").innerHTML = "NA";
+        document.getElementById("doctor_degree").innerHTML = "NA";
       }
     });
 

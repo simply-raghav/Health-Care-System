@@ -12,8 +12,8 @@ const getCardFormat = (result) => {
                                         </div>
                                         <div class="doc-info-cont" id="doctor_info">
                                             <h4 class="doc-name"><a href="doctor-profile.html">Dr. ${result[i].name}</a></h4>
-                                            <p class="doc-speciality">${result[i].specialty}</p>
-                                            <h5 class="doc-department"><img src="/img/specialities/specialities-05.png" class="img-fluid" alt="Speciality">Dentist</h5>
+                                            <p class="doc-speciality">Degree : ${result[i].degree}</p>
+                                            <h5 class="doc-department">${result[i].profession} - ${result[i].experience} Years of Experience </h5>
                                             <div class="rating">
                                             </div>
                                             <div class="clinic-details">
