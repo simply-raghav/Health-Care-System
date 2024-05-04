@@ -2,7 +2,7 @@ const doctor_data = (id) => {
   fetch("/authDoctor/users", {
     method: "POST",
     body: JSON.stringify({
-      doctor_id: id,
+      id: id,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -13,8 +13,10 @@ const doctor_data = (id) => {
       console.log("data: ", data);
       if (data.status === "success") {
         document.getElementById("Doctor_name").innerHTML = "Dr. " + data.result.name;
+        document.getElementById("speciality").innerHTML = data.result.specialty;
+
       } else {
-        document.getElementById("Doctor_name").innerHTML = "Dr. ABC";
+        document.getElementById("Doctor_name").innerHTML = "Dr. NA";
       }
     });
 

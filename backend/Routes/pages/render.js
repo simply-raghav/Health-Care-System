@@ -100,6 +100,61 @@ router.get("/book_appointment", loggedin, (req, res) => {
   }
 });
 
+router.get("/doctor_profile/:id", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("patient/doctor-profile", {
+      id: req.params.id,
+    });
+  } else {
+    res.redirect("login");
+  }
+});
+
+router.get("/booking/:id", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("patient/booking", {
+      id : req.params.id,
+    });
+  } else {
+    res.redirect("login");
+  }
+});
+
+
+
+
+router.get("/appointments", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("doctor/appointments");
+  } else {
+    res.redirect("login");
+  }
+});
+
+router.get("/schedule-timings", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("doctor/schedule-timings", {
+      id: req.user.id,
+    });
+  } else {
+    res.redirect("login");
+  }
+});
+
+router.get("/doctor_profile_settings", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("doctor/doctor-profile-settings", {
+      id: req.user.id,
+    });
+  } else {
+    res.redirect("login");
+  }
+});
+
+
+
+
+
 
 
 

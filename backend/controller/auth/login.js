@@ -95,8 +95,9 @@ const login = async (req, res)=>{
             message: "User Not Registered",
           });
         }
-
+        
         console.log("data",data)
+
         const resp = await bcrypt.compare(pass, data.password);
         if(resp){
             const token = jwt.sign(

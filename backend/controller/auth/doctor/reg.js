@@ -30,7 +30,19 @@ const register = async (req, res)=>{
           req.cookies.hospital_registered,
           process.env.SECRET_KEY
         );
-        const {name , password, email, contact, address, gender, dob ,license,specialty,experience} = req.body;
+        const {
+          name,
+          password,
+          email,
+          contact,
+          address,
+          gender,
+          dob,
+          degreeOverall,
+          license,
+          profession,
+          experience,
+        } = req.body;
         if (await exist(email)) {
           return res.json({
             status: "Failure",
@@ -50,8 +62,9 @@ const register = async (req, res)=>{
           gender,
           DOB: dob,
           hospital: decoded.id,
+          degree: degreeOverall,
           license,
-          specialty,
+          profession,
           experience,
         };
         const newDoc = new doctor(doc);
