@@ -27,7 +27,7 @@
         }
         .day-slot ul li:hover,
         .time-slot ul li:hover {
-            background-color: #f0f0f0; /* Light gray */
+            /* background-color: #f0f0f0; Light gray */
             cursor: pointer;
         }
         .time-slot-message {
@@ -63,9 +63,9 @@
                     <div class="col-md-12 col-12">
                         <nav aria-label="breadcrumb" class="page-breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="patient-dashboard.html">Dashborard</a></li>
-                                <li class="breadcrumb-item"><a href="book-appointment.html">Book Appointment</a></li>
+                                <li class="breadcrumb-item"><a href="/health_care">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/health_care/dashboard">Dashborard</a></li>
+                                <li class="breadcrumb-item"><a href="/health_care/book_appointment">Book Appointment</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Booking</li>
                             </ol>
                         </nav>
@@ -139,134 +139,7 @@
 </div>
 <!-- /Schedule Content -->
 
-<script>
-    // JavaScript code to dynamically generate dates and time slots
-    document.addEventListener("DOMContentLoaded", function () {
-        let currentDateIndex = 0; // Index of the first displayed date
-        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        const today = new Date();
-        const datesList = document.querySelector('.day-slot ul');
-        const prevButton = document.getElementById('prev_button');
 
-        // Function to generate dates for the next 7 days excluding Saturdays and Sundays
-        function generateDates() {
-            datesList.innerHTML = ''; // Clear previous dates
-            for (let i = 0; i < 7; i++) {
-                const currentDate = new Date(today);
-                currentDate.setDate(currentDate.getDate() + currentDateIndex + i);
-                const day = days[currentDate.getDay()];
-                const date = currentDate.getDate();
-                const month = currentDate.toLocaleString('default', { month: 'short' });
-                const year = currentDate.getFullYear();
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <span>${day}</span>
-                    <span class="slot-date">${date} ${month} <small class="slot-year">${year}</small></span>
-                `;
-                // Add click event listener to select date
-                li.addEventListener('click', function() {
-                    if (day === 'Sun') {
-                        // Clear all time slots
-                        const timeSlotsList = document.querySelector('.time-slot ul');
-                        timeSlotsList.innerHTML = '';
-                        // Display the message
-                        const message = document.querySelector('.time-slot-message');
-                        message.style.display = 'block';
-                        return;
-                    }
-                    // Hide the message
-                    const message = document.querySelector('.time-slot-message');
-                    message.style.display = 'none';
-                    // Remove previously selected dates
-                    const selectedDates = document.querySelectorAll('.day-slot li.selected');
-                    selectedDates.forEach(date => date.classList.remove('selected'));
-                    // Highlight the selected date
-                    li.classList.add('selected');
-                    const selectedDateString = currentDate.toDateString();
-                    console.log('Selected Date:', selectedDateString);
-                    // You can add your logic to handle the selected date here
-                    // Generate time slots
-                    generateTimeSlots();
-                });
-                datesList.appendChild(li);
-            }
-        }
-
-        // Function to generate time slots
-        function generateTimeSlots() {
-            const timeSlotsList = document.querySelector('.time-slot ul');
-            timeSlotsList.innerHTML = ''; // Clear previous time slots
-            for (let i = 9; i <= 17; i++) {
-                for (let j = 0; j < 60; j += 15) {
-                    const li = document.createElement('li');
-                    if (i < 12) {
-                        li.innerHTML = `
-                        <a class="timing" href="#">
-                            <span>${i}:${j.toString().padStart(2, '0')}</span> <span>AM</span>
-                        </a>
-                    `;
-                    } else if (i === 12) {
-                        li.innerHTML = `
-                        <a class="timing" href="#">
-                            <span>${i}:${j.toString().padStart(2, '0')}</span> <span>PM</span>
-                        </a>
-                    `;
-                    } else {
-                        li.innerHTML = `
-                        <a class="timing" href="#">
-                            <span>${i - 12}:${j.toString().padStart(2, '0')}</span> <span>PM</span>
-                        </a>
-                    `;
-                    }
-                    // Add click event listener to select time slot
-                    li.addEventListener('click', function() {
-                        // Remove previously selected time slots
-                        const selectedSlots = document.querySelectorAll('.time-slot ul li.selected');
-                        selectedSlots.forEach(slot => slot.classList.remove('selected'));
-                        // Highlight the selected time slot
-                        li.classList.add('selected');
-                        const selectedTime = li.textContent.trim();
-                        console.log('Selected Time:', selectedTime);
-                        // You can add your logic to handle the selected time slot here
-                    });
-                    timeSlotsList.appendChild(li);
-                }
-            }
-        }
-
-        // Generate initial set of dates and time slots when the page loads
-        generateDates();
-        generateTimeSlots();
-
-        // Event listener for the ">" (greater than) sign to generate the next 7 days
-        const nextButton = document.getElementById('next_button');
-        nextButton.addEventListener('click', function() {
-            currentDateIndex += 7; // Increment the index by 7 to get the next set of dates
-            generateDates();
-            // Enable the previous button when navigating forward
-            prevButton.disabled = false;
-        });
-
-        // Event listener for the "<" (less than) sign to generate the previous 7 days
-        prevButton.addEventListener('click', function() {
-            if (currentDateIndex === 0) {
-                // Prevent navigating back to today's date or any past date
-                return;
-            }
-            currentDateIndex -= 7; // Decrement the index by 7 to get the previous set of dates
-            generateDates();
-            // Disable the previous button if currentDateIndex is 0 (today's date)
-            if (currentDateIndex === 0) {
-                prevButton.disabled = true;
-            }
-        });
-
-        // Disable the previous button initially if currentDateIndex is 0 (today's date)
-        if (currentDateIndex === 0) {
-            prevButton.disabled = true;
-        }
-    });
-</script>
 
                         </div>
                         <!-- /Schedule Widget -->
