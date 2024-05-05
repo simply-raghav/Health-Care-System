@@ -90,15 +90,15 @@ const doctor_data = (id) => {
             let starttime_wed = document.getElementById('wednesdayStartTime');
             let endtime_wed = document.getElementById('wednesdayEndTime');
             let check_wed = document.getElementById('wednesdayHolidayCheckbox');
-            if ( data.result.timings.Wednesday.startTime === '' || data.result.timings.wednesday.endtime === '' ) {
+            if ( data.result.timings.Wednesday.startTime === '' || data.result.timings.Wednesday.endtime === '' ) {
                 console.log("Data Wed", data);
                 check_wed.checked = true;
                 check_wed.dispatchEvent(new Event('change'));
             } else{
                 check_wed.checked = false;
                 check_wed.dispatchEvent(new Event('change'))
-                let startTime  = data.result.timings.wednesday.startTime;
-                let endTime  = data.result.timings.wednesday.endTime;
+                let startTime  = data.result.timings.Wednesday.startTime;
+                let endTime  = data.result.timings.Wednesday.endTime;
                 startTime = startTime.toString().padStart(5,'0');
                 endTime = endTime.toString().padStart(5,'0');
                 console.log("Start Time : ", startTime, " End Time : ", endTime);
@@ -116,7 +116,7 @@ const doctor_data = (id) => {
 
 
             let starttime_thu = document.getElementById('thursdayStartTime');
-            let endtime_thu = document.getElementById('thursEndTime');
+            let endtime_thu = document.getElementById('thursdayEndTime');
             let check_thu = document.getElementById('thursdayHolidayCheckbox');
             console.log("Data thurs", data);
             if ( data.result.timings.Thursday.startTime === '' || data.result.timings.Thursday.endtime === '' ) {
@@ -174,6 +174,39 @@ const doctor_data = (id) => {
 
 
             // friday
+
+
+            // saturday 
+
+
+            let starttime_sat = document.getElementById('saturdayStartTime');
+            let endtime_sat = document.getElementById('saturdayEndTime');
+            let check_sat = document.getElementById('saturdayHolidayCheckbox');
+            console.log("Data satrs", data);
+            if ( data.result.timings.Saturday.startTime === '' || data.result.timings.Saturday.endtime === '' ) {
+                check_sat.checked = true;
+                check_sat.dispatchEvent(new Event('change'));
+            } else{
+                check_sat.checked = false;
+                check_sat.dispatchEvent(new Event('change'))
+                let startTime  = data.result.timings.Saturday.startTime;
+                let endTime  = data.result.timings.Saturday.endTime;
+                startTime = startTime.toString().padStart(5,'0');
+                endTime = endTime.toString().padStart(5,'0');
+                console.log("Start Time : ", startTime, " End Time : ", endTime);
+                starttime_sat.value = startTime;
+                starttime_sat.dispatchEvent(new Event('change'));
+                endtime_sat.value = endTime;
+                endtime_sat.dispatchEvent(new Event('change'));
+            }
+
+
+
+
+
+
+
+            // saturday 
 
 
 

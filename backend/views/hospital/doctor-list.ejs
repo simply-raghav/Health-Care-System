@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Online Appointment</title>
+		
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="/admin/img/favicon.png">
+		
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="/admin/css/font-awesome.min.css">
+		
+		<!-- Feathericon CSS -->
+        <link rel="stylesheet" href="/admin/css/feathericon.min.css">
+		
+		<!-- Datatables CSS -->
+		<link rel="stylesheet" href="/admin/plugins/datatables/datatables.min.css">
+		
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="/admin/css/style.css">
+		
+		
+    </head>
+    <body>
+	
+		<!-- Main Wrapper -->
+        <div class="main-wrapper">
+		
+			<!-- Header -->
+            <div class="header">
+			
+				<!-- Logo -->
+                <div class="header-left">
+                    <a href="/health_care" class="logo">
+						<img src="/admin/img/logo.jpg" alt="Logo">
+					</a>
+					<a href="index.html" class="logo logo-small">
+						<!-- <img src="/admin/img/logo-small.png" alt="Logo" width="30" height="30"> -->
+					</a>
+                </div>
+				<!-- /Logo -->
+				
+				<a href="javascript:void(0);" id="toggle_btn">
+					<i class="fe fe-text-align-left"></i>
+				</a>
+				
+				<div class="top-nav-search">
+					<form>
+						<!-- <input type="text" class="form-control" placeholder="Search here">
+						<button class="btn" type="submit"><i class="fa fa-search"></i></button> -->
+					</form>
+				</div>
+				
+				<!-- Mobile Menu Toggle -->
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fa fa-bars"></i>
+				</a>
+				<!-- /Mobile Menu Toggle -->
+				
+				<!-- Header Right Menu -->
+				<ul class="nav user-menu">
+
+					
+					<!-- /Notifications -->
+					
+					<!-- User Menu -->
+					<li class="nav-item dropdown has-arrow">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img class="rounded-circle" src="/admin/img/profiles/avatar-01.jpg" width="31" alt="ABC"></span>
+						</a>
+						<div class="dropdown-menu">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img src="/admin/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+								</div>
+								<div class="user-text">
+									<h6>ABC</h6>
+									<!-- <p class="text-muted mb-0">Administrator</p> -->
+								</div>
+							</div>
+							<a class="dropdown-item" href="/health_care/profile">My Profile</a>
+							<!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
+							<a class="dropdown-item" href="/health_care/logout">Logout</a>
+						</div>
+					</li>
+					<!-- /User Menu -->
+					
+				</ul>
+				<!-- /Header Right Menu -->
+				
+            </div>
+			<!-- /Header -->
+			
+			<!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+					<div id="sidebar-menu" class="sidebar-menu">
+						<ul>
+							<li class="menu-title"> 
+								<span>Main</span>
+							</li>
+							<li> 
+								<a href="/health_care/dashboard"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+							</li>
+							<li> 
+								<a href="/health_care/appointment_list"><i class="fe fe-layout"></i> <span>Appointments</span></a>
+							</li>
+							<li> 
+								<!-- <a href="specialities.html"><i class="fe fe-users"></i> <span>Specialities</span></a> -->
+							</li>
+							<li class="active"> 
+								<a href="doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+							</li>
+							<li> 
+								<a href="/health_care/patient_lists"><i class="fe fe-user"></i> <span>Patients</span></a>
+							</li>
+							
+							<li> 
+								<!-- <a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a> -->
+							</li>
+							<li>
+								<a href="/health_care/adddoc"><i class=""></i><span>Add Doctor</span></a>
+							</li>
+							<li>
+								<!-- <a href="add-pharmacy.html"><i class=""></i><span>Add Pharmacy</span></a> -->
+							</li>
+							<li>
+								<!-- <a href="add-Laboratory.html"><i class=""></i><span>Add Laboratory</span></a> -->
+							</li>
+							
+						</ul>
+					</div>
+                </div>
+            </div>
+			<!-- /Sidebar -->
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+				
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row">
+							<div class="col-sm-12">
+								<h3 class="page-title">List of Doctors</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+									<li class="breadcrumb-item"><a href="javascript:(0);">Users</a></li>
+									<li class="breadcrumb-item active">Doctor</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /Page Header -->
+					
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card">
+								<div class="card-body">
+									<div class="table-responsive">
+										<table class="datatable table table-hover table-center mb-0">
+											<thead>
+												<tr>
+													<th>Doctor Name</th>
+													<th>Speciality</th>
+													<th>Member Since</th>
+													<th>Earned</th>
+													<th>Account Status</th>
+													
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<h2 class="table-avatar">
+															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/admin/img/doctors/doctor-thumb-01.jpg" alt="User Image"></a>
+															<a href="profile.html">Dr. ABC</a>
+														</h2>
+													</td>
+													<td>Dental</td>
+													
+													<td>14 Jan 2019 <br><small>02.59 AM</small></td>
+													
+													<td>Rs.3100.00</td>
+													
+													<td>
+														<div class="status-toggle">
+															<input type="checkbox" id="status_1" class="check" checked>
+															<label for="status_1" class="checktoggle">checkbox</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h2 class="table-avatar">
+															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/admin/img/doctors/doctor-thumb-02.jpg" alt="User Image"></a>
+															<a href="profile.html">Dr. B...</a>
+														</h2>
+													</td>
+													<td>Dental</td>
+													
+													<td>11 Jun 2019 <br><small>4.50 AM</small></td>
+													
+													<td>Rs.5000.00</td>
+													
+													<td>
+														<div class="status-toggle">
+															<input type="checkbox" id="status_1" class="check" checked>
+															<label for="status_1" class="checktoggle">checkbox</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h2 class="table-avatar">
+															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/admin/img/doctors/doctor-thumb-03.jpg" alt="User Image"></a>
+															<a href="profile.html">Dr. C...</a>
+														</h2>
+													</td>
+													<td>Cardiology</td>
+													
+													<td>4 Jan 2018 <br><small>9.40 AM</small></td>
+													
+													<td>Rs.3300.00</td>
+													
+													<td>
+														<div class="status-toggle">
+															<input type="checkbox" id="status_1" class="check" checked>
+															<label for="status_1" class="checktoggle">checkbox</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h2 class="table-avatar">
+															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/admin/img/doctors/doctor-thumb-04.jpg" alt="User Image"></a>
+															<a href="profile.html">Dr. D...</a>
+														</h2>
+													</td>
+													<td>Urology</td>
+													
+													<td>5 Jul 2019 <br><small>12.59 AM</small></td>
+													
+													<td>Rs.3500.00</td>
+													
+													<td>
+														<div class="status-toggle">
+															<input type="checkbox" id="status_1" class="check" checked>
+															<label for="status_1" class="checktoggle">checkbox</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h2 class="table-avatar">
+															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="/admin/img/doctors/doctor-thumb-05.jpg" alt="User Image"></a>
+															<a href="profile.html">Dr. E...</a>
+														</h2>
+													</td>
+													<td>Orthopaedics</td>
+													
+													<td>24 Jan 2019 <br><small>02.59 AM</small></td>
+													
+													<td>RS.3700.00</td>
+													
+													<td>
+														<div class="status-toggle">
+															<input type="checkbox" id="status_1" class="check" checked>
+															<label for="status_1" class="checktoggle">checkbox</label>
+														</div>
+													</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>			
+					</div>
+					
+				</div>			
+			</div>
+			<!-- /Page Wrapper -->
+		
+        </div>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+        <script src="/admin/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="/admin/js/popper.min.js"></script>
+        <script src="/admin/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="/admin/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		
+		<!-- Datatables JS -->
+		<script src="/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="/admin/plugins/datatables/datatables.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script  src="/admin/js/script.js"></script>
+		
+    </body>
+
+
+</html>

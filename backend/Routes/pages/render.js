@@ -68,6 +68,68 @@ router.get("/addDoc", loggedin, (req, res) => {
   }
 });
 
+
+router.get("/appointment_list", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/appointment-list");
+  } else {
+    res.redirect("login");
+  }
+});
+router.get("/doctor_lists", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/doctor-list");
+  } else {
+    res.redirect("login");
+  }
+});
+
+
+
+
+
+
+
+
+router.get("/forgot_password", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/forgot-password");
+  } else {
+    res.redirect("login");
+  }
+});
+
+
+router.get("/patient_lists", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/patient-list");
+  } else {
+    res.redirect("login");
+  }
+});
+
+router.get("/profile", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/profile");
+  } else {
+    res.redirect("login");
+  }
+});
+router.get("/setting", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/settings");
+  } else {
+    res.redirect("login");
+  }
+});
+router.get("/profile1", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("hospital/profile1");
+  } else {
+    res.redirect("login");
+  }
+});
+
 router.get("/addLab", loggedin, (req, res) => {
   if (req.user) {
     res.render("hospital/add_laboratory");
