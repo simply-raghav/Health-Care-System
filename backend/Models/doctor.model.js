@@ -158,6 +158,10 @@ const doctorDetail = new mongoose.Schema(
         },
       },
     },
+    slot_interval: {
+      type: String,
+      deault : "30"
+    },
   },
   { timestamps: true }
 );
