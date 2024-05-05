@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 	
-<!-- /appointments.html   -->
+<!-- /my-patients.html   -->
 <head>
 		<meta charset="utf-8">
 		<title>Online Appointment</title>
@@ -21,7 +21,6 @@
 		<link rel="stylesheet" href="/css/style.css">
 		
 		
-	
 	</head>
 	<body>
 
@@ -33,74 +32,54 @@
 				<nav class="navbar navbar-expand-lg header-nav">
 					<div class="navbar-header">
 						<a id="mobile_btn" href="javascript:void(0);">
-							<span class="bar-icon">
-								<span></span>
-								<span></span>
-								<span></span>
-							</span>
-						</a>
+								<span class="bar-icon">
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+							</a>
 						<a href="index.html" class="navbar-brand logo">
-							<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
-						</a>
+								<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
+							</a>
 					</div>
 					<div class="main-menu-wrapper">
 						<div class="menu-header">
 							<a href="index.html" class="menu-logo">
-								<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
-							</a>
+									<img src="/img/logo.jpg" class="img-fluid" alt="Logo">
+								</a>
 							<a id="menu_close" class="menu-close" href="javascript:void(0);">
-								<i class="fas fa-times"></i>
-							</a>
+									<i class="fas fa-times"></i>
+								</a>
 						</div>
 						<ul class="main-nav">
-							<li>
-								<!-- <a href="index.html">Home</a> -->
+							<li class="active">
+								<!-- <a href="#">Home</a> -->
 							</li>
-							<li class="has-submenu active">
+							<li class="has-submenu">
 								<!-- <a href="doctor-dashboard.html">Doctors </a> -->
 								
-							</li>	
-							
+							</li>
+							<li class="has-submenu">
+								<!-- <a href="patient-dashboard.html">Patients </a> -->
+							</li>
+													<li>
+								<!-- <a href="admin/index.html" target="_blank">Admin</a> -->
+							</li>
+							<li>
+								<!-- <a href="admin/index.html" target="_blank">Hospital Admin</a> -->
+							</li>
 							<li class="login-link">
-								<!-- <a href="login.html">Login / Signup</a> -->
+								<!-- <a href="../loginsign up/127.0.0.15501/-doctor-">Login / Signup</a> -->
 							</li>
 						</ul>
-					</div>		 
+					</div>
 					<ul class="nav header-navbar-rht">
 						<li class="nav-item contact-item">
-							<!-- <div class="header-contact-img">
-								<i class="far fa-hospital"></i>							
-							</div>
-							<div class="header-contact-detail">
-								<p class="contact-header">Contact</p>
-								<p class="contact-info-header"> +91 315 369 5943</p>
-							</div> -->
+							
 						</li>
-						
-						<!-- User Menu -->
-						<!-- <li class="nav-item dropdown has-arrow logged-item">
-							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-								<span class="user-img">
-									<img class="rounded-circle" src="/img/doctors/doctor-thumb-02.jpg" width="31" alt="ABC">
-								</span>
-							</a>
-							<div class="dropdown-menu dropdown-menu-right">
-								<div class="user-header">
-									<div class="avatar avatar-sm">
-										<img src="/img/doctors/doctor-thumb-02.jpg" alt="User Image" class="avatar-img rounded-circle">
-									</div>
-									<div class="user-text">
-										<h6>XYZ</h6>
-										<p class="text-muted mb-0">Doctor</p>
-									</div>
-								</div>
-								<a class="dropdown-item" href="doctor-dashboard.html">Dashboard</a>
-								<a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>
-								<a class="dropdown-item" href="login.html">Logout</a>
-							</div>
-						</li> -->
-						<!-- /User Menu -->
-						
+						<li class="nav-item">
+							<!-- <a class="nav-link header-login" href="../loginsign up/127.0.0.15501/-doctor-appointment-booking-bootstrap-template-admin-dashboard-master/login.html">login / Signup </a> -->
+						</li>
 					</ul>
 				</nav>
 			</header>
@@ -114,10 +93,10 @@
 							<nav aria-label="breadcrumb" class="page-breadcrumb">
 								<ol class="breadcrumb">
 									<li class="breadcrumb-item"><a href="/health_care">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Appointments</li>
+									<li class="breadcrumb-item active" aria-current="page">My Patients</li>
 								</ol>
 							</nav>
-							<h2 class="breadcrumb-title">Appointments</h2>
+							<h2 class="breadcrumb-title">My Patients</h2>
 						</div>
 					</div>
 				</div>
@@ -141,7 +120,7 @@
 										<div class="profile-det-info" id="doctor_info">
 											<h3>Dr. ABC</h3>
 											
-											<div class="patient-details">
+											<div class="doctor-details">
 												<h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
 											</div>
 										</div>
@@ -156,14 +135,14 @@
 													<span>Dashboard</span>
 												</a>
 											</li>
-											<li class="active">
-												<a href="appointments.html">
+											<li>
+												<a href="/health_care/appointments">
 													<i class="fas fa-calendar-check"></i>
 													<span>Appointments</span>
 												</a>
 											</li>
-											<li>
-												<a href="my-patients.html">
+											<li class="active">
+												<a href="#">
 													<i class="fas fa-user-injured"></i>
 													<span>My Patients</span>
 												</a>
@@ -183,7 +162,7 @@
 											</li>
 											
 											<li>
-												<a href="doctor-change-password.html">
+												<a href="/health_care/doctor_change_password">
 													<i class="fas fa-lock"></i>
 													<span>Change Password</span>
 												</a>
@@ -201,70 +180,72 @@
 							<!-- /Profile Sidebar -->
 							
 						</div>
-						
 						<div class="col-md-7 col-lg-8 col-xl-9">
-							<div class="appointments">
-							
-								<!-- Appointment List -->
-								<div class="appointment-list" id="patient_info">
-									<div class="profile-info-widget">
-										<a href="doctor-patient-profile.html" class="booking-doc-img" id="user_image">
-											<img src="/img/patients/patient.jpg" alt="User Image">
-										</a>
-										<div class="profile-det-info" >
-											<h3><a href="doctor-patient-profile.html">A...</a></h3>
-											<div class="patient-details">
-												<h5><i class="far fa-clock"></i> 14 Nov 2023, 10.00 AM</h5>
-												<h5><i class="fas fa-map-marker-alt"></i> Mumbai</h5>
-												<h5><i class="fas fa-envelope"></i> adc@example.com</h5>
-												<h5 class="mb-0"><i class="fas fa-phone"></i> 923 782 4575</h5>
+						
+							<div class="row row-grid">
+								<div class="col-md-6 col-lg-4 col-xl-3">
+									<div class="card widget-profile pat-widget-profile">
+										<div class="card-body" id="patient_info">
+											<div class="pro-widget-content">
+												<div class="profile-info-widget">
+													<a href="doctor-patient-profile.html" class="booking-doc-img" id="user_image">
+														<img src="/img/patients/patient.jpg" alt="User Image">
+													</a>
+													<div class="profile-det-info" id="patient_detail">
+														<h3><a href="doctor-patient-profile.html">A...</a></h3>
+														
+														<div class="patient-details" id="patient_id">
+															<h5><b>Patient ID :</b> P0016</h5>
+															<h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Allahabad, India</h5>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="patient-info" id="patient_info">
+												<ul>
+													<li>Phone <span>952 001 8563</span></li>
+													<li>Age <span>38 Years, Male</span></li>
+													<li>Blood Group <span>AB+</span></li>
+												</ul>
 											</div>
 										</div>
 									</div>
-									<div class="appointment-action" id="action_button">
-										<a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-											<i class="far fa-eye"></i> View
-										</a>
-										<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-											<i class="fas fa-check"></i> Accept
-										</a>
-										<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-											<i class="fas fa-times"></i> Cancel
-										</a>
-									</div>
 								</div>
-								<!-- /Appointment List -->
-							
-								<!-- Appointment List -->
-								<div class="appointment-list" id="patient_info">
-									<div class="profile-info-widget">
-										<a href="doctor-patient-profile.html" class="booking-doc-img" id="user_image">
-											<img src="/img/patients/patient1.jpg" alt="User Image">
-										</a>
-										<div class="profile-det-info">
-											<h3><a href="doctor-patient-profile.html">B...</a></h3>
-											<div class="patient-details">
-												<h5><i class="far fa-clock"></i> 12 Nov 2024, 5.00 PM</h5>
-												<h5><i class="fas fa-map-marker-alt"></i> Delhi</h5>
-												<h5><i class="fas fa-envelope"></i> wwee@example.com</h5>
-												<h5 class="mb-0"><i class="fas fa-phone"></i>  828 632 9170</h5>
+								
+								<div class="col-md-6 col-lg-4 col-xl-3">
+									<div class="card widget-profile pat-widget-profile">
+										<div class="card-body">
+											<div class="pro-widget-content">
+												<div class="profile-info-widget">
+													<a href="doctor-patient-profile.html" class="booking-doc-img" id="user_image">
+														<img src="/img/patients/patient1.jpg" alt="User Image">
+													</a>
+													<div class="profile-det-info" id="patient_detail">
+														<h3><a href="doctor-patient-profile.html">B...</a></h3>
+														
+														<div class="patient-details" id="patient_id">
+															<h5><b>Patient ID :</b> P0001</h5>
+															<h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Allahabad, India</h5>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="patient-info" id="patient_info">
+												<ul>
+													<li>Phone <span>828 632 9170</span></li>
+													<li>Age <span>29 Years, Female</span></li>
+													<li>Blood Group <span>O+</span></li>
+												</ul>
 											</div>
 										</div>
 									</div>
-									<div class="appointment-action" id="action_button">
-										<a href="#" class="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-											<i class="far fa-eye"></i> View
-										</a>
-										<a href="javascript:void(0);" class="btn btn-sm bg-success-light">
-											<i class="fas fa-check"></i> Accept
-										</a>
-										<a href="javascript:void(0);" class="btn btn-sm bg-danger-light">
-											<i class="fas fa-times"></i> Cancel
-										</a>
-									</div>
 								</div>
-								<!-- /Appointment List -->
+								
+								
+								
+								
 							</div>
+
 						</div>
 					</div>
 
@@ -315,7 +296,6 @@
 							</div>
 	
 							 
-	
 							<div class="col-lg-3 col-md-6">
 	
 								<!-- Footer Widget -->
@@ -379,52 +359,6 @@
 		   
 		</div>
 		<!-- /Main Wrapper -->
-		
-		<!-- Appointment Details Modal -->
-		<div class="modal fade custom-modal" id="appt_details">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">Appointment Details</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<ul class="info-details">
-							<li>
-								<div class="details-header">
-									<div class="row">
-										<div class="col-md-6">
-											<span class="title">#APT0001</span>
-											<span class="text">21 Oct 2019 10:00 AM</span>
-										</div>
-										<div class="col-md-6">
-											<div class="text-right">
-												<button type="button" class="btn bg-success-light btn-sm" id="topup_status">Completed</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<span class="title">Status:</span>
-								<span class="text">Completed</span>
-							</li>
-							<li>
-								<span class="title">Confirm Date:</span>
-								<span class="text">29 Jun 2019</span>
-							</li>
-							<li>
-								<span class="title">Paid Amount</span>
-								<span class="text">$450</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /Appointment Details Modal -->
 	  
 		<!-- jQuery -->
 		<script src="/js/jquery.min.js"></script>
@@ -440,8 +374,7 @@
 		<!-- Custom JS -->
 		<script src="/js/script.js"></script>
 		
-		
 	</body>
 
-<!-- /appointments.html   -->
+<!-- /my-patients.html   -->
 </html>
