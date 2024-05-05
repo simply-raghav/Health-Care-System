@@ -29,7 +29,6 @@
 		<link rel="stylesheet" href="/css/style.css">
 		
 		
-	
 	</head>
 	<body onload="getData('<%= id %>')" onsubmit="saveData('<%= id %>')">
 
@@ -257,6 +256,8 @@
 													<option value="Select" >Select</option>
 													<option value="Male" id="male" >Male</option>
 													<option value="Female" id="Female">Female</option>
+													<option value="Others" id="Others">Others</option>
+
 												</select>
 											</div>
 										</div>
@@ -277,7 +278,7 @@
 									<h4 class="card-title">About Me</h4>
 									<div class="form-group mb-0" id="biography">
 										<label>Biography</label>
-										<textarea class="form-control" rows="5"></textarea>
+										<textarea class="form-control" id = "about_me" rows="5"></textarea>
 									</div>
 								</div>
 							</div>
@@ -288,18 +289,6 @@
 								<div class="card-body" id="clinic_info">
 									<h4 class="card-title">Clinic Info</h4>
 									<div class="row form-row">
-										<div class="col-md-6">
-											<div class="form-group" id="clinic_name">
-												<label>Clinic Name</label>
-												<input type="text" class="form-control">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group" id="clinic_address">
-												<label>Clinic Address</label>
-												<input type="text" class="form-control">
-											</div>
-										</div>
 										<div class="col-md-12">
 											<div class="form-group" id="clinic-image">
 												<label>Clinic Images</label>
@@ -572,7 +561,7 @@
 							<!-- /Registrations -->
 							
 							<div class="submit-section submit-btn-bottom" id="save_changes">
-								<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+								<button type="submit" onclick="updateData('<%= id %>')" class="btn btn-primary submit-btn">Save Changes</button>
 							</div>
 							
 						</div>

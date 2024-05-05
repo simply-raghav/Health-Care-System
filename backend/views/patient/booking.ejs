@@ -105,7 +105,8 @@
 <div class="schedule-header">
     <div class="row">
         <div class="col-md-12">
-            <span class="nav-button" id="prev_button">&lt;</span> <!-- Previous button -->
+            <!-- <span class="nav-button" id="prev_button">&lt;</span>  -->
+            <!-- Previous button -->
             <!-- Day Slot -->
             <div class="day-slot" id="day_slot">
                 <ul>
@@ -113,7 +114,8 @@
                 </ul>
             </div>
             <!-- /Day Slot -->
-            <span class="nav-button" id="next_button">></span> <!-- Next button -->
+            <!-- <span class="nav-button" id="next_button">></span>  -->
+            <!-- Next button -->
         </div>
     </div>
 </div>
@@ -195,38 +197,40 @@
             const timeSlotsList = document.querySelector('.time-slot ul');
             timeSlotsList.innerHTML = ''; // Clear previous time slots
             for (let i = 9; i <= 17; i++) {
-                const li = document.createElement('li');
-                if (i < 12) {
-                    li.innerHTML = `
+                for (let j = 0; j < 60; j += 15) {
+                    const li = document.createElement('li');
+                    if (i < 12) {
+                        li.innerHTML = `
                         <a class="timing" href="#">
-                            <span>${i}:00</span> <span>AM</span>
+                            <span>${i}:${j.toString().padStart(2, '0')}</span> <span>AM</span>
                         </a>
                     `;
-                } else if (i === 12) {
-                    li.innerHTML = `
+                    } else if (i === 12) {
+                        li.innerHTML = `
                         <a class="timing" href="#">
-                            <span>${i}:00</span> <span>PM</span>
+                            <span>${i}:${j.toString().padStart(2, '0')}</span> <span>PM</span>
                         </a>
                     `;
-                } else {
-                    li.innerHTML = `
+                    } else {
+                        li.innerHTML = `
                         <a class="timing" href="#">
-                            <span>${i - 12}:00</span> <span>PM</span>
+                            <span>${i - 12}:${j.toString().padStart(2, '0')}</span> <span>PM</span>
                         </a>
                     `;
+                    }
+                    // Add click event listener to select time slot
+                    li.addEventListener('click', function() {
+                        // Remove previously selected time slots
+                        const selectedSlots = document.querySelectorAll('.time-slot ul li.selected');
+                        selectedSlots.forEach(slot => slot.classList.remove('selected'));
+                        // Highlight the selected time slot
+                        li.classList.add('selected');
+                        const selectedTime = li.textContent.trim();
+                        console.log('Selected Time:', selectedTime);
+                        // You can add your logic to handle the selected time slot here
+                    });
+                    timeSlotsList.appendChild(li);
                 }
-                // Add click event listener to select time slot
-                li.addEventListener('click', function() {
-                    // Remove previously selected time slots
-                    const selectedSlots = document.querySelectorAll('.time-slot ul li.selected');
-                    selectedSlots.forEach(slot => slot.classList.remove('selected'));
-                    // Highlight the selected time slot
-                    li.classList.add('selected');
-                    const selectedTime = li.textContent.trim();
-                    console.log('Selected Time:', selectedTime);
-                    // You can add your logic to handle the selected time slot here
-                });
-                timeSlotsList.appendChild(li);
             }
         }
 
