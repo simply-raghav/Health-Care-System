@@ -25,7 +25,10 @@ const doctor_data = (id) => {
         document.getElementById("doctor_address_form").value =
           data.result.address;
         console.log(data.result.gender);
-        document.getElementById("gender_form").value = data.result.gender;
+        const gender = document.getElementById("gender_form")
+        gender.value = data.result.gender;
+        gender.dispatchEvent(new Event('change'));
+
 
         // document.getElementById("doctor_dob_form").value= data.result.DOB;
       } else {

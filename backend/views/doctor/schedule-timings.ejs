@@ -26,7 +26,7 @@
 		
 	
 	</head>
-	<body>
+	<body onload="getData( '<%= id %>' )">
 
 		<!-- Main Wrapper -->
 		<div class="main-wrapper">
@@ -1457,94 +1457,82 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 		</script>
-		
 		<!-- Start & end time validation for Monday slot -->
 
-
-
-
-
-
-
-
 		<!-- Holiday checkbox toggle for tuesday slot -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-var tuesdayHolidayCheckbox = document.getElementById("tuesdayHolidayCheckbox");
-var tuesdayHoursInfoDiv = document.querySelector("#slot_tuesday .hours-info");
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+		var tuesdayHolidayCheckbox = document.getElementById("tuesdayHolidayCheckbox");
+		var tuesdayHoursInfoDiv = document.querySelector("#slot_tuesday .hours-info");
 
-// Initially hide the hours-info div if the checkbox is checked
-if (tuesdayHolidayCheckbox.checked) {
-tuesdayHoursInfoDiv.style.display = "none";
-}
+		// Initially hide the hours-info div if the checkbox is checked
+		if (tuesdayHolidayCheckbox.checked) {
+		tuesdayHoursInfoDiv.style.display = "none";
+		}
 
-// Add event listener to the checkbox
-tuesdayHolidayCheckbox.addEventListener("change", function() {
-// Toggle the visibility of hours-info div based on checkbox state
-if (this.checked) {
-    tuesdayHoursInfoDiv.style.display = "none";
-} else {
-    tuesdayHoursInfoDiv.style.display = "block";
-}
-});
-});
-</script>
-<!-- Holiday checkbox toggle for tuesday slot -->
+		// Add event listener to the checkbox
+		tuesdayHolidayCheckbox.addEventListener("change", function() {
+		// Toggle the visibility of hours-info div based on checkbox state
+		if (this.checked) {
+			tuesdayHoursInfoDiv.style.display = "none";
+		} else {
+			tuesdayHoursInfoDiv.style.display = "block";
+		}
+		});
+		});
+		</script>
+		<!-- Holiday checkbox toggle for tuesday slot -->
 
-<!-- Start & end time validation for tuesday slot -->
-<script>
+		<!-- Start & end time validation for tuesday slot -->
+		<script>
 
-document.addEventListener("DOMContentLoaded", function() {
-var tuesdayStartTimeSelect = document.getElementById("tuesdayStartTime");
-var tuesdayEndTimeSelect = document.getElementById("tuesdayEndTime");
+		document.addEventListener("DOMContentLoaded", function() {
+		var tuesdayStartTimeSelect = document.getElementById("tuesdayStartTime");
+		var tuesdayEndTimeSelect = document.getElementById("tuesdayEndTime");
 
-for (var i = 0; i < 24; i++) {
-var hour = (i < 10) ? "0" + i : i;
-tuesdayStartTimeSelect.options[tuesdayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
-}
+		for (var i = 0; i < 24; i++) {
+		var hour = (i < 10) ? "0" + i : i;
+		tuesdayStartTimeSelect.options[tuesdayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+		}
 
-function updatetuesdayEndTimeOptions() {
-var selectedtuesdayStartTime = document.getElementById("tuesdayStartTime").value;
+		function updatetuesdayEndTimeOptions() {
+		var selectedtuesdayStartTime = document.getElementById("tuesdayStartTime").value;
 
-tuesdayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
+		tuesdayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
 
-for (var i = parseInt(selectedtuesdayStartTime.split(":")[0]) + 1; i <= 23; i++) {
-    var hour = (i < 10) ? "0" + i : i;
-    tuesdayEndTimeSelect.options[tuesdayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
-}
-}
+		for (var i = parseInt(selectedtuesdayStartTime.split(":")[0]) + 1; i <= 23; i++) {
+			var hour = (i < 10) ? "0" + i : i;
+			tuesdayEndTimeSelect.options[tuesdayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+		}
+		}
 
-tuesdayStartTimeSelect.addEventListener("change", updatetuesdayEndTimeOptions);
+		tuesdayStartTimeSelect.addEventListener("change", updatetuesdayEndTimeOptions);
 
-document.getElementById("tuesdayForm").addEventListener("submit", function(event) {
-event.preventDefault();
-var startTime = document.getElementById("tuesdayStartTime").value;
-var endTime = document.getElementById("tuesdayEndTime").value;
+		document.getElementById("tuesdayForm").addEventListener("submit", function(event) {
+		event.preventDefault();
+		var startTime = document.getElementById("tuesdayStartTime").value;
+		var endTime = document.getElementById("tuesdayEndTime").value;
 
-if (startTime === "-" || endTime === "-") {
-    alert("Please select both start time and end time.");
-    return false;
-}
+		if (startTime === "-" || endTime === "-") {
+			alert("Please select both start time and end time.");
+			return false;
+		}
 
-var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
-var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+		var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+		var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
 
-if (startTimeMinutes >= endTimeMinutes) {
-    alert("Start time must be less than end time.");
-    return false;
-}
+		if (startTimeMinutes >= endTimeMinutes) {
+			alert("Start time must be less than end time.");
+			return false;
+		}
 
-document.getElementById("tuesdayForm").submit();
-});
-});
-
-
-</script>
-
-<!-- Start & end time validation for tuesday slot -->
+		document.getElementById("tuesdayForm").submit();
+		});
+		});
 
 
-
+		</script>
+		<!-- Start & end time validation for tuesday slot -->
 
 		<!-- Holiday checkbox toggle for wednesday slot -->
         <script>
@@ -1619,11 +1607,7 @@ document.getElementById("tuesdayForm").submit();
         
         
         </script>
-        
         <!-- Start & end time validation for wednesday slot -->
-
-
-
 
 				<!-- Holiday checkbox toggle for thursday slot -->
 				<script>
@@ -1697,12 +1681,8 @@ document.getElementById("tuesdayForm").submit();
 				});
 				
 				
-				</script>
-				
+				</script>				
 				<!-- Start & end time validation for thursday slot -->
-
-
-
 
 						<!-- Holiday checkbox toggle for friday slot -->
 						<script>
@@ -1780,86 +1760,85 @@ document.getElementById("tuesdayForm").submit();
 						
 						<!-- Start & end time validation for friday slot -->
 
+						<!-- Holiday checkbox toggle for saturday slot -->
+						<script>
+							document.addEventListener("DOMContentLoaded", function() {
+						var saturdayHolidayCheckbox = document.getElementById("saturdayHolidayCheckbox");
+						var saturdayHoursInfoDiv = document.querySelector("#slot_saturday .hours-info");
+						
+						// Initially hide the hours-info div if the checkbox is checked
+						if (saturdayHolidayCheckbox.checked) {
+						saturdayHoursInfoDiv.style.display = "none";
+						}
+						
+						// Add event listener to the checkbox
+						saturdayHolidayCheckbox.addEventListener("change", function() {
+						// Toggle the visibility of hours-info div based on checkbox state
+						if (this.checked) {
+							saturdayHoursInfoDiv.style.display = "none";
+						} else {
+							saturdayHoursInfoDiv.style.display = "block";
+						}
+						});
+						});
+						</script>
+						<!-- Holiday checkbox toggle for saturday slot -->
+						
+						<!-- Start & end time validation for saturday slot -->
+						<script>
+						
+						document.addEventListener("DOMContentLoaded", function() {
+						var saturdayStartTimeSelect = document.getElementById("saturdayStartTime");
+						var saturdayEndTimeSelect = document.getElementById("saturdayEndTime");
+						
+						for (var i = 0; i < 24; i++) {
+						var hour = (i < 10) ? "0" + i : i;
+						saturdayStartTimeSelect.options[saturdayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+						}
+						
+						function updatesaturdayEndTimeOptions() {
+						var selectedsaturdayStartTime = document.getElementById("saturdayStartTime").value;
+						
+						saturdayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
+						
+						for (var i = parseInt(selectedsaturdayStartTime.split(":")[0]) + 1; i <= 23; i++) {
+							var hour = (i < 10) ? "0" + i : i;
+							saturdayEndTimeSelect.options[saturdayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
+						}
+						}
+						
+						saturdayStartTimeSelect.addEventListener("change", updatesaturdayEndTimeOptions);
+						
+						document.getElementById("saturdayForm").addEventListener("submit", function(event) {
+						event.preventDefault();
+						var startTime = document.getElementById("saturdayStartTime").value;
+						var endTime = document.getElementById("saturdayEndTime").value;
+						
+						if (startTime === "-" || endTime === "-") {
+							alert("Please select both start time and end time.");
+							return false;
+						}
+						
+						var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
+						var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
+						
+						if (startTimeMinutes >= endTimeMinutes) {
+							alert("Start time must be less than end time.");
+							return false;
+						}
+						
+						document.getElementById("saturdayForm").submit();
+						});
+						});
+						
+						
+						</script>
+						
+						<!-- Start & end time validation for saturday slot -->
+						
 
-
-
-								<!-- Holiday checkbox toggle for saturday slot -->
-								<script>
-									document.addEventListener("DOMContentLoaded", function() {
-								var saturdayHolidayCheckbox = document.getElementById("saturdayHolidayCheckbox");
-								var saturdayHoursInfoDiv = document.querySelector("#slot_saturday .hours-info");
-								
-								// Initially hide the hours-info div if the checkbox is checked
-								if (saturdayHolidayCheckbox.checked) {
-								saturdayHoursInfoDiv.style.display = "none";
-								}
-								
-								// Add event listener to the checkbox
-								saturdayHolidayCheckbox.addEventListener("change", function() {
-								// Toggle the visibility of hours-info div based on checkbox state
-								if (this.checked) {
-									saturdayHoursInfoDiv.style.display = "none";
-								} else {
-									saturdayHoursInfoDiv.style.display = "block";
-								}
-								});
-								});
-								</script>
-								<!-- Holiday checkbox toggle for saturday slot -->
-								
-								<!-- Start & end time validation for saturday slot -->
-								<script>
-								
-								document.addEventListener("DOMContentLoaded", function() {
-								var saturdayStartTimeSelect = document.getElementById("saturdayStartTime");
-								var saturdayEndTimeSelect = document.getElementById("saturdayEndTime");
-								
-								for (var i = 0; i < 24; i++) {
-								var hour = (i < 10) ? "0" + i : i;
-								saturdayStartTimeSelect.options[saturdayStartTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
-								}
-								
-								function updatesaturdayEndTimeOptions() {
-								var selectedsaturdayStartTime = document.getElementById("saturdayStartTime").value;
-								
-								saturdayEndTimeSelect.innerHTML = "<option value='-'>-</option>";
-								
-								for (var i = parseInt(selectedsaturdayStartTime.split(":")[0]) + 1; i <= 23; i++) {
-									var hour = (i < 10) ? "0" + i : i;
-									saturdayEndTimeSelect.options[saturdayEndTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
-								}
-								}
-								
-								saturdayStartTimeSelect.addEventListener("change", updatesaturdayEndTimeOptions);
-								
-								document.getElementById("saturdayForm").addEventListener("submit", function(event) {
-								event.preventDefault();
-								var startTime = document.getElementById("saturdayStartTime").value;
-								var endTime = document.getElementById("saturdayEndTime").value;
-								
-								if (startTime === "-" || endTime === "-") {
-									alert("Please select both start time and end time.");
-									return false;
-								}
-								
-								var startTimeMinutes = parseInt(startTime.split(':')[0]) * 60 + parseInt(startTime.split(':')[1]);
-								var endTimeMinutes = parseInt(endTime.split(':')[0]) * 60 + parseInt(endTime.split(':')[1]);
-								
-								if (startTimeMinutes >= endTimeMinutes) {
-									alert("Start time must be less than end time.");
-									return false;
-								}
-								
-								document.getElementById("saturdayForm").submit();
-								});
-								});
-								
-								
-								</script>
-								
-								<!-- Start & end time validation for saturday slot -->
-
-
+						<!-- Body Onload Time Slot Updation -->
+						<script src="/js/Doctor/schedule-timings.js"></script>
 
 
 
