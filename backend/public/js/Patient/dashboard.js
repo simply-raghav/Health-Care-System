@@ -25,6 +25,73 @@ const patient_data = (id) => {
 
 }
 
+
+
+
+
+
+
+
+
+// patient apt render
+
+const patient_apt = (apt) => {
+  
+  var date = new Date(apt.dateofAppointment);
+  var book_date = new Date(apt.dateOfBooking);
+  var book_day =book_date.getDate();
+  var book_month = book_date.getMonth();
+  var book_year = book_date.getFullYear();
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1; // Months are zero-based, so we add 1
+  var day = date.getDate();
+  const appointment = `<tr>
+  <td>
+    <h2 class="table-avatar">
+      <a href="doctor-profile.html" class="avatar avatar-sm mr-2" id="doctor_img">
+        <img class="avatar-img rounded-circle" src="/img/doctor/doctor-01.jpg" alt="doctor Image">
+      </a>
+      <a href="doctor-profile.html" id="doctor_name">${apt.doctorId.name}<span id="specility">Dental</span></a>
+    </h2>
+  </td>
+  <td>${day}:${month}:${year}<span class="d-block text-info">${apt.timeofAppointment}</span></td>
+  <td>${book_day}:${book_month}:${book_year}</td>
+  <td>${apt.amount} &#x20B9</td>
+  
+  
+    </div>
+  </td>
+</tr>
+`;
+
+document.getElementById("appointments_list").innerHTML += appointment;
+};
+
+// patient apt render
+
+
+
+
+{/* <td><span class="badge badge-pill bg-success-light">Confirm</span></td>
+  <td class="text-right">
+    <div class="table-action">
+      <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
+        <i class="fas fa-print"></i> Print
+      </a>
+      <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
+        <i class="far fa-eye"></i> View
+      </a> */}
+
+
+
+
+
+
+
+
+
+
+
 const patient_appointments = (id) => {
     fetch("/appointment/viewAppointment_patient", {
       method: "POST",
@@ -42,8 +109,10 @@ const patient_appointments = (id) => {
         console.log(result);
         const sortedres = result.sort( (a, b) => new Date(a.dateofAppointment) - new Date(b.dateofAppointment) );
         console.log("Sorted: ", sortedres);
-        for (let i = 0; i < sortedres.length; i++) {
-          console.log(sortedres[i]);
+        for (let i = 0; i < data.result.length; i++) {
+          console.log(sortedres);
+          patient_apt(sortedres[i]);
+
         }
       });
 
