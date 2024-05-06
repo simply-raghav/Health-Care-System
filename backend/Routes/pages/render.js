@@ -213,6 +213,15 @@ router.get("/schedule-timings", loggedin, (req, res) => {
     res.redirect("login");
   }
 });
+router.get("/my_patients", loggedin, (req, res) => {
+  if (req.user) {
+    res.render("doctor/my-patients", {
+      id: req.user.id,
+    });
+  } else {
+    res.redirect("login");
+  }
+});
 
 router.get("/doctor_profile_settings", loggedin, (req, res) => {
   if (req.user) {
@@ -241,15 +250,6 @@ router.get("/doctor_change_password", loggedin, (req, res) => {
 
 
 
-router.get("/my_patients", loggedin, (req, res) => {
-  if (req.user) {
-    res.render("doctor/my-patients", {
-      id: req.user.id,
-    });
-  } else {
-    res.redirect("login");
-  }
-});
 
 
 
