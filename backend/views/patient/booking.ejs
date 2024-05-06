@@ -146,7 +146,7 @@
 
                         <!-- Submit Section -->
                         <div class="submit-section proceed-btn text-right" id="proceed_to_pay">
-                            <a href=""id="payButton" class="btn btn-primary submit-btn">Proceed to Pay</a>
+                            <a id="payButton" onclick="proceedPay('<%= id %>')" class="btn btn-primary submit-btn">Proceed to Pay</a>
                         </div>
                         <!-- /Submit Section -->
 
@@ -380,7 +380,7 @@
   }
 
   // Add event listener for payment button
-  document.getElementById("payButton").addEventListener("click", handlePayment);
+  document.getElementById("payButtons").addEventListener("click", handlePayment);
 
   // Add event listener for home link
   document.getElementById("homeLink").addEventListener("click", function(event) {

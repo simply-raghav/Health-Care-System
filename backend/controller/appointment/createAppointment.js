@@ -14,7 +14,16 @@ const createAppointment = async (req, res)=>{
         console.log("hi there", data);
         const doctorId = data._id;
         
-        const appt = {doctorId, doctorId, dateofAppointment, dateOfBooking, status, amount};
+        const appt = {
+            doctorId, 
+            patientId, 
+            dateofAppointment, 
+            timeofAppointment, 
+            dateOfBooking,
+            timeOfBooking, 
+            status, 
+            amount,
+        };
         console.log(appt);
         const newAppt = new Appointment(appt);
         const result = await newAppt.save();
