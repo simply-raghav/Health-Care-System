@@ -38,5 +38,24 @@ const getAllAppointments_doctor = async (req, res) => {
   }
 };
 
+const getAllAppointments_patient = async (req, res) => {
+  try {
+    console.log("Appointment : ", req);
+    const result = await Appointment.find({ patientId: req.body.id })
+      .populate("doctorId")
+      .populate("patientId");
+    return res.json({
+      status: "success",
+      message: "entry created successfully",
+      result: result,
+    });
+  } catch (error) {
+    return res.json({
+      status: "Error",
+      message: error.message,
+    });
+  }
+};
 
-module.exports = {getAllAppointments, getAllAppointments_doctor};
+
+module.exports = {getAllAppointments, getAllAppointments_doctor, getAllAppointments_patient};
