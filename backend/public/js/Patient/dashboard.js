@@ -42,8 +42,8 @@ const patient_appointments = (id) => {
         console.log(result);
         const sortedres = result.sort( (a, b) => new Date(a.dateofAppointment) - new Date(b.dateofAppointment) );
         console.log("Sorted: ", sortedres);
-        for (let i = 0; i < data.result.length; i++) {
-          console.log(data.result[i]);
+        for (let i = 0; i < sortedres.length; i++) {
+          console.log(sortedres[i]);
         }
       });
 

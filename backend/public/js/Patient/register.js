@@ -66,5 +66,53 @@ register.addEventListener("submit", async () => {
   }
 });
 
+let global_OTP;
 
-  
+document.getElementById("verifyEmail").addEventListener('click',()=>{
+    const email = document.getElementById("email");
+    const OTPinput = document.getElementById("OTPinput");
+    const OTPLabel = document.getElementById("OTPLabel");
+    const verifyOTP = document.getElementById("verifyOTP");
+    if(email.value.length == 0){
+      alert("Blank email can't be verified");
+      return;
+    }
+      fetch("/auth/email", {
+        method: "POST",
+        body: JSON.stringify({
+          email : email.value
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("data: ", data);
+          if (data.status === "success") {
+            global_OTP = data.OTP;
+            return;
+          } else if (data.status === "Failure") {
+            alert(data.message);
+          }
+          console.log("Data: ", data);
+        });
+
+    OTPinput.removeAttribute("class", "hide");
+    OTPLabel.removeAttribute("class", "hide");
+    verifyOTP.removeAttribute("class", "hide");
+})
+
+document.getElementById("verifyOTP").addEventListener('click',()=>{
+    const OTPinput = document.getElementById("OTPinput");
+    const OTPLabel = document.getElementById("OTPLabel");
+    const verifyOTP = document.getElementById("verifyOTP");
+    if(OTPinput === global_OTP){
+      alert("OTP Verified");
+      OTPinput.setAttribute("class", "hide");
+      OTPLabel.setAttribute("class", "hide");
+      verifyOTP.setAttribute("class", "hide");
+    }
+
+});
+

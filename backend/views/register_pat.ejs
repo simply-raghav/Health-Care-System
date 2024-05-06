@@ -142,15 +142,22 @@
     </div>
 	<br>
 	<br>
-    <div class="form-group form-focus">
+	<div class="form-group ">
+		<input type="email" class="form-control floating" pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+			title="Please enter a valid Gmail address" id="email" required>
+		<label class="focus-label">Email Address</label><br>
+		<button id="verifyEmail" class="btn btn-primary">Verify Email</button>
+	</div>
+
+    <!-- <div class="form-group ">
         <input type="email" class="form-control floating" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" title="Please enter a valid Gmail address" id = "email" required>
-        <label class="focus-label">Email Address</label>
-		<button class = "btn btn-primary btn-block btn-lg" id = "verifyEmail">Verify Email</button>
-    </div>
-	<div class="form-group form-focus">
-		<input type="number" class="form-control floating hide" id="OTP" required>
-		<label class="focus-label hide">Enter OTP</label>
-		<button class = "" id="verifyOTP">Verify OTP</button>
+        <label class="focus-label">Email Address</label><br>
+		<button id = "verifyEmail">Verify Email</button>
+    </div> -->
+	<div class="form-group form-focus" >
+		<input type="number" class="form-control floating hide" id="OTPinput">
+		<label class="focus-label hide" id = "OTPLabel">Enter OTP</label>
+		<button class="btn btn-primary hide" id="verifyOTP"  onclick="verify_OTP()">Verify OTP</button>
 	</div>
     <div class="form-group form-focus">
         <input type="text" class="form-control floating" id = "contact" pattern="[0-9]{10}" title="Please enter a 10-digit mobile number" required>
