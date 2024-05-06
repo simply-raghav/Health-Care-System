@@ -27,7 +27,7 @@ const appointmentDetail = new mongoose.Schema({
     },
     status : {
         type : String,
-        enum : ["Completed", "Cancelled", "Pending", "Confirmedw"]
+        enum : ["Completed", "Cancelled", "Pending", "Confirmed"]
     }, 
     amount : {
         type : Number

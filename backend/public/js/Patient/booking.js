@@ -148,7 +148,7 @@ function generateTimeSlots(slotDuration, startTime, endTime) {
 };
 
 
-const patient_data = (id) => {
+const doctor_data = (id) => {
   fetch("/authDoctor/users", {
     method: "POST",
     body: JSON.stringify({
@@ -163,6 +163,8 @@ const patient_data = (id) => {
       console.log("data: ", data);
       document.getElementById("docName").innerHTML = "Dr. " + data.result.name;
       document.getElementById("address").innerHTML = data.result.hospital.name + ", " + data.result.hospital.address;   
+      document.getElementById("doctor_id").innerHTML = data.result._id ;
+      document.getElementById("doctor_amt").innerHTML = data.result.pricing ;
       console.log(data.result.slot_interval);
       console.log(data.result.timings.Sunday);
     slot = data.result.slot_interval;
@@ -173,12 +175,41 @@ const patient_data = (id) => {
 };
 const getData = (id) => {
     console.log("Patient Id: ", id);
-    patient_data(id);
+    doctor_data(id);
 };
 
 const proceedPay = (id) => {
     console.log("Selected Date:", finaldate);
     console.log("Selected Time:", finaltime);
-    
+    const doctorId = document.getElementById("doctor_id").innerHTML;
+    const amount = document.getElementById("doctor_amt").innerHTML;
+    const data = {
+        doctorId : doctorId,
+        dateofAppointment : finaldate,
+        timeofAppointment : finaltime,
+        amount : amount
+    }
+    console.log("Data for Appointment: ", data);
+
+    fetch("/appointment/makeAppointment", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.status === 'success'){
+            alert("Appointment Created Successfully");
+            window.location.href = "/health_care/dashboard";
+            console.log(data);
+            return;
+        }else {
+            alert("Something went wrong!!! Please try again later");
+            window.location.href = "/health_care/dashboard";
+            return;
+        }
+      });
 
 }
