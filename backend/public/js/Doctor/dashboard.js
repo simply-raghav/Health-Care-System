@@ -37,6 +37,7 @@ const doctor_appointments = (id) => {
         console.log(data);
         
         let appointment_body = "";
+        console.log("data: ", data);
         for (let i = 0; i < data.result.length; i++) {
           appointment_body += `<tr>
           <tbody id = "appointment_upcoming_list">

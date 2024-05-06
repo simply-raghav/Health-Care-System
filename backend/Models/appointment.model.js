@@ -7,7 +7,7 @@ const appointmentDetail = new mongoose.Schema({
     }, 
     patientId : {
         type : mongoose.Schema.Types.ObjectId, 
-        ref : "doctor"
+        ref : "patient"
     }, 
     dateofAppointment : {
         type : Date,
