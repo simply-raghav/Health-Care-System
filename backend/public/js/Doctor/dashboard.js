@@ -106,7 +106,7 @@ const today_apt = (apt) => {
 const past_apt = (apt) => {
 
   var date = new Date(apt.dateofAppointment);
-
+  // var book_date = new Date(apt.dateOfBooking);
   var year = date.getFullYear();
   var month = date.getMonth() + 1; // Months are zero-based, so we add 1
   var day = date.getDate();
