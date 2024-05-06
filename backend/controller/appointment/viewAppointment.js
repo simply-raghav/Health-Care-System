@@ -40,7 +40,7 @@ const getAllAppointments_doctor = async (req, res) => {
 
 const getAllAppointments_patient = async (req, res) => {
   try {
-    console.log("Appointment : ", req.b);
+    console.log("Appointment : ", req);
     const result = await Appointment.find({ patientId: req.body.id })
       .populate("doctorId")
       .populate("patientId");
