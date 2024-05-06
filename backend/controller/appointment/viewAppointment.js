@@ -24,7 +24,7 @@ const getAllAppointments_doctor = async (req, res) => {
 
   try {
       console.log("Appointment : ", req.b);
-    const result = await Appointment.find({ doctorId: req.body.doctor_id });
+    const result = await Appointment.find({ doctorId: req.body.doctor_id }).populate("doctorId").populate("patientId");
     return res.json({
       status: "success",
       message: "entry created successfully",

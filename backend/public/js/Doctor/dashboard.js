@@ -35,6 +35,7 @@ const doctor_appointments = (id) => {
       .then((res) => res.json())
       .then((data) => {
         let appointment_body = "";
+        console.log("data: ", data);
         for (let i = 0; i < data.result.length; i++) {
           appointment_body += `<tr>
             <td>
