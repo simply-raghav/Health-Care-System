@@ -23,7 +23,7 @@ const doctor_data = (id) => {
 }
 
 const doctor_appointments = (id) => {
-    fetch("/appointment/viewAppointment", {
+    fetch("/appointment/viewAppointment_doctor", {
       method: "POST",
       body: JSON.stringify({
         doctor_id: id,
@@ -60,8 +60,9 @@ const doctor_appointments = (id) => {
         }
 
         console.log(appointment_body);
-        if(appointment_body) document.getElementById("appointment_upcoming_list").innerHTML +=
-          appointment_body;
+        if (appointment_body)
+          document.getElementById("appointment_upcoming_list").innerHTML +=
+            appointment_body;
       });
 
 }
