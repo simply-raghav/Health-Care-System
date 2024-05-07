@@ -118,13 +118,13 @@
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
 										<a href="#" class="booking-doc-img" id="doctor_image">
-											<img src="/img/doctors/doctor-thumb-02.jpg" alt="Doctor Image">
+											<img src="/img/doctor/doctor-thumb-02.jpg" alt="Doctor Image">
 										</a>
 										<div class="profile-det-info" id="doctor_info">
-											<h3>Dr. ABC</h3>
+											<h3 id = "doctor_name">Dr. ABC</h3>
 											
 											<div class="patient-details">
-												<h5 class="mb-0">BDS, MDS - Oral & Maxillofacial Surgery</h5>
+												<h5 class="mb-0" class = "degree">BDS, MDS - Oral & Maxillofacial Surgery</h5>
 											</div>
 										</div>
 									</div>
@@ -198,7 +198,7 @@
 													<div class="col-lg-4">
 														<div class="form-group" id="time_slot">               
 															<label>Timing Slot Duration</label>
-															<select class="select form-control">
+															<select class="select form-control" id = "time_slot">
 																<option >-</option>
 																<option>15 mins</option>
 																<option selected="selected" >30 mins</option>  
@@ -346,7 +346,7 @@
 																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
 																			</div> -->
 																			<div class="submit-section text-center">
-																				<button type="submit"  class="btn btn-primary submit-btn">Save Changes</button>
+																				<button onclick="setData( '<%= id %>' )"  class="btn btn-primary submit-btn">Save Changes</button>
 																			</div>
 																		</form>
 																	</div>
@@ -450,7 +450,7 @@
 																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
 																			</div> -->
 																			<div class="submit-section text-center">
-																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																				<button onclick="setData( '<%= id %>' )" class="btn btn-primary submit-btn">Save Changes</button>
 																			</div>
 																		</form>
 																	</div>
@@ -554,7 +554,7 @@
 																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
 																			</div> -->
 																			<div class="submit-section text-center">
-																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																				<button onclick="setData( '<%= id %>' )" class="btn btn-primary submit-btn">Save Changes</button>
 																			</div>
 																		</form>
 																	</div>
@@ -658,7 +658,7 @@
 																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
 																			</div> -->
 																			<div class="submit-section text-center">
-																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																				<button onclick="setData( '<%= id %>' )" class="btn btn-primary submit-btn">Save Changes</button>
 																			</div>
 																		</form>
 																	</div>
@@ -762,7 +762,7 @@
 																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
 																			</div> -->
 																			<div class="submit-section text-center">
-																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																				<button onclick="setData( '<%= id %>' )" class="btn btn-primary submit-btn">Save Changes</button>
 																			</div>
 																		</form>
 																	</div>
@@ -866,7 +866,7 @@
 																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
 																			</div> -->
 																			<div class="submit-section text-center">
-																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																				<button onclick="setData( '<%= id %>' )" class="btn btn-primary submit-btn">Save Changes</button>
 																			</div>
 																		</form>
 																	</div>
@@ -970,7 +970,7 @@
 																				<a href="javascript:void(0);" class="add-hours"><i class="fa fa-plus-circle"></i> Add More</a>
 																			</div> -->
 																			<div class="submit-section text-center">
-																				<button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+																				<button onclick="setData( '<%= id %>' )" class="btn btn-primary submit-btn">Save Changes</button>
 																			</div>
 																		</form>
 																	</div>
@@ -1303,22 +1303,29 @@
 		<!-- Custom JS -->
 		<script src="/js/script.js"></script>
 
+
 		<!-- holiday checkbox toggle -->
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
 				var holidayCheckbox = document.getElementById("holidayCheckbox");
 				var hoursInfoDiv = document.querySelector(".hours-info");
-		
+				var startTimeSelect = document.getElementById("startTime");
+				var endTimeSelect = document.getElementById("endTime");
+				
 				// Initially hide the hours-info div if the checkbox is checked
 				if (holidayCheckbox.checked) {
 					hoursInfoDiv.style.display = "none";
+					
 				}
-		
+				
 				// Add event listener to the checkbox
 				holidayCheckbox.addEventListener("change", function() {
 					// Toggle the visibility of hours-info div based on checkbox state
 					if (this.checked) {
 						hoursInfoDiv.style.display = "none";
+						var startTimeSelect = document.getElementById("startTime");
+						startTimeSelect.value = '-';
+						startTimeSelect.dispatchEvent(new Event('change'));
 					} else {
 						hoursInfoDiv.style.display = "block";
 					}
@@ -1332,7 +1339,7 @@
 			// Populate options for start time
 			var startTimeSelect = document.getElementById("startTime");
 			var endTimeSelect = document.getElementById("endTime");
-		
+
 			for (var i = 0; i < 24; i++) {
 				var hour = (i < 10) ? "0" + i : i;
 				startTimeSelect.options[startTimeSelect.options.length] = new Option(hour + ":00", hour + ":00");
@@ -1381,7 +1388,6 @@
 				document.getElementById("timeForm").submit();
 			});
 		</script>
-		
 		<!-- start & end time validation -->
 
 		<!-- Holiday checkbox toggle for Monday slot -->
@@ -1394,12 +1400,15 @@
     if (mondayHolidayCheckbox.checked) {
         mondayHoursInfoDiv.style.display = "none";
     }
-
+	
     // Add event listener to the checkbox
     mondayHolidayCheckbox.addEventListener("change", function() {
-        // Toggle the visibility of hours-info div based on checkbox state
+		// Toggle the visibility of hours-info div based on checkbox state
         if (this.checked) {
-            mondayHoursInfoDiv.style.display = "none";
+			mondayHoursInfoDiv.style.display = "none";
+			var startTimeSelect = document.getElementById("mondayStartTime");
+			startTimeSelect.value = '-';
+			startTimeSelect.dispatchEvent(new Event('change'));
         } else {
             mondayHoursInfoDiv.style.display = "block";
         }
@@ -1467,14 +1476,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		// Initially hide the hours-info div if the checkbox is checked
 		if (tuesdayHolidayCheckbox.checked) {
-		tuesdayHoursInfoDiv.style.display = "none";
+			tuesdayHoursInfoDiv.style.display = "none";
 		}
-
+		
 		// Add event listener to the checkbox
 		tuesdayHolidayCheckbox.addEventListener("change", function() {
-		// Toggle the visibility of hours-info div based on checkbox state
-		if (this.checked) {
-			tuesdayHoursInfoDiv.style.display = "none";
+			// Toggle the visibility of hours-info div based on checkbox state
+			if (this.checked) {
+				tuesdayHoursInfoDiv.style.display = "none";
+				var startTimeSelect = document.getElementById("tuesdayStartTime");
+				startTimeSelect.value = '-';
+				startTimeSelect.dispatchEvent(new Event('change'));
 		} else {
 			tuesdayHoursInfoDiv.style.display = "block";
 		}
@@ -1542,14 +1554,17 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Initially hide the hours-info div if the checkbox is checked
         if (wednesdayHolidayCheckbox.checked) {
-        wednesdayHoursInfoDiv.style.display = "none";
+			wednesdayHoursInfoDiv.style.display = "none";
         }
         
         // Add event listener to the checkbox
         wednesdayHolidayCheckbox.addEventListener("change", function() {
-        // Toggle the visibility of hours-info div based on checkbox state
-        if (this.checked) {
-            wednesdayHoursInfoDiv.style.display = "none";
+			// Toggle the visibility of hours-info div based on checkbox state
+			if (this.checked) {
+				wednesdayHoursInfoDiv.style.display = "none";
+				var startTimeSelect = document.getElementById("wednesdayStartTime");
+				startTimeSelect.value = '-';
+				startTimeSelect.dispatchEvent(new Event('change'));
         } else {
             wednesdayHoursInfoDiv.style.display = "block";
         }
@@ -1617,14 +1632,17 @@ document.addEventListener("DOMContentLoaded", function() {
 				
 				// Initially hide the hours-info div if the checkbox is checked
 				if (thursdayHolidayCheckbox.checked) {
-				thursdayHoursInfoDiv.style.display = "none";
+					thursdayHoursInfoDiv.style.display = "none";
 				}
 				
 				// Add event listener to the checkbox
 				thursdayHolidayCheckbox.addEventListener("change", function() {
-				// Toggle the visibility of hours-info div based on checkbox state
-				if (this.checked) {
-					thursdayHoursInfoDiv.style.display = "none";
+					// Toggle the visibility of hours-info div based on checkbox state
+					if (this.checked) {
+						thursdayHoursInfoDiv.style.display = "none";
+						var startTimeSelect = document.getElementById("thursdayStartTime");
+						startTimeSelect.value = '-';
+						startTimeSelect.dispatchEvent(new Event('change'));
 				} else {
 					thursdayHoursInfoDiv.style.display = "block";
 				}
@@ -1692,14 +1710,17 @@ document.addEventListener("DOMContentLoaded", function() {
 						
 						// Initially hide the hours-info div if the checkbox is checked
 						if (fridayHolidayCheckbox.checked) {
-						fridayHoursInfoDiv.style.display = "none";
+							fridayHoursInfoDiv.style.display = "none";
 						}
 						
 						// Add event listener to the checkbox
 						fridayHolidayCheckbox.addEventListener("change", function() {
-						// Toggle the visibility of hours-info div based on checkbox state
-						if (this.checked) {
-							fridayHoursInfoDiv.style.display = "none";
+							// Toggle the visibility of hours-info div based on checkbox state
+							if (this.checked) {
+								fridayHoursInfoDiv.style.display = "none";
+								var startTimeSelect = document.getElementById("fridayStartTime");
+								startTimeSelect.value = '-';
+								startTimeSelect.dispatchEvent(new Event('change'));
 						} else {
 							fridayHoursInfoDiv.style.display = "block";
 						}
@@ -1768,14 +1789,17 @@ document.addEventListener("DOMContentLoaded", function() {
 						
 						// Initially hide the hours-info div if the checkbox is checked
 						if (saturdayHolidayCheckbox.checked) {
-						saturdayHoursInfoDiv.style.display = "none";
+							saturdayHoursInfoDiv.style.display = "none";
 						}
 						
 						// Add event listener to the checkbox
 						saturdayHolidayCheckbox.addEventListener("change", function() {
-						// Toggle the visibility of hours-info div based on checkbox state
-						if (this.checked) {
-							saturdayHoursInfoDiv.style.display = "none";
+							// Toggle the visibility of hours-info div based on checkbox state
+							if (this.checked) {
+								saturdayHoursInfoDiv.style.display = "none";
+								var startTimeSelect = document.getElementById("saturdayStartTime");
+								startTimeSelect.value = '-';
+								startTimeSelect.dispatchEvent(new Event('change'));
 						} else {
 							saturdayHoursInfoDiv.style.display = "block";
 						}
