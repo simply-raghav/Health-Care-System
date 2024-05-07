@@ -14,11 +14,6 @@ const doctor_data = (id) => {
       .then((data) => {
         console.log("data: ", data);
         if (data.status === "success") {
-            document.getElementById("doctor_name").innerHTML =
-              "Dr. " + data.result.name;
-            document.getElementById("degree").innerHTML =
-              "Dr. " + data.result.degree;
-              
             // sunday render
             let starttime_sun = document.getElementById('startTime');
             let endtime_sun = document.getElementById('endTime');
@@ -276,6 +271,10 @@ const doctor_data = (id) => {
         //   document.getElementById("doctor_name").innerHTML = "NA";
         //   document.getElementById("doctor_degree").innerHTML = "NA";
         }
+        document.getElementById("doctor_name").innerHTML =
+          "Dr. " + data.result.name;
+        document.getElementById("degree").innerHTML =
+          "Dr. " + data.result.degree;
       });
   };
   

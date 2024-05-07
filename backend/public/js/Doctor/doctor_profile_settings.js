@@ -28,8 +28,7 @@ const doctor_data = (id) => {
         const gender = document.getElementById("gender_form")
         gender.value = data.result.gender;
         gender.dispatchEvent(new Event('change'));
-
-
+        
         // document.getElementById("doctor_dob_form").value= data.result.DOB;
       } else {
         document.getElementById("doctor_name").innerHTML = "NA";
