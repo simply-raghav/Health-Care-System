@@ -14,7 +14,7 @@ const doctor_data = (id) => {
       if (data.status === "success") {
         document.getElementById("Doctor_name").innerHTML =
           "Dr. " + data.result.name;
-        document.getElementById("speciality").innerHTML = data.result.specialty;
+        document.getElementById("speciality").innerHTML = data.result.degree;
       } else {
         document.getElementById("Doctor_name").innerHTML = "Dr. NA";
       }
@@ -59,11 +59,9 @@ const upcoming_apt = (apt) => {
 
   document.getElementById("appointment_upcoming_list").innerHTML += appointment;
 };
-
 // upcoming apt render
 
 // today apt render
-
 const today_apt = (apt) => {
   console.log("today apt");
 
@@ -98,11 +96,9 @@ const today_apt = (apt) => {
     document.getElementById("appointment_today_list").innerHTML += appointment;
 
   }
-
 // today apt render
 
 // past apt render
-
 const past_apt = (apt) => {
 
   var date = new Date(apt.dateofAppointment);
@@ -140,7 +136,6 @@ const past_apt = (apt) => {
 
   document.getElementById("appointment_past_list").innerHTML += appointment;
 };
-
 // past apt render
 
 
@@ -156,7 +151,6 @@ const past_apt = (apt) => {
 
 
 // completed apt render
-
 const completed_apt = (apt) => {
 
   var date = new Date(apt.dateofAppointment);
@@ -194,18 +188,7 @@ const completed_apt = (apt) => {
 
   document.getElementById("appointment_completed_list").innerHTML += appointment;
 };
-
 // completed apt render
-
-
-
-
-
-
-
-
-
-
 
 const doctor_appointments = (id) => {
   fetch("/appointment/viewAppointment_doctor", {

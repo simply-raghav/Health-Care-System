@@ -1,5 +1,5 @@
-const register = document.getElementById("registerForm");
-register.addEventListener("submit", async () => {
+const register = document.getElementById("register_patient");
+register.addEventListener("click", async () => {
   const fstName = document.getElementById("firstName").value;
   const lastName = document.getElementById("lastName").value;
   const DOB = document.getElementById("DOB").value;
@@ -29,7 +29,15 @@ register.addEventListener("submit", async () => {
     alert("Password and Confirm Password Mismatch");
     window.location = window.location;
     return false;
-  }else{
+  }
+  const OTPinput = document.getElementById("OTPinput");
+  const emailInput = document.getElementById("email");
+  console.log(OTPinput.display, emailInput.disabled)
+  if(!(OTPinput.value === global_OTP) || emailInput.disabled == false){
+    alert("Email OTP not verified");
+    return false;
+  }
+  {
     const data = {
       fstName,
       lastName,
@@ -113,6 +121,8 @@ document.getElementById("verifyOTP").addEventListener('click',()=>{
       OTPinput.setAttribute("class", "hide");
       OTPLabel.setAttribute("class", "hide");
       verifyOTP.setAttribute("class", "hide");
+    }else {
+      alert("OTP entered Incorrect");
     }
 
 });
