@@ -36,8 +36,10 @@ const patient_data = (id) => {
 // patient apt render
 
 const patient_apt = (apt) => {
-  
+  var today = new Date();
   var date = new Date(apt.dateofAppointment);
+  if(date < today) return;
+  if(apt.timeofAppointment < new Date().getTime()) return ;
   var book_date = new Date(apt.dateOfBooking);
   var book_day =book_date.getDate();
   var book_month = book_date.getMonth();
@@ -45,6 +47,7 @@ const patient_apt = (apt) => {
   var year = date.getFullYear();
   var month = date.getMonth() + 1; // Months are zero-based, so we add 1
   var day = date.getDate();
+
   const appointment = `<tr>
   <td>
     <h2 class="table-avatar">
@@ -112,8 +115,18 @@ const patient_appointments = (id) => {
         for (let i = 0; i < data.result.length; i++) {
           console.log(sortedres);
           patient_apt(sortedres[i]);
-
         }
+        if(data.result.length === 0 || document.getElementById('appointments_list').innerHTML === ''){
+          document.getElementById("appointments_list").innerHTML = `
+            <tr>
+  <td>
+    <h2 class="table-avatar"> No Appointments is Scheduled </h2>
+    </div>
+  </td>
+</tr>
+          `;
+        }
+        
       });
 
 }

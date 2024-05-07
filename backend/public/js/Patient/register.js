@@ -97,7 +97,7 @@ document.getElementById("verifyEmail").addEventListener('click',()=>{
           }
           console.log("Data: ", data);
         });
-
+    email.disabled = 'true';
     OTPinput.removeAttribute("class", "hide");
     OTPLabel.removeAttribute("class", "hide");
     verifyOTP.removeAttribute("class", "hide");
@@ -107,7 +107,8 @@ document.getElementById("verifyOTP").addEventListener('click',()=>{
     const OTPinput = document.getElementById("OTPinput");
     const OTPLabel = document.getElementById("OTPLabel");
     const verifyOTP = document.getElementById("verifyOTP");
-    if(OTPinput === global_OTP){
+    console.log()
+    if(OTPinput.value === global_OTP){
       alert("OTP Verified");
       OTPinput.setAttribute("class", "hide");
       OTPLabel.setAttribute("class", "hide");
