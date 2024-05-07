@@ -116,16 +116,7 @@ const patient_appointments = (id) => {
           console.log(sortedres);
           patient_apt(sortedres[i]);
         }
-        if(data.result.length === 0 || document.getElementById('appointments_list').innerHTML === ''){
-          document.getElementById("appointments_list").innerHTML = `
-            <tr>
-  <td>
-    <h2 class="table-avatar"> No Appointments is Scheduled </h2>
-    </div>
-  </td>
-</tr>
-          `;
-        }
+        
         
       });
 
