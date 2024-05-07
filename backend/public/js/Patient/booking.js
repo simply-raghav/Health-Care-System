@@ -47,27 +47,27 @@ function generateDates() {
           // Generate time slots with different values based on the selected day
           if (day === 'Sun') {
               console.log(slot_interval, timings.Sunday.startTime, timings.Sunday.endTime);
-              generateTimeSlots(slot_interval, timings.Sunday.startTime, timings.Sunday.endTime); // Example values for Sunday
+              generateTimeSlots(parseInt(slot_interval, 10) , timings.Sunday.startTime, timings.Sunday.endTime); // Example values for Sunday
               proceedButton.style.display = "none";
               // generateTimeSlots(15, '12:00', '18:00'); 
           } else if (day === 'Mon') {
-              generateTimeSlots(slot_interval, timings.Monday.startTime, timings.Monday.endTime); // Example values for Monday
+              generateTimeSlots(parseInt(slot_interval, 10), timings.Monday.startTime, timings.Monday.endTime); // Example values for Monday
               proceedButton.style.display = "none";
               // generateTimeSlots(15, '9:00', '17:00'); // Example values for Monday
           } else if (day === 'Tue') {
-              generateTimeSlots(slot_interval, timings.Tueday.startTime, timings.Tueday.endTime); // Example values for Tuesday
+              generateTimeSlots(parseInt(slot_interval, 10), timings.Tueday.startTime, timings.Tueday.endTime); // Example values for Tuesday
               proceedButton.style.display = "none";  
           } else if (day === 'Wed') {
-              generateTimeSlots(slot_interval, timings.Wednesday.startTime, timings.Wednesday.endTime); // Example values for Wednesday
+              generateTimeSlots(parseInt(slot_interval, 10), timings.Wednesday.startTime, timings.Wednesday.endTime); // Example values for Wednesday
               proceedButton.style.display = "none";
           } else if (day === 'Thu') {
-              generateTimeSlots(slot_interval, timings.Thursday.startTime, timings.Thursday.endTime); // Example values for Thursday
+              generateTimeSlots(parseInt(slot_interval, 10), timings.Thursday.startTime, timings.Thursday.endTime); // Example values for Thursday
               proceedButton.style.display = "none";
           } else if (day === 'Fri') {
-              generateTimeSlots(slot_interval, timings.Friday.startTime, timings.Friday.endTime); // Example values for Friday
+              generateTimeSlots(parseInt(slot_interval, 10), timings.Friday.startTime, timings.Friday.endTime); // Example values for Friday
               proceedButton.style.display = "none";
           } else if (day === 'Sat') {
-              generateTimeSlots(slot_interval, timings.Saturday.startTime, timings.Saturday.endTime); // Example values for Saturday
+              generateTimeSlots(parseInt(slot_interval, 10), timings.Saturday.startTime, timings.Saturday.endTime); // Example values for Saturday
               proceedButton.style.display = "none";
           }
       });
