@@ -302,43 +302,6 @@ const doctor_data = (id) => {
     let endtime_sat = document.getElementById('saturdayEndTime').value;
     let endtime_sun = document.getElementById('endTime').value;
 
-    // const mondayholidayCheckbox = document.getElementById("mondayholidayCheckbox");
-    // const tuesdayholidayCheckbox = document.getElementById("tuesdayholidayCheckbox");
-    // const wednesdayholidayCheckbox = document.getElementById("wednesdayholidayCheckbox");
-    // const thursdayholidayCheckbox = document.getElementById("thursdayholidayCheckbox");
-    // const fridayholidayCheckbox = document.getElementById("fridayholidayCheckbox");
-    // const saturdayholidayCheckbox = document.getElementById("saturdayholidayCheckbox");
-    // const sundayholidayCheckbox = document.getElementById("holidayCheckbox");
-    // console.log(
-    //   mondayholidayCheckbox,
-    //   tuesdayholidayCheckbox,
-    //   wednesdayholidayCheckbox,
-    //   thursdayholidayCheckbox,
-    //   fridayholidayCheckbox,
-    //   saturdayholidayCheckbox,
-    //   sundayholidayCheckbox.checked
-    // );
-    // if(mondayholidayCheckbox.checked == true){
-    //     starttime_mon = endtime_mon = "";
-    // }
-    // if (tuesdayholidayCheckbox.checked == true) {
-    //   starttime_tue = endtime_tue = "";
-    // }
-    // if (wednesdayholidayCheckbox.checked == true) {
-    //   starttime_wed = endtime_wed = "";
-    // }
-    // if (thursdayholidayCheckbox.checked == true) {
-    //   starttime_thu = endtime_thu = "";
-    // }
-    // if (fridayholidayCheckbox.checked == true) {
-    //   starttime_fri = endtime_fri = "";
-    // }
-    // if (saturdayholidayCheckbox.checked == true) {
-    //   starttime_sat = endtime_sat = "";
-    // }
-    // if (sundayholidayCheckbox.checked == true) {
-    //   starttime_sun = endtime_sun = "";
-    // }
 
 
     const data = {
@@ -374,6 +337,7 @@ const doctor_data = (id) => {
         },
       },
     };
+    console.log("Updated Data: ", data);
 
     fetch("/authDoctor/updateTimings", {
       method: "POST",

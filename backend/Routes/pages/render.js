@@ -254,17 +254,4 @@ router.get("/doctor_change_password", loggedin, (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports=router;
