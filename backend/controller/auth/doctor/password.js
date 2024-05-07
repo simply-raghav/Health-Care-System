@@ -27,7 +27,6 @@ const setPassword = async (req, res) => {
       status: "success",
       message: "Password changed successfully",
       result: result,
-      changedPassword: changedPassword, 
     });
   } catch (error) {
     return res.json({
@@ -37,4 +36,4 @@ const setPassword = async (req, res) => {
   }
 };
 
-module.exports = { getPassword, setPassword };
+module.exports =  setPassword;
