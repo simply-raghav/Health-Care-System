@@ -315,7 +315,7 @@ const doctor_data = (id) => {
           startTime: starttime_mon,
           endTime: endtime_mon,
         },
-        Tuesday: {
+        Tueday: {
           startTime: starttime_tue,
           endTime: endtime_tue,
         },

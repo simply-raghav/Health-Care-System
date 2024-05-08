@@ -86,9 +86,9 @@ function generateTimeSlots(slotDuration, startTime, endTime) {
   timeSlotsList.innerHTML = ''; // Clear previous time slots
 
   // Check if it's a holiday (no time slots)
-  if (startTime === '' || endTime === '') {
+  if (startTime === '-' || endTime === '-') {
       const message = document.querySelector('.time-slot-message');
-      message.textContent = 'Doctor is on holiday';
+      message.textContent = 'Doctor is not available';
       message.style.display = 'block';
       return; // Exit the function
   }
