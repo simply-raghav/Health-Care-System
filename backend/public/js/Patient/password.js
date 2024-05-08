@@ -10,7 +10,7 @@ const changePassword = () => {
       old_password : old_password,
       new_password : new_password,
     };
-    fetch("/authDoctor/changePassword", {
+    fetch("/authPatient/changePassword", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
