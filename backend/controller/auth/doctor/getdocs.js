@@ -1,6 +1,6 @@
-
+// This API is used to get doctor details along with their respective hospital details.
 const doctor = require("../../../Models/doctor.model");
-
+// get all doctors lists with hospital details. 
 const getusers = async (req, res) => {
   try {
     const result = await doctor.find().populate('hospital');
@@ -17,6 +17,7 @@ const getusers = async (req, res) => {
   }
 };
 
+// get specific doctor details with hospital details.
 const getuser = async (req, res) => {
   try {
     const result = await doctor.findOne({_id:req.body.id}).populate('hospital');

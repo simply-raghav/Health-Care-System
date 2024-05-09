@@ -1,11 +1,12 @@
-const MongoStore = require("connect-mongo");
+// Import mongoose for creating schema and model
 const mongoose = require("mongoose");
+
+// Define schema for patient details
 const patientDetail = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-
   DOB: {
     type: Date,
     required: true,
@@ -44,6 +45,8 @@ const patientDetail = new mongoose.Schema({
   },
 });
 
+// Create patient model
 const patient = new mongoose.model("patient", patientDetail);
 
+// Export the patient model
 module.exports = patient;

@@ -1,3 +1,6 @@
+// This model is just basic structure,
+// it has to be updated according to requirements.
+
 const MongoStore = require("connect-mongo");
 const mongoose = require("mongoose");
 const labDetail = new mongoose.Schema({

@@ -98,19 +98,3 @@ const updateData = (id) => {
   update_doctor_profile(id);
 };
 
-doctor_name;
-doctor_degree;
-doctor_username;
-doctor_email;
-doctor_name_form;
-doctor_phone_number;
-doctor_address_form;
-gender_form;
-doctor_dob_form;
-about_me;
-Button_group = {
-  price_free,
-  price_custom,
-};
-services;
-specialist;
