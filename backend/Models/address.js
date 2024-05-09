@@ -1,4 +1,6 @@
-const mongoose = require('mongoose')
+// This code is not used anywhere, 
+// it can be completed and can be used as an object type for other models.
+const mongoose = require("mongoose");
 
 const address = new mongoose.Schema({
   addressLine1: {
@@ -9,7 +11,6 @@ const address = new mongoose.Schema({
     type: string,
     required: true,
   },
-  
 });
 
-module.exports  = address;
+module.exports = address;

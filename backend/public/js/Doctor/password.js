@@ -1,3 +1,5 @@
+// page to change doctor's password
+
 const changePassword = () => {
     const old_password = document.getElementById("old_password").value;
     const new_password = document.getElementById("new_password").value;
@@ -10,6 +12,7 @@ const changePassword = () => {
       old_password : old_password,
       new_password : new_password,
     };
+    // API call to change password.
     fetch("/authDoctor/changePassword", {
     method: "POST",
     body: JSON.stringify(data),

@@ -30,7 +30,7 @@ const patient_data = (id) => {
     .then((data) => {
       console.log("data: ", data);
       document.getElementById("docName").innerHTML = "Dr. " + data.result.name;
-      document.getElementById("speciality").innerHTML = data.result.specialty;
+      document.getElementById("speciality").innerHTML = "Degree: " +  data.result.degree;
       document.getElementById("address").innerHTML = data.result.hospital.name + ", "+ data.result.hospital.address;
       if (data.result.hospital.about_me) {
         document.getElementById("about_me").innerHTML = data.result.hospital.about_me;

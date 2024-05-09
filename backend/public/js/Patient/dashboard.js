@@ -41,8 +41,9 @@ const patient_apt = (apt) => {
   if(date < today) return;
   if(apt.timeofAppointment < new Date().getTime()) return ;
   var book_date = new Date(apt.dateOfBooking);
+  console.log(book_date);
   var book_day =book_date.getDate();
-  var book_month = book_date.getMonth();
+  var book_month = book_date.getMonth()+1;
   var book_year = book_date.getFullYear();
   var year = date.getFullYear();
   var month = date.getMonth() + 1; // Months are zero-based, so we add 1
@@ -59,7 +60,7 @@ const patient_apt = (apt) => {
   </td>
   <td>${day}:${month}:${year}<span class="d-block text-info">${apt.timeofAppointment}</span></td>
   <td>${book_day}:${book_month}:${book_year}</td>
-  <td>${apt.amount} &#x20B9</td>
+  <td>&#x20B9 ${apt.amount}</td>
   
   
     </div>

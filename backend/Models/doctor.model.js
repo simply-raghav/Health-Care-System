@@ -1,5 +1,7 @@
-const MongoStore = require("connect-mongo");
+// Import mongoose for creating schema and model
 const mongoose = require("mongoose");
+
+// Define schema for doctor details
 const doctorDetail = new mongoose.Schema(
   {
     name: {
@@ -107,7 +109,7 @@ const doctorDetail = new mongoose.Schema(
           default: "",
         },
       },
-      Tueday: {
+      Tuesday: {
         startTime: {
           type: String,
           default: "",
@@ -160,12 +162,14 @@ const doctorDetail = new mongoose.Schema(
     },
     slot_interval: {
       type: String,
-      deault : "30"
+      default: "30", // Default slot interval
     },
   },
   { timestamps: true }
 );
 
+// Create doctor model
 const doctor = new mongoose.model("doctor", doctorDetail);
 
+// Export the doctor model
 module.exports = doctor;
