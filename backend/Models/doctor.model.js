@@ -109,7 +109,7 @@ const doctorDetail = new mongoose.Schema(
           default: "",
         },
       },
-      Tuesday: {
+      Tueday: {
         startTime: {
           type: String,
           default: "",
