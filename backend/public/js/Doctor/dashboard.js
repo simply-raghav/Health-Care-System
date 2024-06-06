@@ -119,4 +119,52 @@ const past_apt = (apt) => {
 
 // Function to fetch doctor appointments and render them
 const doctor_appointments = (id) => {
-  // Fetch doctor appointments from
+  fetch("/appointment/viewAppointment_doctor", {
+    method: "POST",
+    body: JSON.stringify({
+      doctor_id: id,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+
+      let appointment_body = "";
+      console.log("data: ", data);
+      console.log(data.result[0].patientId.name);
+      for (let i = 0; i < data.result.length; i++) {
+        const today = new Date();
+        const aptDate = new Date(data.result[i].dateofAppointment);
+
+        // Extract year, month, and day from aptDate
+        var year = aptDate.getFullYear();
+        var month = aptDate.getMonth() + 1; // Months are zero-based, so we add 1
+        var day = aptDate.getDate();
+
+        // Create a new Date object for aptDate with time set to midnight
+        const newapt = new Date(year, month - 1, day);
+
+        // Compare the dates without considering the time component
+        if (newapt > today) {
+          upcoming_apt(data.result[i]);
+        } else if (
+          year === today.getFullYear() &&
+          month === today.getMonth() + 1 &&
+          day === today.getDate()
+        ) {
+          today_apt(data.result[i]);
+        } else {
+          past_apt(data.result[i]);
+        }
+      }
+    });
+};
+
+const getData = (id) => {
+  console.log("Doctor Id: ", id);
+  doctor_data(id);
+  doctor_appointments(id);
+};
