@@ -7,9 +7,7 @@ Welcome to the Health Care System project! Our platform is engineered to seamles
 - [About the Project](#about-the-project)
 - [Installation](#installation)
 - [Features](#features)
-- [Future Scope](#future-scope)
-- [Contributing](#contributing)
-- [License](#license)
+- [Future Enhancement](#future-enhancement)
 
 ## About the Project
 
@@ -40,8 +38,6 @@ At Health Care System, our mission is to leverage technology to transform health
 #### Get Started:
 
 Experience the future of healthcare with the Health Care System. Whether you're a healthcare provider looking to streamline operations, a patient seeking convenient access to medical services, or an administrator aiming to optimize organizational efficiency, our platform offers the tools and capabilities you need to thrive in today's rapidly evolving healthcare landscape. Join us in shaping the future of healthcare delivery and together, let's make a difference in the lives of patients around the world.
-
-[Provide a brief overview of your project. Describe its purpose, goals, and any important information that users should know.]
 
 ## Installation
 
@@ -129,13 +125,13 @@ This command will read the `package.json` file and install all the required depe
 Now, you are ready to start the server. Run the following command in the terminal:
 
 ```bash
-npm start
+nodemon .\app.js
 ```
 
 If everything is set up correctly, you should see a message indicating that the server is running, typically something like:
 
 ```
-Server is running on http://localhost:3000
+Server is running on `PORT`
 ```
 
 ### Step 6: Open Your Website
@@ -256,68 +252,41 @@ This guide should help users with no technical background to set up and run your
 
 ## Features
 
-
 #### Doctor Entity
-- [x] **Feature 1:** Get list of Appointments categorized into Upcoming, Today and Past Appointments. 
-
-- [ ] **Feature 2:** View patient profile, and add/edit medicals records including notes, lab reports and prescription.  
-
-- [x] **Feature 3:** Doctor can schedule it timings on a week basis (eg. Doctor is available from 9:00 AM to 3:00 PM on Monday-Wednesday-Saturday and 11:00 AM to 3:00 PM on Sunday, rest he is not available).
-
-- [ ] **Feature 4:** Update Profile which includes about me, it's clinic information, contact details, consultation fees, services and specialization, education, experience, awards and many more. 
-
-- [ ] **Feature 5:** Cancel/edit Appointments
-
-- [ ] **Feature 6:** View Medical Reports(Past as well).
-
+- [x] **Feature 1:** Get a list of Appointments categorized into Upcoming, Today, and Past Appointments.
+- [ ] **Feature 2:** View patient profiles and add/edit medical records including notes, lab reports, and prescriptions.
+- [x] **Feature 3:** Doctors can schedule their timings on a weekly basis (e.g., available from 9:00 AM to 3:00 PM on Monday, Wednesday, and Saturday, and 11:00 AM to 3:00 PM on Sunday, not available on other days).
+- [ ] **Feature 4:** Update Profile, including about me, clinic information, contact details, consultation fees, services, specialization, education, experience, awards, and more.
+- [ ] **Feature 5:** Cancel/edit Appointments.
+- [ ] **Feature 6:** View Medical Reports (Past and present).
 
 #### Patient Entity
-- [ ] **Feature 1:** View current Appointments. 
-
-- [ ] **Feature 2:** View List of Prescriptions with complete detail including doctor details, medicine dosage details and many more.
-
-- [ ] **Feature 3:** View and download all medical reports Generated, also see the status of reports.
-
-- [ ] **Feature 4:** See all the Billings made for medical purpose. This includes, doctor consultancy fees, lab testing bills and pharmacy bills as well.
-
-- [x] **Feature 2:** Book Appointments page gives list of all doctors with there respective Hospital info, Clinical info, features and specifications.
-
-- [ ] **Feature 2:** Filter List of Doctors according to Name, Profession and Hospital Name.
-
-- [x] **Feature 3:** View Doctor Profile contains all the profile information doctor has added in it's profile page. 
-
-- [x] **Feature 4:** Book appointment gives you an option to select time according to your choice of time.
-
-- [ ] **Feature 5:** Appointments slots disabling feature when booked. 
-
-- [ ] **Feature 6:** Payment Gateway. (Implemented but not integrated)
-
+- [ ] **Feature 1:** View current Appointments.
+- [ ] **Feature 2:** View a List of Prescriptions with complete details, including doctor details and medicine dosage.
+- [ ] **Feature 3:** View and download all medical reports generated, and see the status of reports.
+- [ ] **Feature 4:** View all medical billings, including doctor consultancy fees, lab testing bills, and pharmacy bills.
+- [x] **Feature 2:** Book Appointments page provides a list of all doctors with their respective Hospital info, Clinic info, features, and specifications.
+- [ ] **Feature 2:** Filter List of Doctors according to Name, Profession, and Hospital Name.
+- [x] **Feature 3:** View Doctor Profile contains all the profile information the doctor has added.
+- [x] **Feature 4:** Book appointment allows selecting a preferred time slot.
+- [ ] **Feature 5:** Appointment slots disabling feature when booked.
+- [ ] **Feature 6:** Payment Gateway (Implemented but not integrated).
 - [ ] **Feature 7:** Update Profile.
 
 #### Hospital Entity
-- [ ] **Feature 1:** View List of doctors, staff members, Patients served or upcoming. 
+- [ ] **Feature 1:** View lists of doctors, staff members, and served or upcoming patients.
+- [x] **Feature 2:** Add Doctor.
+- [ ] **Feature 3:** Add lab Technicians, Pharmacy, and staff.
+- [ ] **Feature 4:** Manage Doctors, Pharmacy, Lab Technicians, and Staff Members.
+- [ ] **Feature 5:** Assigning authorities for each staff member (Administrative, Accounts, nurses, medical equipment access, etc.).
 
-- [x] **Feature 2:** Add Doctor
+### Future Enhancements
 
-- [ ] **Feature 3:** Add lab Technician, Pharmacy and staffs
-
-- [ ] **Feature 4:** Manage Doctors, Pharmacy, Lab Technician and Staff Members.
-
-- [ ] **Feature 5:** Assigning authorities for each staff members(Administrative, Accounts, nurses, medical equipments access and many more).
-
-### Future enhancements 
-
-- [ ] **Feature 1:** Video Conferencing between patient and doctor. 
-
-- [ ] **Feature 2:** Doctors may get some urgent operation to look on, so notification to patient accordingly.
-
-- [ ] **Feature 3:** Managing all the medical equipments inventory management. 
-
-- [ ] **Feature 4:** Different types of Rooms in a Hospital can be managed (Patient Room, ICU, etc.)
-
-- [ ] **Feature 5:** All other pharmacies and labs other than Hospitals can be integrated.
-
-- [ ] **Feature 6:** Emergency Support can also be integrated, and many more. 
-
+- [ ] **Feature 1:** Video Conferencing between patient and doctor.
+- [ ] **Feature 2:** Urgent operation notifications to patients.
+- [ ] **Feature 3:** Managing all medical equipment inventory.
+- [ ] **Feature 4:** Managing different types of rooms in a Hospital (Patient Room, ICU, etc.).
+- [ ] **Feature 5:** Integration of pharmacies and labs other than Hospitals.
+- [ ] **Feature 6:** Integration of Emergency Support, and more.
 
 ### This is all about my vision for a Health-Care-System. 
