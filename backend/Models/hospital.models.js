@@ -1,6 +1,7 @@
-const MongoStore = require("connect-mongo");
+// Import mongoose for creating schema and model
 const mongoose = require("mongoose");
 
+// Define schema for hospital details
 const hospitalDetails = new mongoose.Schema({
   name: {
     type: String,
@@ -8,11 +9,11 @@ const hospitalDetails = new mongoose.Schema({
   },
   address: {
     type: String,
-    // required: true,
+    required: true, 
   },
-  owner_name : {
-    type : String, 
-    // required : true,
+  owner_name: {
+    type: String,
+    required: true, 
   },
   email: {
     type: String,
@@ -20,22 +21,24 @@ const hospitalDetails = new mongoose.Schema({
   },
   contact: {
     type: Number,
-    // required: true,
+    required: true,
   },
   registration_number: {
     type: String,
-    // required: true,
+    required: true,
   },
   license_number: {
     type: String,
-    // required: true,
+    required: true,
   },
   password: {
-      type: String,
-      required: true,
+    type: String,
+    required: true,
   },
 });
 
-const hospital= new mongoose.model("hospital", hospitalDetails);
+// Create hospital model
+const hospital = new mongoose.model("hospital", hospitalDetails);
 
+// Export the hospital model
 module.exports = hospital;

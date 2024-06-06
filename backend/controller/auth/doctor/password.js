@@ -1,8 +1,10 @@
+// This API is used to change password of doctor.
 const doctor = require("../../../Models/doctor.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const setPassword = async (req, res) => {
   try {
+    // doctor id can be retrieved from cookie.
     const decoded = jwt.verify(
       req.cookies.doctor_registered,
       process.env.SECRET_KEY
@@ -10,6 +12,7 @@ const setPassword = async (req, res) => {
     const {old_password, new_password} = req.body;
     const result = await doctor.findOne({ _id: decoded.id });
     console.log("Result: ", result);
+    // check whether the old password 
     const resp = await bcrypt.compare(old_password,result.password);
     if(resp){
         const hashed = await bcrypt.hash(new_password, 12);
